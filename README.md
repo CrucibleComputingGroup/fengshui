@@ -13,24 +13,6 @@ validation for physical implementability.
 
 ---
 
-## This repository vs. the Zenodo record
-
-**Use this repository.** It is the current code.
-
-The Zenodo record is the frozen snapshot submitted for artifact evaluation, plus the 4.6 GB
-characterization database. Two things landed here *after* that snapshot was cut, and both change
-results:
-
-| Change | Effect if you use the Zenodo code instead |
-|---|---|
-| I-SAEO bootstrap fix in `src/scripts/run_archgym_chiplet.py` | The seeded pool could carry a duplicate PIM or switch chiplet. Figure 11's MoE EDP reads 2.41× instead of 1.1× |
-| Converged pool chains in `src/archgym_results/ae_*_chain_converged/` | Figure 9's `poolVsUnconGap` reads 4.8% instead of the paper's 4.1% |
-
-Zenodo remains the right source for the **database** — it is far too large for git. Everything else,
-take from here.
-
----
-
 ## Quick start
 
 ```bash
