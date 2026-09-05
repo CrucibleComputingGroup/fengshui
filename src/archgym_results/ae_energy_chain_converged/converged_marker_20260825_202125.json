@@ -1,0 +1,52 @@
+{
+  "metric": "energy",
+  "objective": "energy",
+  "cost_aware": false,
+  "threshold_pct": 1.0,
+  "patience": 2,
+  "n_max": 16,
+  "converged_n": 10,
+  "source_dir": "src/archgym_results/ae_energy_chain",
+  "curve": [
+    {
+      "n": 1,
+      "best_value": 0.0548867227222092
+    },
+    {
+      "n": 2,
+      "best_value": 0.0491824382319389
+    },
+    {
+      "n": 3,
+      "best_value": 0.0374962801874083
+    },
+    {
+      "n": 4,
+      "best_value": 0.0366463651359307
+    },
+    {
+      "n": 5,
+      "best_value": 0.0355891644688752
+    },
+    {
+      "n": 6,
+      "best_value": 0.0351780399327445
+    },
+    {
+      "n": 7,
+      "best_value": 0.0350324649416599
+    },
+    {
+      "n": 8,
+      "best_value": 0.0349275538585129
+    },
+    {
+      "n": 9,
+      "best_value": 0.0348593849266393
+    },
+    {
+      "n": 10,
+      "best_value": 0.0347266090103171
+    }
+  ]
+}

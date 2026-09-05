@@ -1,0 +1,7 @@
+technology,global_cycle_seconds,width|datawidth,energy,area,action
+15nm,1e-9,32,0.0289,3.70E+01,add|read
+15nm,1e-9,32,0.000951,3.70E+01,leak
+15nm,1e-9,32,0,3.70E+01,update|write
+40nm,1e-9,32,0.21,2.78E+02,add|read
+40nm,1e-9,32,0.0024,2.78E+02,leak
+40nm,1e-9,32,0,2.78E+02,update|write

@@ -1,0 +1,30 @@
+problem:
+  instance:
+    B: 1
+    H: 64
+    Q: 1
+    R: 2
+    T: 256
+  shape:
+    data_spaces:
+    - name: QK
+      projection:
+      - - - B
+      - - - H
+      - - - R
+      - - - T
+      - - - Q
+    - name: LM
+      projection:
+      - - - B
+      - - - H
+      - - - R
+      - - - Q
+      read_write: true
+    dimensions:
+    - B
+    - H
+    - R
+    - T
+    - Q
+    name: flashattn_lm

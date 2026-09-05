@@ -1,0 +1,65 @@
+# 1. 使用 Ubuntu 作为基础镜像 (22.04 LTS)
+FROM ubuntu:22.04
+
+# 2. 设置非交互模式
+ENV DEBIAN_FRONTEND=noninteractive
+
+# 3. 安装依赖项
+RUN apt-get update && apt-get install -y \
+    sudo \
+    git \
+    python3 \
+    python3-pip \
+    make \
+    g++ \
+    cmake \
+    libconfig++-dev \
+    libboost-dev \
+    libboost-iostreams-dev \
+    libboost-serialization-dev \
+    libyaml-cpp-dev \
+    libncurses5-dev \
+    libtinfo-dev \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# 4. Git 核心配置：放行安全目录，替换 SSH 协议
+RUN git config --global url."https://github.com/".insteadOf git@github.com: \
+    && git config --global url."https://github.com/".insteadOf git://github.com/ \
+    && git config --global --add safe.directory '*'
+
+WORKDIR /workspace
+
+# 5. 只克隆主仓库（坚决不在这里加 --recurse-submodules）
+RUN git clone https://github.com/Accelergy-Project/accelergy-timeloop-infrastructure.git
+
+WORKDIR /workspace/accelergy-timeloop-infrastructure
+
+# 6. 【核心修复】第一步：只拉取所有组件的第一层文件夹（这步不会报错）
+RUN git submodule update --init
+
+# 7. 【核心修复】第二步：手动进入关键的组件目录拉取深层依赖，完美避开 src/accelergy 的报错
+RUN cd src/timeloop && git submodule update --init --recursive \
+    && cd ../timeloop-python && git submodule update --init --recursive \
+    && cd ../accelergy-cacti-plug-in && git submodule update --init --recursive \
+    && cd ../accelergy-neurosim-plug-in && git submodule update --init --recursive
+
+# 8. 打上官方要求的 Cacti 补丁 (官方 make pull 里隐含的步骤，不可少)
+RUN cp cacti.patch ./src/cacti/ && cd ./src/cacti/ && git reset --hard && git apply cacti.patch || true
+RUN cp cacti.patch ./src/accelergy-cacti-plug-in/cacti/ && cd ./src/accelergy-cacti-plug-in/cacti/ && git reset --hard && git apply cacti.patch || true
+
+# 9. 依次执行安装指令
+# 提前安装 Python 编译时必需的基础依赖库
+RUN pip3 install PyYAML setuptools wheel
+
+RUN make install_accelergy
+RUN pip3 install ./src/timeloopfe
+
+# 【核心修复】先手动创建 ~/.local/bin 目录，然后再执行安装
+RUN mkdir -p ~/.local/bin && make install_timeloop
+
+# 【环境配置】把安装路径加到系统环境变量里，这样你进容器后可以直接敲 timeloop-mapper 等命令
+ENV PATH="/root/.local/bin:${PATH}"
+
+# 10. 默认启动命令
+CMD ["/bin/bash"]

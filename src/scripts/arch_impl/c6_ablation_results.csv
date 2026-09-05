@@ -1,0 +1,12 @@
+# C6 framework dataflow-isolation ablation (energy objective, full DAG-CP + het-batch model).
+# Source: c6_framework_ablation.py run 2026-06-09 (preload 1,280,080 rows).
+# Memory homogenized to GDDR7 for every variant except full_hetmem.
+# df_{OS,WS,RS} = the real N=8 energy pool with all COMPUTE chiplets forced to one
+# dataflow (sizes + PIM + switch kept). single_OS = Gemini-style homogeneous design.
+variant,qwen_b1,qwen_b8,mobilenet_b1,mobilenet_b8,replknet_b1,replknet_b8
+full_hetmem,7.1561e-2,5.5385e-1,8.0582e-5,5.4024e-4,3.0579e-3,2.1256e-2
+full_gddr7,8.0275e-2,5.8049e-1,8.6090e-5,5.7096e-4,3.1709e-3,2.1827e-2
+df_OS_gddr7,8.1192e-2,6.0501e-1,8.6090e-5,7.3053e-4,5.2660e-3,3.3261e-2
+df_WS_gddr7,9.5798e-2,6.7507e-1,1.8394e-4,1.4313e-3,7.9607e-3,5.4859e-2
+df_RS_gddr7,9.1239e-2,7.0096e-1,1.0547e-4,5.7058e-4,3.1709e-3,2.1827e-2
+single_OS_gddr7,9.0042e-2,7.0216e-1,8.6101e-5,8.6900e-4,5.8355e-3,3.6970e-2

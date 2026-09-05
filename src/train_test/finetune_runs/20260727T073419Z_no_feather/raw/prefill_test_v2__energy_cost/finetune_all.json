@@ -1,0 +1,42 @@
+{
+  "args": {
+    "base_n": 8,
+    "n_evals": 500,
+    "saeo_candidates": 2000,
+    "saeo_mutation_rate": 0.3,
+    "seed": 42
+  },
+  "splits": {
+    "prefill_test_v2": {
+      "test_nets": [
+        "llama3.1_70b_prefill_s2048_b1_seq2048",
+        "llama3.1_70b_prefill_s2048_b8_seq2048",
+        "llama3.1_70b_prefill_s512_b1_seq512",
+        "llama3.1_70b_prefill_s512_b8_seq512",
+        "llama3.1_8b_prefill_s2048_b1_seq2048",
+        "llama3.1_8b_prefill_s2048_b8_seq2048",
+        "llama3.1_8b_prefill_s512_b1_seq512",
+        "llama3.1_8b_prefill_s512_b8_seq512",
+        "qwen3_235b_a22b_prefill_s2048_b1_seq2048",
+        "qwen3_235b_a22b_prefill_s2048_b8_seq2048",
+        "qwen3_235b_a22b_prefill_s512_b1_seq512",
+        "qwen3_235b_a22b_prefill_s512_b8_seq512",
+        "qwen3_30b_a3b_prefill_s2048_b1_seq2048",
+        "qwen3_30b_a3b_prefill_s2048_b8_seq2048",
+        "qwen3_30b_a3b_prefill_s512_b1_seq512",
+        "qwen3_30b_a3b_prefill_s512_b8_seq512"
+      ],
+      "configs": {
+        "energy_cost": {
+          "base_cross": 73.78562470381534,
+          "finetune_cross": 72.06624634920593,
+          "new_chiplet_ids": [
+            "gemmini_like@glb9@pe_x_scale3@pe_y_scale3"
+          ],
+          "changed_prefix_ids": [],
+          "time_s": 2746.036846878007
+        }
+      }
+    }
+  }
+}

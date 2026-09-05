@@ -1,0 +1,37 @@
+problem:
+  instance:
+    B: 1
+    D: 128
+    H: 64
+    Q: 1024
+    R: 4
+  shape:
+    data_spaces:
+    - name: PRM
+      projection:
+      - - - B
+      - - - H
+      - - - R
+      - - - Q
+    - name: RNV0
+      projection:
+      - - - B
+      - - - D
+      - - - H
+      - - - R
+      - - - Q
+    - name: SPNV
+      projection:
+      - - - B
+      - - - D
+      - - - H
+      - - - R
+      - - - Q
+      read_write: true
+    dimensions:
+    - B
+    - D
+    - H
+    - R
+    - Q
+    name: flashattn_spnv

@@ -1,0 +1,32 @@
+problem:
+  instance:
+    B: 1
+    H: 32
+    K: 1024
+    Q: 1024
+  shape:
+    data_spaces:
+    - name: Inputs1
+      projection:
+      - - - B
+      - - - H
+      - - - Q
+      - - - K
+    - name: Inputs2
+      projection:
+      - - - B
+      - - - H
+      - - - Q
+    - name: Outputs
+      projection:
+      - - - B
+      - - - H
+      - - - Q
+      - - - K
+      read_write: true
+    dimensions:
+    - B
+    - H
+    - Q
+    - K
+    name: layer0_softmax_div

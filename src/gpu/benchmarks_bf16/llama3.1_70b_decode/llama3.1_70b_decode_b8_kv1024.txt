@@ -1,0 +1,22 @@
+Results for llama3.1_70b_decode_b8_kv1024:
+{'name': 'layer0_q_proj', 'iters': 16800, 'avg_latency_ms': 0.08976568312872024, 'avg_energy_J': 0.028071785714285712, 'avg_power_W': 312.7152019844133, 'out_elems': 65536}
+{'name': 'layer0_k_proj', 'iters': 85200, 'avg_latency_ms': 0.01761264854753521, 'avg_energy_J': 0.004730715962441315, 'avg_power_W': 268.5907866829086, 'out_elems': 8192}
+{'name': 'layer0_v_proj', 'iters': 85200, 'avg_latency_ms': 0.017611296031396714, 'avg_energy_J': 0.004732558685446009, 'avg_power_W': 268.71570185615656, 'out_elems': 8192}
+{'name': 'layer0_attn_scores', 'iters': 530008, 'avg_latency_ms': 0.004474028736976754, 'avg_energy_J': 0.001244264094628259, 'avg_power_W': 278.10820354029477, 'out_elems': 524288, 'scores_on_chip': True}
+{'name': 'layer0_attn_v', 'iters': 241900, 'avg_latency_ms': 0.006210024117339293, 'avg_energy_J': 0.0013462546506821, 'avg_power_W': 216.7818274883477, 'out_elems': 65536}
+{'name': 'layer0_o_proj', 'iters': 16800, 'avg_latency_ms': 0.08976688929966518, 'avg_energy_J': 0.02804392857142857, 'avg_power_W': 312.4008332877871, 'out_elems': 65536}
+{'name': 'layer0_gate_proj', 'iters': 4900, 'avg_latency_ms': 0.30783761160714285, 'avg_energy_J': 0.10082877551020408, 'avg_power_W': 327.5293379581966, 'out_elems': 229376}
+{'name': 'layer0_up_proj', 'iters': 4900, 'avg_latency_ms': 0.30781479193239797, 'avg_energy_J': 0.1008030612244898, 'avg_power_W': 327.47108652255775, 'out_elems': 229376}
+{'name': 'layer0_down_proj', 'iters': 4900, 'avg_latency_ms': 0.3079804587850765, 'avg_energy_J': 0.10441734693877551, 'avg_power_W': 339.03138847550537, 'out_elems': 65536}
+Critical Path Latency (ms): 0.8060346956749208
+Total Pipeline Energy (J): 0.37421869135238134
+Bottleneck Latency (ms): 0.3079804587850765
+Total Pipeline Energy with Idle (J): 0.44724247271195605
+P2P Transfer Energy (J): 0.0066203543884167885  [@ 284 pJ/bit (size-dependent, eff.)]
+Total Pipeline Energy with Idle + P2P (J): 0.45386282710037285
+--- Inter-card transfer (step 4), curve=interconnect-measured size-dependent (pj/bit 113-877, bw 4-48 GB/s) ---
+Max Single-Edge Transfer Latency (ms): 0.037449142857142854
+Sum On-Path Transfer Latency (ms): 0.12050316573524812
+Critical Path Latency w/ Transfer (ms): 0.9265378614101689
+Bottleneck Latency w/ Transfer (ms): 0.3079804587850765
+Transfer-bound (slowest link > slowest compute stage): False

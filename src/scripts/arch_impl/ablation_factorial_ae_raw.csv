@@ -1,0 +1,1281 @@
+metric,objective,cost_aware,config,mem,batch,tp,fusion,network,category,value
+Energy,energy,False,Full Fengshui,1,1,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.26928802223493836
+Energy,energy,False,Full Fengshui,1,1,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.0815289696900403
+Energy,energy,False,Full Fengshui,1,1,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002200653022007134
+Energy,energy,False,Full Fengshui,1,1,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.01695788498679726
+Energy,energy,False,Full Fengshui,1,1,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0217680357602186
+Energy,energy,False,Full Fengshui,1,1,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.109638179014542
+Energy,energy,False,Full Fengshui,1,1,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006450207860713182
+Energy,energy,False,Full Fengshui,1,1,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05159733233426734
+Energy,energy,False,Full Fengshui,1,1,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.03990129839927497
+Energy,energy,False,Full Fengshui,1,1,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.31151272596457763
+Energy,energy,False,Full Fengshui,1,1,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003727677565918374
+Energy,energy,False,Full Fengshui,1,1,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.023072215808397183
+Energy,energy,False,Full Fengshui,1,1,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.13029594006430403
+Energy,energy,False,Full Fengshui,1,1,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0126256594556955
+Energy,energy,False,Full Fengshui,1,1,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010710895331371574
+Energy,energy,False,Full Fengshui,1,1,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.08308161766913773
+Energy,energy,False,Full Fengshui,1,1,1,1,mobilenet_v3_small_b1_seq1,cnn,4.898774773385527e-05
+Energy,energy,False,Full Fengshui,1,1,1,1,mobilenet_v3_small_b8_seq1,cnn,0.0003716671446383544
+Energy,energy,False,Full Fengshui,1,1,1,1,replknet31b_b1_seq1,cnn,0.0027206970617051503
+Energy,energy,False,Full Fengshui,1,1,1,1,replknet31b_b8_seq1,cnn,0.020354624167141525
+Energy,energy,False,w/o Mem,0,1,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.28304990100675415
+Energy,energy,False,w/o Mem,0,1,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.1512744201816547
+Energy,energy,False,w/o Mem,0,1,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002200653022007134
+Energy,energy,False,w/o Mem,0,1,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017309698162689017
+Energy,energy,False,w/o Mem,0,1,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.085947556962187
+Energy,energy,False,w/o Mem,0,1,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.318199889906829
+Energy,energy,False,w/o Mem,0,1,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006450207860713182
+Energy,energy,False,w/o Mem,0,1,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05159733233426734
+Energy,energy,False,w/o Mem,0,1,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.04410146849170692
+Energy,energy,False,w/o Mem,0,1,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.344565255209951
+Energy,energy,False,w/o Mem,0,1,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00504081351185243
+Energy,energy,False,w/o Mem,0,1,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.029745128260169496
+Energy,energy,False,w/o Mem,0,1,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.14248612898440735
+Energy,energy,False,w/o Mem,0,1,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0718216768442235
+Energy,energy,False,w/o Mem,0,1,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.013866388471048433
+Energy,energy,False,w/o Mem,0,1,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.11036812075828084
+Energy,energy,False,w/o Mem,0,1,1,1,mobilenet_v3_small_b1_seq1,cnn,5.449609973385528e-05
+Energy,energy,False,w/o Mem,0,1,1,1,mobilenet_v3_small_b8_seq1,cnn,0.00040499296950339316
+Energy,energy,False,w/o Mem,0,1,1,1,replknet31b_b1_seq1,cnn,0.00283371798970525
+Energy,energy,False,w/o Mem,0,1,1,1,replknet31b_b8_seq1,cnn,0.020925880679141633
+Energy,energy,False,w/o Batch,1,0,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.2723981650526211
+Energy,energy,False,w/o Batch,1,0,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.0815289696900403
+Energy,energy,False,w/o Batch,1,0,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0022389844705535894
+Energy,energy,False,w/o Batch,1,0,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017075387406102163
+Energy,energy,False,w/o Batch,1,0,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0271351742376265
+Energy,energy,False,w/o Batch,1,0,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.109638179014542
+Energy,energy,False,w/o Batch,1,0,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006547960476079382
+Energy,energy,False,w/o Batch,1,0,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.051899446036882395
+Energy,energy,False,w/o Batch,1,0,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.04060623422834467
+Energy,energy,False,w/o Batch,1,0,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.31151272596457763
+Energy,energy,False,w/o Batch,1,0,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003757406904014574
+Energy,energy,False,w/o Batch,1,0,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.023101591413227183
+Energy,energy,False,w/o Batch,1,0,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.1320004734183861
+Energy,energy,False,w/o Batch,1,0,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0126256594556955
+Energy,energy,False,w/o Batch,1,0,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010787141086849025
+Energy,energy,False,w/o Batch,1,0,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.08315714609478762
+Energy,energy,False,w/o Batch,1,0,1,1,mobilenet_v3_small_b1_seq1,cnn,4.898774773385527e-05
+Energy,energy,False,w/o Batch,1,0,1,1,mobilenet_v3_small_b8_seq1,cnn,0.0003716671446383544
+Energy,energy,False,w/o Batch,1,0,1,1,replknet31b_b1_seq1,cnn,0.0027206970617051503
+Energy,energy,False,w/o Batch,1,0,1,1,replknet31b_b8_seq1,cnn,0.020354624167141525
+Energy,energy,False,w/o Tp,1,1,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.26928802223493836
+Energy,energy,False,w/o Tp,1,1,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.187425856797779
+Energy,energy,False,w/o Tp,1,1,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002200653022007134
+Energy,energy,False,w/o Tp,1,1,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.01695788498679726
+Energy,energy,False,w/o Tp,1,1,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0509670588880597
+Energy,energy,False,w/o Tp,1,1,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.259797573048449
+Energy,energy,False,w/o Tp,1,1,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006450207860713182
+Energy,energy,False,w/o Tp,1,1,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05159733233426734
+Energy,energy,False,w/o Tp,1,1,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.043914953750578786
+Energy,energy,False,w/o Tp,1,1,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3282839166907932
+Energy,energy,False,w/o Tp,1,1,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003727677565918374
+Energy,energy,False,w/o Tp,1,1,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.023072215808397183
+Energy,energy,False,w/o Tp,1,1,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.1315198028519049
+Energy,energy,False,w/o Tp,1,1,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0690383825576795
+Energy,energy,False,w/o Tp,1,1,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010710895331371574
+Energy,energy,False,w/o Tp,1,1,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.08308161766913773
+Energy,energy,False,w/o Tp,1,1,0,1,mobilenet_v3_small_b1_seq1,cnn,4.898774773385527e-05
+Energy,energy,False,w/o Tp,1,1,0,1,mobilenet_v3_small_b8_seq1,cnn,0.0003716671446383544
+Energy,energy,False,w/o Tp,1,1,0,1,replknet31b_b1_seq1,cnn,0.0027206970617051503
+Energy,energy,False,w/o Tp,1,1,0,1,replknet31b_b8_seq1,cnn,0.020354624167141525
+Energy,energy,False,w/o Fusion,1,1,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.2712249843128479
+Energy,energy,False,w/o Fusion,1,1,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.1217418242234323
+Energy,energy,False,w/o Fusion,1,1,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0022622222136525426
+Energy,energy,False,w/o Fusion,1,1,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017835169799923774
+Energy,energy,False,w/o Fusion,1,1,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0274896066429076
+Energy,energy,False,w/o Fusion,1,1,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.339036806266344
+Energy,energy,False,w/o Fusion,1,1,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.0064823333384249684
+Energy,energy,False,w/o Fusion,1,1,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05204089361817855
+Energy,energy,False,w/o Fusion,1,1,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.03990129839927497
+Energy,energy,False,w/o Fusion,1,1,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.31151272596457763
+Energy,energy,False,w/o Fusion,1,1,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003727677565918374
+Energy,energy,False,w/o Fusion,1,1,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.023072215808397183
+Energy,energy,False,w/o Fusion,1,1,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.13029594006430403
+Energy,energy,False,w/o Fusion,1,1,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0126256594556955
+Energy,energy,False,w/o Fusion,1,1,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010710895331371574
+Energy,energy,False,w/o Fusion,1,1,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.08308161766913773
+Energy,energy,False,w/o Fusion,1,1,1,0,mobilenet_v3_small_b1_seq1,cnn,8.311289706323438e-05
+Energy,energy,False,w/o Fusion,1,1,1,0,mobilenet_v3_small_b8_seq1,cnn,0.0006438140264731021
+Energy,energy,False,w/o Fusion,1,1,1,0,replknet31b_b1_seq1,cnn,0.0035879514224212896
+Energy,energy,False,w/o Fusion,1,1,1,0,replknet31b_b8_seq1,cnn,0.02998131263677132
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.28626909572843695
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.1512744201816547
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0022389844705535894
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017460755013994016
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.091776068879595
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.318199889906829
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006547960476079382
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.051899446036882395
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.044869318880776624
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.344565255209951
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.005078947841948631
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0297828924729995
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.14437001694277543
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0718216768442235
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.01395679533087614
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.11044364918393074
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,mobilenet_v3_small_b1_seq1,cnn,5.449609973385528e-05
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,mobilenet_v3_small_b8_seq1,cnn,0.00040499296950339316
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,replknet31b_b1_seq1,cnn,0.00283371798970525
+Energy,energy,False,w/o Mem+Batch,0,0,1,1,replknet31b_b8_seq1,cnn,0.020925880679141633
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.28304990100675415
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.2449422164777784
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002200653022007134
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017309698162689017
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.085947556962187
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.440531652225186
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006450207860713182
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05159733233426734
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.047000388630578
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3469078060987861
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00504081351185243
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.029745128260169496
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.16097438644846454
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.123986189789674
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.013866388471048433
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.11036812075828084
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,mobilenet_v3_small_b1_seq1,cnn,5.449609973385528e-05
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,mobilenet_v3_small_b8_seq1,cnn,0.00040499296950339316
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,replknet31b_b1_seq1,cnn,0.00283371798970525
+Energy,energy,False,w/o Mem+Tp,0,1,0,1,replknet31b_b8_seq1,cnn,0.020925880679141633
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.30009707219511933
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.195249565403049
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0022622222136525426
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017835169799923774
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0921935082341339
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.65602247117626
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.0064823333384249684
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05204089361817855
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.04410146849170692
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.344565255209951
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00504081351185243
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.029745128260169496
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.14248612898440735
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0718216768442235
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.013866388471048433
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.11036812075828084
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,mobilenet_v3_small_b1_seq1,cnn,9.801004906323438e-05
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,mobilenet_v3_small_b8_seq1,cnn,0.0007660633704731022
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,replknet31b_b1_seq1,cnn,0.00387484550242149
+Energy,energy,False,w/o Mem+Fusion,0,1,1,0,replknet31b_b8_seq1,cnn,0.032219641916771326
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.2723981650526211
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.187425856797779
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0022389844705535894
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017075387406102163
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0563341973654679
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.259797573048449
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006547960476079382
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.051899446036882395
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.04461988957964849
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3282839166907932
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003757406904014574
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.023101591413227183
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.13326829887920746
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0690383825576795
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010787141086849025
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.08315714609478762
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,mobilenet_v3_small_b1_seq1,cnn,4.898774773385527e-05
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,mobilenet_v3_small_b8_seq1,cnn,0.0003716671446383544
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,replknet31b_b1_seq1,cnn,0.0027206970617051503
+Energy,energy,False,w/o Batch+Tp,1,0,0,1,replknet31b_b8_seq1,cnn,0.020354624167141525
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.27433512713053065
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.1217418242234323
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002300553662198998
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017986226651228773
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0328567451203154
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.339036806266344
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006580085953791169
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.052343007320793604
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.04060623422834467
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.31151272596457763
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003757406904014574
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.023101591413227183
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.1320004734183861
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0126256594556955
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010787141086849025
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.08315714609478762
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,mobilenet_v3_small_b1_seq1,cnn,8.311289706323438e-05
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,mobilenet_v3_small_b8_seq1,cnn,0.0006438140264731021
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,replknet31b_b1_seq1,cnn,0.0035879514224212896
+Energy,energy,False,w/o Batch+Fusion,1,0,1,0,replknet31b_b8_seq1,cnn,0.02998131263677132
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.2712249843128479
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.2438890531140228
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0022622222136525426
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017835169799923774
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0569561118840232
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.461589795135522
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.0064823333384249684
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05204089361817855
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.043914953750578786
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3282839166907932
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003727677565918374
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.023072215808397183
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.1315198028519049
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0690383825576795
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010710895331371574
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.08308161766913773
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,mobilenet_v3_small_b1_seq1,cnn,8.311289706323438e-05
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,mobilenet_v3_small_b8_seq1,cnn,0.0006438140264731021
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,replknet31b_b1_seq1,cnn,0.0035879514224212896
+Energy,energy,False,w/o Tp+Fusion,1,1,0,0,replknet31b_b8_seq1,cnn,0.02998131263677132
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.28626909572843695
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.2449422164777784
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0022389844705535894
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017460755013994016
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.091776068879595
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.440531652225186
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006547960476079382
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.051899446036882395
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0477682390196477
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3469078060987861
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.005078947841948631
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0297828924729995
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.16285827440683265
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.123986189789674
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.01395679533087614
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.11044364918393074
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,mobilenet_v3_small_b1_seq1,cnn,5.449609973385528e-05
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,mobilenet_v3_small_b8_seq1,cnn,0.00040499296950339316
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,replknet31b_b1_seq1,cnn,0.00283371798970525
+Energy,energy,False,w/o Mem+Batch+Tp,0,0,0,1,replknet31b_b8_seq1,cnn,0.020925880679141633
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.30331626691680214
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.195249565403049
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002300553662198998
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017986226651228773
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0980220201515418
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.65602247117626
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006580085953791169
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.052343007320793604
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.044869318880776624
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.344565255209951
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.005078947841948631
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0297828924729995
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.14437001694277543
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0718216768442235
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.01395679533087614
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.11044364918393074
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,mobilenet_v3_small_b1_seq1,cnn,9.801004906323438e-05
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,mobilenet_v3_small_b8_seq1,cnn,0.0007660633704731022
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,replknet31b_b1_seq1,cnn,0.00387484550242149
+Energy,energy,False,w/o Mem+Batch+Fusion,0,0,1,0,replknet31b_b8_seq1,cnn,0.032219641916771326
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.30009707219511933
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.3067825105220234
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0022622222136525426
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017835169799923774
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0921935082341339
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.65602247117626
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.0064823333384249684
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05204089361817855
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.047000388630578
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3469078060987861
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00504081351185243
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.029745128260169496
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.16097438644846454
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.123986189789674
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.013866388471048433
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.11036812075828084
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,mobilenet_v3_small_b1_seq1,cnn,9.801004906323438e-05
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,mobilenet_v3_small_b8_seq1,cnn,0.0007660633704731022
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,replknet31b_b1_seq1,cnn,0.00387484550242149
+Energy,energy,False,w/o Mem+Tp+Fusion,0,1,0,0,replknet31b_b8_seq1,cnn,0.032219641916771326
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.27433512713053065
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.2438890531140228
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002300553662198998
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017986226651228773
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0623232503614313
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.461589795135522
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006580085953791169
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.052343007320793604
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.04461988957964849
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3282839166907932
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003757406904014574
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.023101591413227183
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.13326829887920746
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0690383825576795
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010787141086849025
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.08315714609478762
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,mobilenet_v3_small_b1_seq1,cnn,8.311289706323438e-05
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,mobilenet_v3_small_b8_seq1,cnn,0.0006438140264731021
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,replknet31b_b1_seq1,cnn,0.0035879514224212896
+Energy,energy,False,w/o Batch+Tp+Fusion,1,0,0,0,replknet31b_b8_seq1,cnn,0.02998131263677132
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.30331626691680214
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.3067825105220234
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002300553662198998
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017986226651228773
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0980220201515418
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.65602247117626
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006580085953791169
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.052343007320793604
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0477682390196477
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3469078060987861
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.005078947841948631
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0297828924729995
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.16285827440683265
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.123986189789674
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.01395679533087614
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.11044364918393074
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,mobilenet_v3_small_b1_seq1,cnn,9.801004906323438e-05
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,mobilenet_v3_small_b8_seq1,cnn,0.0007660633704731022
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,replknet31b_b1_seq1,cnn,0.00387484550242149
+Energy,energy,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,replknet31b_b8_seq1,cnn,0.032219641916771326
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.315205433419933
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,274.8188843274165
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.2268313621960487
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.31035111568372
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,88.77324140913306
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,942.8983850092517
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.05040205680822
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.6676041651794904
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,84.42162973947886
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.4955481363105974
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.672456385963399
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.002619625481904
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,220.72673536062095
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3970689730340762
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.898946708659718
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,mobilenet_v3_small_b1_seq1,cnn,0.0038188946092666135
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,mobilenet_v3_small_b8_seq1,cnn,0.026374049316057836
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,replknet31b_b1_seq1,cnn,0.1622931771358099
+Energy x Cost,energy,True,Full Fengshui,1,1,1,1,replknet31b_b8_seq1,cnn,1.1765009492634384
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,36.3399670971898
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,434.68157305907
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.2268313621960487
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.31035111568372
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,149.68071449582862
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1782.2876617176992
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.05040205680822
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.989347030481897
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,117.64769975005291
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.5416768376191171
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.9318285479419774
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,17.16923778478413
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,315.19300033720174
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.5135837125107587
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,17.94115117143459
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,mobilenet_v3_small_b1_seq1,cnn,0.006263750881775028
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,mobilenet_v3_small_b8_seq1,cnn,0.046501767207181466
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,replknet31b_b1_seq1,cnn,0.33393823317294713
+Energy x Cost,energy,True,w/o Mem,0,1,1,1,replknet31b_b8_seq1,cnn,2.4835234674122915
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.403490265858913
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,274.9588199625528
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.22880560539635497
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.313595560876881
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,88.93808285964869
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,942.9391792237035
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6662349559102333
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.056890947194454
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.692083280391657
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,84.42162973947886
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.4963735845239802
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.673267497261622
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.052893001233562
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,220.72673536062095
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3987196133005344
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.900568931256252
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,mobilenet_v3_small_b1_seq1,cnn,0.0038188946092666135
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,mobilenet_v3_small_b8_seq1,cnn,0.026374049316057836
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,replknet31b_b1_seq1,cnn,0.1622931771358099
+Energy x Cost,energy,True,w/o Batch,1,0,1,1,replknet31b_b8_seq1,cnn,1.1765009492634384
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.315205433419933
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,274.8188843274165
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.2268313621960487
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.31035111568372
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,88.77324140913306
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,942.8983850092517
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.05040205680822
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.6676041651794904
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,84.42162973947886
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.4955481363105974
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.672456385963399
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.002619625481904
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,220.72673536062095
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3970689730340762
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.898946708659718
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,mobilenet_v3_small_b1_seq1,cnn,0.0038188946092666135
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,mobilenet_v3_small_b8_seq1,cnn,0.026374049316057836
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,replknet31b_b1_seq1,cnn,0.1622931771358099
+Energy x Cost,energy,True,w/o Tp,1,1,0,1,replknet31b_b8_seq1,cnn,1.1765009492634384
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.642971493684687
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,295.64993444333936
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.23039156949085526
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.489054826346568
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,100.89596614940214
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1027.7402912056698
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.418068453307285
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.6676041651794904
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,84.42162973947886
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.4955481363105974
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.672456385963399
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.002619625481904
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,220.72673536062095
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3970689730340762
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.898946708659718
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,mobilenet_v3_small_b1_seq1,cnn,0.009078489150219061
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,mobilenet_v3_small_b8_seq1,cnn,0.07582858344272721
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,replknet31b_b1_seq1,cnn,0.2151847026649446
+Energy x Cost,energy,True,w/o Fusion,1,1,1,0,replknet31b_b8_seq1,cnn,1.6729024825396892
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,36.419570410302214
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,434.9141115670229
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.22880560539635497
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.313595560876881
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,149.81951138836456
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1782.305305213947
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6662349559102333
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.056890947194454
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,5.009485386030781
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,117.64769975005291
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.5425022858325
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.9326396592402
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,17.213241174355492
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,315.19472471859524
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.515234352777217
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,17.942773394031125
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,mobilenet_v3_small_b1_seq1,cnn,0.006263750881775028
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,mobilenet_v3_small_b8_seq1,cnn,0.046501767207181466
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,replknet31b_b1_seq1,cnn,0.33393823317294713
+Energy x Cost,energy,True,w/o Mem+Batch,0,0,1,1,replknet31b_b8_seq1,cnn,2.4835234674122915
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,36.3399670971898
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,434.68157305907
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.2268313621960487
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.31035111568372
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,149.68071449582862
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1807.9191315767137
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.05040205680822
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.989347030481897
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,117.64769975005291
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.5416768376191171
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.9318285479419774
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,17.16923778478413
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,315.19300033720174
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.5135837125107587
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,17.94115117143459
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,mobilenet_v3_small_b1_seq1,cnn,0.006263750881775028
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,mobilenet_v3_small_b8_seq1,cnn,0.046501767207181466
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,replknet31b_b1_seq1,cnn,0.33393823317294713
+Energy x Cost,energy,True,w/o Mem+Tp,0,1,0,1,replknet31b_b8_seq1,cnn,2.4835234674122915
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,36.3399670971898
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,450.8677937669659
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.23039156949085526
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.489054826346568
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,150.81932291661724
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1875.3619419118347
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.418068453307285
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.989347030481897
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,117.64769975005291
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.5416768376191171
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.9318285479419774
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,17.16923778478413
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,315.19300033720174
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.5135837125107587
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,17.94115117143459
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,mobilenet_v3_small_b1_seq1,cnn,0.01110908113733676
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,mobilenet_v3_small_b8_seq1,cnn,0.09246802157723691
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,replknet31b_b1_seq1,cnn,0.4395823624893217
+Energy x Cost,energy,True,w/o Mem+Fusion,0,1,1,0,replknet31b_b8_seq1,cnn,3.5099650469529573
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.403490265858913
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,274.9588199625528
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.22880560539635497
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.313595560876881
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,88.93808285964869
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,942.9391792237035
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6662349559102333
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.056890947194454
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.692083280391657
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,84.42162973947886
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.4963735845239802
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.673267497261622
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.052893001233562
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,220.72673536062095
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3987196133005344
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.900568931256252
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,mobilenet_v3_small_b1_seq1,cnn,0.0038188946092666135
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,mobilenet_v3_small_b8_seq1,cnn,0.026374049316057836
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,replknet31b_b1_seq1,cnn,0.1622931771358099
+Energy x Cost,energy,True,w/o Batch+Tp,1,0,0,1,replknet31b_b8_seq1,cnn,1.1765009492634384
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.731256326123667
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,295.78987007847564
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.23236581269116152
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.492299271539729
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,101.06080759991777
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1027.7810854201218
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6662349559102333
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.424557343693518
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.692083280391657
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,84.42162973947886
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.4963735845239802
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.673267497261622
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.052893001233562
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,220.72673536062095
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3987196133005344
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.900568931256252
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,mobilenet_v3_small_b1_seq1,cnn,0.009078489150219061
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,mobilenet_v3_small_b8_seq1,cnn,0.07582858344272721
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,replknet31b_b1_seq1,cnn,0.2151847026649446
+Energy x Cost,energy,True,w/o Batch+Fusion,1,0,1,0,replknet31b_b8_seq1,cnn,1.6729024825396892
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.642971493684687
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,295.64993444333936
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.23039156949085526
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.489054826346568
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,102.07029067896758
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1027.7402912056698
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.418068453307285
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.6676041651794904
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,84.42162973947886
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.4955481363105974
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.672456385963399
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.002619625481904
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,220.72673536062095
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3970689730340762
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.898946708659718
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,mobilenet_v3_small_b1_seq1,cnn,0.009078489150219061
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,mobilenet_v3_small_b8_seq1,cnn,0.07582858344272721
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,replknet31b_b1_seq1,cnn,0.2151847026649446
+Energy x Cost,energy,True,w/o Tp+Fusion,1,1,0,0,replknet31b_b8_seq1,cnn,1.6729024825396892
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,36.419570410302214
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,434.9141115670229
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.22880560539635497
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.313595560876881
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,149.81951138836456
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1807.9367750729614
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6662349559102333
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.056890947194454
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,5.009485386030781
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,117.64769975005291
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.5425022858325
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.9326396592402
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,17.213241174355492
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,315.19472471859524
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.515234352777217
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,17.942773394031125
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,mobilenet_v3_small_b1_seq1,cnn,0.006263750881775028
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,mobilenet_v3_small_b8_seq1,cnn,0.046501767207181466
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,replknet31b_b1_seq1,cnn,0.33393823317294713
+Energy x Cost,energy,True,w/o Mem+Batch+Tp,0,0,0,1,replknet31b_b8_seq1,cnn,2.4835234674122915
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,36.419570410302214
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,451.10033227491886
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.23236581269116152
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.492299271539729
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,150.95811980915317
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1875.3795854080824
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6662349559102333
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.424557343693518
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,5.009485386030781
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,117.64769975005291
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.5425022858325
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.9326396592402
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,17.213241174355492
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,315.19472471859524
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.515234352777217
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,17.942773394031125
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,mobilenet_v3_small_b1_seq1,cnn,0.01110908113733676
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,mobilenet_v3_small_b8_seq1,cnn,0.09246802157723691
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,replknet31b_b1_seq1,cnn,0.4395823624893217
+Energy x Cost,energy,True,w/o Mem+Batch+Fusion,0,0,1,0,replknet31b_b8_seq1,cnn,3.5099650469529573
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,36.3399670971898
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,450.8677937669659
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.23039156949085526
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.489054826346568
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,150.81932291661724
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1981.598606932215
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.418068453307285
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.989347030481897
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,117.64769975005291
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.5416768376191171
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.9318285479419774
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,17.16923778478413
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,315.19300033720174
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.5135837125107587
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,17.94115117143459
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,mobilenet_v3_small_b1_seq1,cnn,0.01110908113733676
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,mobilenet_v3_small_b8_seq1,cnn,0.09246802157723691
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,replknet31b_b1_seq1,cnn,0.4395823624893217
+Energy x Cost,energy,True,w/o Mem+Tp+Fusion,0,1,0,0,replknet31b_b8_seq1,cnn,3.5099650469529573
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.731256326123667
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,295.78987007847564
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.23236581269116152
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.492299271539729
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,102.2351321294832
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1027.7810854201218
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6662349559102333
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.424557343693518
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.692083280391657
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,84.42162973947886
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.4963735845239802
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.673267497261622
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.052893001233562
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,220.72673536062095
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3987196133005344
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.900568931256252
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,mobilenet_v3_small_b1_seq1,cnn,0.009078489150219061
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,mobilenet_v3_small_b8_seq1,cnn,0.07582858344272721
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,replknet31b_b1_seq1,cnn,0.2151847026649446
+Energy x Cost,energy,True,w/o Batch+Tp+Fusion,1,0,0,0,replknet31b_b8_seq1,cnn,1.6729024825396892
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,36.419570410302214
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,451.10033227491886
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.23236581269116152
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.492299271539729
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,150.95811980915317
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1981.6162504284628
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6662349559102333
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.424557343693518
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,5.009485386030781
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,117.64769975005291
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.5425022858325
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.9326396592402
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,17.213241174355492
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,315.19472471859524
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.515234352777217
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,17.942773394031125
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,mobilenet_v3_small_b1_seq1,cnn,0.01110908113733676
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,mobilenet_v3_small_b8_seq1,cnn,0.09246802157723691
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,replknet31b_b1_seq1,cnn,0.4395823624893217
+Energy x Cost,energy,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,replknet31b_b8_seq1,cnn,3.5099650469529573
+EDP,edp,False,Full Fengshui,1,1,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0001301897311763192
+EDP,edp,False,Full Fengshui,1,1,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.00813585977501676
+EDP,edp,False,Full Fengshui,1,1,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,3.9370491538836114e-08
+EDP,edp,False,Full Fengshui,1,1,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.3432125961212e-06
+EDP,edp,False,Full Fengshui,1,1,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.0020040510982519727
+EDP,edp,False,Full Fengshui,1,1,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.12439633801678437
+EDP,edp,False,Full Fengshui,1,1,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0461578924138415e-07
+EDP,edp,False,Full Fengshui,1,1,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0259533745530329e-05
+EDP,edp,False,Full Fengshui,1,1,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.329723824250374e-06
+EDP,edp,False,Full Fengshui,1,1,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00017127598640942815
+EDP,edp,False,Full Fengshui,1,1,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.2938636669635308e-07
+EDP,edp,False,Full Fengshui,1,1,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.4718674516556203e-06
+EDP,edp,False,Full Fengshui,1,1,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,4.442891097749901e-05
+EDP,edp,False,Full Fengshui,1,1,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.0021229649582899606
+EDP,edp,False,Full Fengshui,1,1,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.322418085517818e-07
+EDP,edp,False,Full Fengshui,1,1,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.0521824217218377e-05
+EDP,edp,False,Full Fengshui,1,1,1,1,mobilenet_v3_small_b1_seq1,cnn,1.3109355308607232e-10
+EDP,edp,False,Full Fengshui,1,1,1,1,mobilenet_v3_small_b8_seq1,cnn,7.068905534264046e-09
+EDP,edp,False,Full Fengshui,1,1,1,1,replknet31b_b1_seq1,cnn,5.59991318227939e-07
+EDP,edp,False,Full Fengshui,1,1,1,1,replknet31b_b8_seq1,cnn,1.9854715902964524e-05
+EDP,edp,False,w/o Mem,0,1,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0002816517661967209
+EDP,edp,False,w/o Mem,0,1,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.008629609581298896
+EDP,edp,False,w/o Mem,0,1,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,3.9370491538836114e-08
+EDP,edp,False,w/o Mem,0,1,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.376098419608144e-06
+EDP,edp,False,w/o Mem,0,1,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004123006390832337
+EDP,edp,False,w/o Mem,0,1,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.24673547908767782
+EDP,edp,False,w/o Mem,0,1,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0461578924138415e-07
+EDP,edp,False,w/o Mem,0,1,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0259533745530329e-05
+EDP,edp,False,w/o Mem,0,1,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.2927591780277681e-05
+EDP,edp,False,w/o Mem,0,1,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00030361537708764765
+EDP,edp,False,w/o Mem,0,1,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,7.939079648627103e-07
+EDP,edp,False,w/o Mem,0,1,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.699968226132862e-06
+EDP,edp,False,w/o Mem,0,1,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.00014274765149734623
+EDP,edp,False,w/o Mem,0,1,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004670635533938361
+EDP,edp,False,w/o Mem,0,1,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.243129787887059e-07
+EDP,edp,False,w/o Mem,0,1,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,6.959637106023976e-05
+EDP,edp,False,w/o Mem,0,1,1,1,mobilenet_v3_small_b1_seq1,cnn,1.5622479523445932e-10
+EDP,edp,False,w/o Mem,0,1,1,1,mobilenet_v3_small_b8_seq1,cnn,7.612227318585301e-09
+EDP,edp,False,w/o Mem,0,1,1,1,replknet31b_b1_seq1,cnn,5.693725250467343e-07
+EDP,edp,False,w/o Mem,0,1,1,1,replknet31b_b8_seq1,cnn,2.0043403568866016e-05
+EDP,edp,False,w/o Batch,1,0,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00013197466314685414
+EDP,edp,False,w/o Batch,1,0,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.00813585977501676
+EDP,edp,False,w/o Batch,1,0,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.002139548570519e-08
+EDP,edp,False,w/o Batch,1,0,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.353372038181924e-06
+EDP,edp,False,w/o Batch,1,0,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.0020138998402951243
+EDP,edp,False,w/o Batch,1,0,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.12439633801678437
+EDP,edp,False,w/o Batch,1,0,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0745553389342735e-07
+EDP,edp,False,w/o Batch,1,0,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0316286794194378e-05
+EDP,edp,False,w/o Batch,1,0,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.393268586569124e-06
+EDP,edp,False,w/o Batch,1,0,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00017127598640942815
+EDP,edp,False,w/o Batch,1,0,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.3121579124544085e-07
+EDP,edp,False,w/o Batch,1,0,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.473690149184112e-06
+EDP,edp,False,w/o Batch,1,0,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,4.496190176070459e-05
+EDP,edp,False,w/o Batch,1,0,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.0021229649582899606
+EDP,edp,False,w/o Batch,1,0,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.3459597249790353e-07
+EDP,edp,False,w/o Batch,1,0,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.0540480342581306e-05
+EDP,edp,False,w/o Batch,1,0,1,1,mobilenet_v3_small_b1_seq1,cnn,1.3109355308607232e-10
+EDP,edp,False,w/o Batch,1,0,1,1,mobilenet_v3_small_b8_seq1,cnn,7.068905534264046e-09
+EDP,edp,False,w/o Batch,1,0,1,1,replknet31b_b1_seq1,cnn,5.59991318227939e-07
+EDP,edp,False,w/o Batch,1,0,1,1,replknet31b_b8_seq1,cnn,1.9854715902964524e-05
+EDP,edp,False,w/o Tp,1,1,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00028442847596012774
+EDP,edp,False,w/o Tp,1,1,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.017153996988736448
+EDP,edp,False,w/o Tp,1,1,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.335772895265393e-08
+EDP,edp,False,w/o Tp,1,1,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.8219625631726888e-06
+EDP,edp,False,w/o Tp,1,1,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004505738469697859
+EDP,edp,False,w/o Tp,1,1,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.2713003874639977
+EDP,edp,False,w/o Tp,1,1,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.789850319771225e-07
+EDP,edp,False,w/o Tp,1,1,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.7765064102312712e-05
+EDP,edp,False,w/o Tp,1,1,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,5.567675835588229e-06
+EDP,edp,False,w/o Tp,1,1,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00033760855968065467
+EDP,edp,False,w/o Tp,1,1,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.2938636669635308e-07
+EDP,edp,False,w/o Tp,1,1,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.4718674516556203e-06
+EDP,edp,False,w/o Tp,1,1,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,7.496875403061314e-05
+EDP,edp,False,w/o Tp,1,1,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004354758153354638
+EDP,edp,False,w/o Tp,1,1,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.4922859339792506e-07
+EDP,edp,False,w/o Tp,1,1,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.0521824217218377e-05
+EDP,edp,False,w/o Tp,1,1,0,1,mobilenet_v3_small_b1_seq1,cnn,1.3109355308607232e-10
+EDP,edp,False,w/o Tp,1,1,0,1,mobilenet_v3_small_b8_seq1,cnn,7.068905534264046e-09
+EDP,edp,False,w/o Tp,1,1,0,1,replknet31b_b1_seq1,cnn,5.59991318227939e-07
+EDP,edp,False,w/o Tp,1,1,0,1,replknet31b_b8_seq1,cnn,1.9854715902964524e-05
+EDP,edp,False,w/o Fusion,1,1,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0001301897311763192
+EDP,edp,False,w/o Fusion,1,1,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.0082104600731645
+EDP,edp,False,w/o Fusion,1,1,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,3.9370491538836114e-08
+EDP,edp,False,w/o Fusion,1,1,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.4920529381877214e-06
+EDP,edp,False,w/o Fusion,1,1,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.002004246432354067
+EDP,edp,False,w/o Fusion,1,1,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.12552064443251879
+EDP,edp,False,w/o Fusion,1,1,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0461578924138415e-07
+EDP,edp,False,w/o Fusion,1,1,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0317330592260325e-05
+EDP,edp,False,w/o Fusion,1,1,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.329723824250374e-06
+EDP,edp,False,w/o Fusion,1,1,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00017127598640942815
+EDP,edp,False,w/o Fusion,1,1,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.2938636669635308e-07
+EDP,edp,False,w/o Fusion,1,1,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.4718674516556203e-06
+EDP,edp,False,w/o Fusion,1,1,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,4.442891097749901e-05
+EDP,edp,False,w/o Fusion,1,1,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.0021229649582899606
+EDP,edp,False,w/o Fusion,1,1,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.322418085517818e-07
+EDP,edp,False,w/o Fusion,1,1,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.0521824217218377e-05
+EDP,edp,False,w/o Fusion,1,1,1,0,mobilenet_v3_small_b1_seq1,cnn,1.9206883738859168e-10
+EDP,edp,False,w/o Fusion,1,1,1,0,mobilenet_v3_small_b8_seq1,cnn,9.79281378929837e-09
+EDP,edp,False,w/o Fusion,1,1,1,0,replknet31b_b1_seq1,cnn,5.625063414094399e-07
+EDP,edp,False,w/o Fusion,1,1,1,0,replknet31b_b8_seq1,cnn,1.9854715902964524e-05
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0002846053902306437
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.008629609581298896
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.002139548570519e-08
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.3862578616688681e-06
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004144397122825416
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.24673547908767782
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0745553389342735e-07
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0316286794194378e-05
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.3108750722570895e-05
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00030382931351442046
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,7.999139693155416e-07
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.705935273873705e-06
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.0001442754997026864
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004670635533938361
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.264114953905767e-07
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,6.964399807699977e-05
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,mobilenet_v3_small_b1_seq1,cnn,1.5622479523445932e-10
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,mobilenet_v3_small_b8_seq1,cnn,7.612227318585301e-09
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,replknet31b_b1_seq1,cnn,5.693725250467343e-07
+EDP,edp,False,w/o Mem+Batch,0,0,1,1,replknet31b_b8_seq1,cnn,2.0043403568866016e-05
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00029134866470639694
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.017519738536599865
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.335772895265393e-08
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.8549758207397359e-06
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004601483942244591
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.27546860965661735
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.789850319771225e-07
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.7765064102312712e-05
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.2927591780277681e-05
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00036088503091887334
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,7.939079648627103e-07
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.699968226132862e-06
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.00016338747960844026
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004670635533938361
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.205979358588207e-07
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,6.959637106023976e-05
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,mobilenet_v3_small_b1_seq1,cnn,1.5622479523445932e-10
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,mobilenet_v3_small_b8_seq1,cnn,7.612227318585301e-09
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,replknet31b_b1_seq1,cnn,5.693725250467343e-07
+EDP,edp,False,w/o Mem+Tp,0,1,0,1,replknet31b_b8_seq1,cnn,2.0043403568866016e-05
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0002831164027282081
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.008710153365495328
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,3.9370491538836114e-08
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.534020452899692e-06
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004140890756153842
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.24871355889503774
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0461578924138415e-07
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0317330592260325e-05
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.2927591780277681e-05
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00030361537708764765
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,7.939079648627103e-07
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.699968226132862e-06
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.00014274765149734623
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004670635533938361
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.243129787887059e-07
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,6.959637106023976e-05
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,mobilenet_v3_small_b1_seq1,cnn,2.1839753217255589e-10
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,mobilenet_v3_small_b8_seq1,cnn,1.1218051428465116e-08
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,replknet31b_b1_seq1,cnn,5.730923410807152e-07
+EDP,edp,False,w/o Mem+Fusion,0,1,1,0,replknet31b_b8_seq1,cnn,2.0071627669053036e-05
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0002872820444359229
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.017153996988736448
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.409238912282194e-08
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.838150413711402e-06
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004525435953784162
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.2713003874639977
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8319208445344784e-07
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.7869082450749286e-05
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,5.660073184576053e-06
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00033760855968065467
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.3121579124544085e-07
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.473690149184112e-06
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,7.589708025263015e-05
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004354758153354638
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.517145851954513e-07
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.0540480342581306e-05
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,mobilenet_v3_small_b1_seq1,cnn,1.3109355308607232e-10
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,mobilenet_v3_small_b8_seq1,cnn,7.068905534264046e-09
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,replknet31b_b1_seq1,cnn,5.59991318227939e-07
+EDP,edp,False,w/o Batch+Tp,1,0,0,1,replknet31b_b8_seq1,cnn,1.9854715902964524e-05
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00013197466314685414
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.0082104600731645
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.002139548570519e-08
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.5022123802484352e-06
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.0020140951743972185
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.12552064443251879
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0745553389342735e-07
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0374083640924374e-05
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.393268586569124e-06
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00017127598640942815
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.3121579124544085e-07
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.473690149184112e-06
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,4.496190176070459e-05
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.0021229649582899606
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.3459597249790353e-07
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.0540480342581306e-05
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,mobilenet_v3_small_b1_seq1,cnn,1.9206883738859168e-10
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,mobilenet_v3_small_b8_seq1,cnn,9.79281378929837e-09
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,replknet31b_b1_seq1,cnn,5.625063414094399e-07
+EDP,edp,False,w/o Batch+Fusion,1,0,1,0,replknet31b_b8_seq1,cnn,1.9854715902964524e-05
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00028442847596012774
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.017390224325790318
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.335772895265393e-08
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.9112874428369967e-06
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.00452111374948478
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.2749414281477107
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.789850319771225e-07
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.791778313419866e-05
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,5.567675835588229e-06
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00033760855968065467
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.2938636669635308e-07
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.4718674516556203e-06
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,7.496875403061314e-05
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004354758153354638
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.4922859339792506e-07
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.0521824217218377e-05
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,mobilenet_v3_small_b1_seq1,cnn,1.9206883738859168e-10
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,mobilenet_v3_small_b8_seq1,cnn,9.79281378929837e-09
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,replknet31b_b1_seq1,cnn,5.625063414094399e-07
+EDP,edp,False,w/o Tp+Fusion,1,1,0,0,replknet31b_b8_seq1,cnn,1.9854715902964524e-05
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0002943022887403198
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.017519738536599865
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.409238912282194e-08
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.8711636712784492e-06
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004622874674237671
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.27546860965661735
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8319208445344784e-07
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.7869082450749286e-05
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.3108750722570895e-05
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00036088503091887334
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,7.999139693155416e-07
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.705935273873705e-06
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.00016516534046862342
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004670635533938361
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.23083927656347e-07
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,6.964399807699977e-05
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,mobilenet_v3_small_b1_seq1,cnn,1.5622479523445932e-10
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,mobilenet_v3_small_b8_seq1,cnn,7.612227318585301e-09
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,replknet31b_b1_seq1,cnn,5.693725250467343e-07
+EDP,edp,False,w/o Mem+Batch+Tp,0,0,0,1,replknet31b_b8_seq1,cnn,2.0043403568866016e-05
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0002860700267621309
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.008710153365495328
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.002139548570519e-08
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.5441798949604162e-06
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004162281488146921
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.24871355889503774
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0745553389342735e-07
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0374083640924374e-05
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.3108750722570895e-05
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00030382931351442046
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,7.999139693155416e-07
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.705935273873705e-06
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.0001442754997026864
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004670635533938361
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.264114953905767e-07
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,6.964399807699977e-05
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,mobilenet_v3_small_b1_seq1,cnn,2.1839753217255589e-10
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,mobilenet_v3_small_b8_seq1,cnn,1.1218051428465116e-08
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,replknet31b_b1_seq1,cnn,5.730923410807152e-07
+EDP,edp,False,w/o Mem+Batch+Fusion,0,0,1,0,replknet31b_b8_seq1,cnn,2.0071627669053036e-05
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00029134866470639694
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.017769265566303316
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.335772895265393e-08
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.9112874428369967e-06
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004619368307566098
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.2794170210148985
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.789850319771225e-07
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.791778313419866e-05
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.2927591780277681e-05
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00036088503091887334
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,7.939079648627103e-07
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.699968226132862e-06
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.00016338747960844026
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004670635533938361
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.205979358588207e-07
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,6.959637106023976e-05
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,mobilenet_v3_small_b1_seq1,cnn,2.1839753217255589e-10
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,mobilenet_v3_small_b8_seq1,cnn,1.1218051428465116e-08
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,replknet31b_b1_seq1,cnn,5.730923410807152e-07
+EDP,edp,False,w/o Mem+Tp+Fusion,0,1,0,0,replknet31b_b8_seq1,cnn,2.0071627669053036e-05
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0002872820444359229
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.017390224325790318
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.409238912282194e-08
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.92747529337571e-06
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004540811233571084
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.2749414281477107
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8319208445344784e-07
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.8021801482635233e-05
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,5.660073184576053e-06
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00033760855968065467
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.3121579124544085e-07
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.473690149184112e-06
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,7.589708025263015e-05
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004354758153354638
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.517145851954513e-07
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.0540480342581306e-05
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,mobilenet_v3_small_b1_seq1,cnn,1.9206883738859168e-10
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,mobilenet_v3_small_b8_seq1,cnn,9.79281378929837e-09
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,replknet31b_b1_seq1,cnn,5.625063414094399e-07
+EDP,edp,False,w/o Batch+Tp+Fusion,1,0,0,0,replknet31b_b8_seq1,cnn,1.9854715902964524e-05
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0002943022887403198
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.017769265566303316
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.409238912282194e-08
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.92747529337571e-06
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004640759039559177
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.2794170210148985
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8319208445344784e-07
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.8021801482635233e-05
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.3108750722570895e-05
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00036088503091887334
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,7.999139693155416e-07
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.705935273873705e-06
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.00016516534046862342
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004670635533938361
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.23083927656347e-07
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,6.964399807699977e-05
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,mobilenet_v3_small_b1_seq1,cnn,2.1839753217255589e-10
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,mobilenet_v3_small_b8_seq1,cnn,1.1218051428465116e-08
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,replknet31b_b1_seq1,cnn,5.730923410807152e-07
+EDP,edp,False,w/o Mem+Batch+Tp+Fusion,0,0,0,0,replknet31b_b8_seq1,cnn,2.0071627669053036e-05
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.038775627882769996
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.008792922293753
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.343020711743431e-06
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00040748084553943686
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.7719821739556976
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,38.22826785105346
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002696081120437637
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0011215475571909387
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10233462378342638
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.325942522354318e-05
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009132598821098237
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.013822713437360612
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0836057173259597
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.445093864193522e-05
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.010912334520725977
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,mobilenet_v3_small_b1_seq1,cnn,1.628963066319379e-08
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,mobilenet_v3_small_b8_seq1,cnn,9.522031384137261e-07
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,replknet31b_b1_seq1,cnn,3.684822009660321e-05
+EDP x Cost,edp,True,Full Fengshui,1,1,1,1,replknet31b_b8_seq1,cnn,0.0013838377853953227
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.042618089918087236
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.301649517154649
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.343020711743431e-06
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00040748084553943686
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.8207068710338773
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,42.88104060348516
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002696081120437637
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0013480939696359727
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10531211351031566
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.034901672524003e-05
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009552396981677221
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.016628046472409803
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.2427278902587933
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.445093864193522e-05
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.011585454752794752
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,mobilenet_v3_small_b1_seq1,cnn,1.842674025388191e-08
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,mobilenet_v3_small_b8_seq1,cnn,1.0077489710811839e-06
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,replknet31b_b1_seq1,cnn,6.793866555141506e-05
+EDP x Cost,edp,True,w/o Mem,0,1,1,1,replknet31b_b8_seq1,cnn,0.0025180440059210225
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.038863940398188454
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.008792922293753
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.376545212900786e-06
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004077965456992791
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.7726971463925663
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,38.22826785105346
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.867325248103556e-05
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002697844696274537
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0011274902567783034
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10233462378342638
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.344714387841758e-05
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009134453054740362
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.013853957298702663
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0836057173259597
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.451653793282024e-05
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.01091381450916579
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,mobilenet_v3_small_b1_seq1,cnn,1.628963066319379e-08
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,mobilenet_v3_small_b8_seq1,cnn,9.522031384137261e-07
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,replknet31b_b1_seq1,cnn,3.684822009660321e-05
+EDP x Cost,edp,True,w/o Batch,1,0,1,1,replknet31b_b8_seq1,cnn,0.0013838377853953227
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.04230700134944125
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,3.13985318730324
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.415682580904626e-06
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004706881510570336
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.9661882781197557
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,58.48508833710131
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.0034721598032598122
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0012404136399524076
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.14043591648177361
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.325942522354318e-05
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009132598821098237
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.014673829969104931
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.3573441559329071
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.34590101119612e-05
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.010912334520725977
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,mobilenet_v3_small_b1_seq1,cnn,1.628963066319379e-08
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,mobilenet_v3_small_b8_seq1,cnn,9.522031384137261e-07
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,replknet31b_b1_seq1,cnn,3.684822009660321e-05
+EDP x Cost,edp,True,w/o Tp,1,1,0,1,replknet31b_b8_seq1,cnn,0.0013838377853953227
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.038775627882769996
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.044917938634835
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.343020711743431e-06
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004615242999035291
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.7720120070554837
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,38.919490224393606
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002733764682937495
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0011215475571909387
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10233462378342638
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.325942522354318e-05
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009132598821098237
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.013822713437360612
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0836057173259597
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.445093864193522e-05
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.010912334520725977
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,mobilenet_v3_small_b1_seq1,cnn,2.3339353311417832e-08
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,mobilenet_v3_small_b8_seq1,cnn,1.3705215567036505e-06
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,replknet31b_b1_seq1,cnn,3.752587954518981e-05
+EDP x Cost,edp,True,w/o Fusion,1,1,1,0,replknet31b_b8_seq1,cnn,0.001392452849199315
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.042706402433505694
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.301793851544954
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.376545212900786e-06
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004077965456992791
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.821418093762069
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,42.88104060348516
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.867325248103556e-05
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002697844696274537
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0013540366692233374
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10531211351031566
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.053673538011443e-05
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009554251215319346
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.016659290333751853
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.2427278902587933
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.451653793282024e-05
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.011586934741234563
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,mobilenet_v3_small_b1_seq1,cnn,1.842674025388191e-08
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,mobilenet_v3_small_b8_seq1,cnn,1.0077489710811839e-06
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,replknet31b_b1_seq1,cnn,6.793866555141506e-05
+EDP x Cost,edp,True,w/o Mem+Batch,0,0,1,1,replknet31b_b8_seq1,cnn,0.0025180440059210225
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.04753452509314886
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,4.508512751609742
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.415682580904626e-06
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004706881510570336
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0429956434161172
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,74.81371924449502
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.0034721598032598122
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0013649509010060356
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.17339294629274427
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.034901672524003e-05
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009552396981677221
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.017786505193877377
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.8984469895233693
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.34590101119612e-05
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.011585454752794752
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,mobilenet_v3_small_b1_seq1,cnn,1.842674025388191e-08
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,mobilenet_v3_small_b8_seq1,cnn,1.0077489710811839e-06
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,replknet31b_b1_seq1,cnn,6.793866555141506e-05
+EDP x Cost,edp,True,w/o Mem+Tp,0,1,0,1,replknet31b_b8_seq1,cnn,0.0025180440059210225
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.042618089918087236
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.35193763767928
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.343020711743431e-06
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004615242999035291
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.8207068710338773
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,44.05755293799319
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002733764682937495
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0013480939696359727
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10531211351031566
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.034901672524003e-05
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009552396981677221
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.016628046472409803
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.2427278902587933
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.445093864193522e-05
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.011585454752794752
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,mobilenet_v3_small_b1_seq1,cnn,2.5761798448730793e-08
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,mobilenet_v3_small_b8_seq1,cnn,1.4252555102195278e-06
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,replknet31b_b1_seq1,cnn,6.898706982577549e-05
+EDP x Cost,edp,True,w/o Mem+Fusion,0,1,1,0,replknet31b_b8_seq1,cnn,0.0025180440059210225
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.04244599758872335
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,3.13985318730324
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.45352090688733e-06
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004711911813388175
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.9673091463671385
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,58.48508833710132
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.867325248103556e-05
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.0034753921273413414
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0012463563395397723
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.14043734967612695
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.344714387841758e-05
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009134453054740362
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.014705652411479761
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.3573441559329071
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.353672181503676e-05
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.01091381450916579
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,mobilenet_v3_small_b1_seq1,cnn,1.628963066319379e-08
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,mobilenet_v3_small_b8_seq1,cnn,9.522031384137261e-07
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,replknet31b_b1_seq1,cnn,3.684822009660321e-05
+EDP x Cost,edp,True,w/o Batch+Tp,1,0,0,1,replknet31b_b8_seq1,cnn,0.0013838377853953227
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.038863940398188454
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.044917938634835
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.376545212900786e-06
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004618400000633713
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.7727269794923525
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,38.919490224393606
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.867325248103556e-05
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002735528258774395
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0011274902567783034
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10233462378342638
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.344714387841758e-05
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009134453054740362
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.013853957298702663
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0836057173259597
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.451653793282024e-05
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.01091381450916579
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,mobilenet_v3_small_b1_seq1,cnn,2.3339353311417832e-08
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,mobilenet_v3_small_b8_seq1,cnn,1.3705215567036505e-06
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,replknet31b_b1_seq1,cnn,3.752587954518981e-05
+EDP x Cost,edp,True,w/o Batch+Fusion,1,0,1,0,replknet31b_b8_seq1,cnn,0.001392452849199315
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.04230700134944125
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,3.3126587806165007
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.415682580904626e-06
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004827215074165808
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.9665067464953309
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,64.51398560169261
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.00359874807452465
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0012404136399524076
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.14043591648177361
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.325942522354318e-05
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009132598821098237
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.014673829969104931
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.3573441559329071
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.34590101119612e-05
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.010912334520725977
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,mobilenet_v3_small_b1_seq1,cnn,2.3339353311417832e-08
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,mobilenet_v3_small_b8_seq1,cnn,1.3705215567036505e-06
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,replknet31b_b1_seq1,cnn,3.752587954518981e-05
+EDP x Cost,edp,True,w/o Tp+Fusion,1,1,0,0,replknet31b_b8_seq1,cnn,0.001392452849199315
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.04765096449117047
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,4.508801420390352
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.45352090688733e-06
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004711911813388175
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0441106332139591
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,74.81371924449502
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.867325248103556e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.0034753921273413414
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0013708936005934003
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.17339437948709757
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.053673538011443e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009554251215319346
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.01781832763625221
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.8984469895233693
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.353672181503676e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.011586934741234563
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,mobilenet_v3_small_b1_seq1,cnn,1.842674025388191e-08
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,mobilenet_v3_small_b8_seq1,cnn,1.0077489710811839e-06
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,replknet31b_b1_seq1,cnn,6.793866555141506e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Tp,0,0,0,1,replknet31b_b8_seq1,cnn,0.0025180440059210225
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.042706402433505694
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.352081972069585
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.376545212900786e-06
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004618400000633713
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.821418093762069
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,44.05755293799319
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.867325248103556e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002735528258774395
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0013540366692233374
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10531211351031566
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.053673538011443e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009554251215319346
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.016659290333751853
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.2427278902587933
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.451653793282024e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.011586934741234563
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,mobilenet_v3_small_b1_seq1,cnn,2.5761798448730793e-08
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,mobilenet_v3_small_b8_seq1,cnn,1.4252555102195278e-06
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,replknet31b_b1_seq1,cnn,6.898706982577549e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Fusion,0,0,1,0,replknet31b_b8_seq1,cnn,0.0025180440059210225
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.04753452509314886
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,4.80264083519759
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.415682580904626e-06
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004827215074165808
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0430208121671274
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,80.00214730045413
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.00359874807452465
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0013649509010060356
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.17339294629274427
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.034901672524003e-05
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009552396981677221
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.017786505193877377
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.8984469895233693
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.34590101119612e-05
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.011585454752794752
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,mobilenet_v3_small_b1_seq1,cnn,2.5761798448730793e-08
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,mobilenet_v3_small_b8_seq1,cnn,1.4252555102195278e-06
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,replknet31b_b1_seq1,cnn,6.898706982577549e-05
+EDP x Cost,edp,True,w/o Mem+Tp+Fusion,0,1,0,0,replknet31b_b8_seq1,cnn,0.0025180440059210225
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.04244599758872335
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,3.3126587806165007
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.45352090688733e-06
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00048322453769836465
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.9676276147427136
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,64.51398560169261
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.867325248103556e-05
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.0036019803986061796
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0012463563395397723
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.14043734967612695
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.344714387841758e-05
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009134453054740362
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.014705652411479761
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.3573441559329071
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.353672181503676e-05
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.01091381450916579
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,mobilenet_v3_small_b1_seq1,cnn,2.3339353311417832e-08
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,mobilenet_v3_small_b8_seq1,cnn,1.3705215567036505e-06
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,replknet31b_b1_seq1,cnn,3.752587954518981e-05
+EDP x Cost,edp,True,w/o Batch+Tp+Fusion,1,0,0,0,replknet31b_b8_seq1,cnn,0.001392452849199315
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.04765096449117047
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,4.8029295039782
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.45352090688733e-06
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00048322453769836465
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0441358019649694
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,80.00214730045413
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.867325248103556e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.0036019803986061796
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0013708936005934003
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.17339437948709757
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.053673538011443e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009554251215319346
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.01781832763625221
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.8984469895233693
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.353672181503676e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.011586934741234563
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,mobilenet_v3_small_b1_seq1,cnn,2.5761798448730793e-08
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,mobilenet_v3_small_b8_seq1,cnn,1.4252555102195278e-06
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,replknet31b_b1_seq1,cnn,6.898706982577549e-05
+EDP x Cost,edp,True,w/o Mem+Batch+Tp+Fusion,0,0,0,0,replknet31b_b8_seq1,cnn,0.0025180440059210225

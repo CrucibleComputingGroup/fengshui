@@ -1,0 +1,18 @@
+Results for mobilenet_v3_small_b1:
+{'name': 'layer6_features_2_block_0_0', 'iters': 333824, 'avg_latency_ms': 0.004503821668449355, 'avg_energy_J': 0.0006074907735812884, 'avg_power_W': 134.87568160611283, 'out_elems': 225792}
+{'name': 'layer7_features_2_block_1_0', 'iters': 308812, 'avg_latency_ms': 0.00486909909740797, 'avg_energy_J': 0.0007314191158374675, 'avg_power_W': 150.19807092458998, 'out_elems': 56448}
+{'name': 'layer8_features_2_block_2_0', 'iters': 311296, 'avg_latency_ms': 0.004848819029958625, 'avg_energy_J': 0.0005428370425575658, 'avg_power_W': 111.94256976696353, 'out_elems': 18816}
+{'name': 'layer19_features_5_block_2_fc1', 'iters': 659456, 'avg_latency_ms': 0.0023384479262073586, 'avg_energy_J': 0.00023628111655667704, 'avg_power_W': 101.03263291141063, 'out_elems': 64}
+{'name': 'layer43_features_10_block_1_0', 'iters': 172032, 'avg_latency_ms': 0.00876395617212568, 'avg_energy_J': 0.001101533435639881, 'avg_power_W': 125.68264641078397, 'out_elems': 28224}
+Critical Path Latency (ms): 0.02532414389414899
+Total Pipeline Energy (J): 0.00321956148417288
+Bottleneck Latency (ms): 0.00876395617212568
+Total Pipeline Energy with Idle (J): 0.0040518651476644536
+P2P Transfer Energy (J): 0.0015439908492456622  [@ 320 pJ/bit (size-dependent, eff.)]
+Total Pipeline Energy with Idle + P2P (J): 0.0055958559969101155
+--- Inter-card transfer (step 4), curve=interconnect-measured size-dependent (pj/bit 113-877, bw 4-48 GB/s) ---
+Max Single-Edge Transfer Latency (ms): 0.020509168055908193
+Sum On-Path Transfer Latency (ms): 0.05557107277379052
+Critical Path Latency w/ Transfer (ms): 0.0808952166679395
+Bottleneck Latency w/ Transfer (ms): 0.020509168055908193
+Transfer-bound (slowest link > slowest compute stage): True

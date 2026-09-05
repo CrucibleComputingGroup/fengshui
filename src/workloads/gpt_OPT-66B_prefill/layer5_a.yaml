@@ -1,0 +1,33 @@
+problem:
+  version: '0.4'
+  shape:
+#Inputs--SN, Weights--SD, Outputs--A, get SN/SD
+    name: A
+
+    dimensions: [B, H, M, P]
+
+    data_spaces:
+    - name: Inputs
+      projection:
+      - - - B
+      - - - H
+      - - - M
+      - - - P
+    - name: Weights
+      projection:
+      - - - B
+      - - - H
+      - - - P
+    - name: Outputs
+      projection:
+      - - - B
+      - - - H
+      - - - M
+      - - - P
+      read_write: True
+
+  instance:
+    B: 1      # Batch size
+    H: 72     # Number of heads
+    M: 2048   # Key
+    P: 2048   # Query

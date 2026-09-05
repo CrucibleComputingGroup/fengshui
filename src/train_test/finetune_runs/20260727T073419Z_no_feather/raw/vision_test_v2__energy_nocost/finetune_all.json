@@ -1,0 +1,36 @@
+{
+  "args": {
+    "base_n": 8,
+    "n_evals": 500,
+    "saeo_candidates": 2000,
+    "saeo_mutation_rate": 0.3,
+    "seed": 42
+  },
+  "splits": {
+    "vision_test_v2": {
+      "test_nets": [
+        "mobilenet_v3_small_b1_seq1",
+        "mobilenet_v3_small_b8_seq1",
+        "replknet31b_b1_seq1",
+        "replknet31b_b8_seq1",
+        "vit_b16_s197_b1_seq1",
+        "vit_b16_s197_b8_seq1",
+        "vit_h14_s257_b1_seq1",
+        "vit_h14_s257_b8_seq1",
+        "vit_l16_s197_b1_seq1",
+        "vit_l16_s197_b8_seq1"
+      ],
+      "configs": {
+        "energy_nocost": {
+          "base_cross": 0.003404174517082535,
+          "finetune_cross": 0.003265810077928848,
+          "new_chiplet_ids": [
+            "eyeriss_like@glb1@pe_x_scale2@pe_y_scale2"
+          ],
+          "changed_prefix_ids": [],
+          "time_s": 379.4123922297731
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+metric,objective,cost_aware,framework,network,category,value
+Energy,energy,False,Fengshui (Full),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.33264013279646193
+Energy,energy,False,Fengshui (Full),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.3413494464801152
+Energy,energy,False,Fengshui (Full),llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002224049987082776
+Energy,energy,False,Fengshui (Full),llama3.1_8b_decode_kv1024_b8_seq1,decode,0.01835725425452371
+Energy,energy,False,Fengshui (Full),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.2403685408485237
+Energy,energy,False,Fengshui (Full),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.780731581887176
+Energy,energy,False,Fengshui (Full),llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006434686232025822
+Energy,energy,False,Fengshui (Full),llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05289238802655947
+Energy,energy,False,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.07156071128905983
+Energy,energy,False,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.553854813974445
+Energy,energy,False,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.009018554552331083
+Energy,energy,False,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0797054730614147
+Energy,energy,False,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.21033416845455044
+Energy,energy,False,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.599336899632733
+Energy,energy,False,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.018919610189435578
+Energy,energy,False,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.2992331824928576
+Energy,energy,False,Fengshui (Full),mobilenet_v3_small_b1_seq1,cnn,8.058165843368917e-05
+Energy,energy,False,Fengshui (Full),mobilenet_v3_small_b8_seq1,cnn,0.000540239222958497
+Energy,energy,False,Fengshui (Full),replknet31b_b1_seq1,cnn,0.0030578511097053497
+Energy,energy,False,Fengshui (Full),replknet31b_b8_seq1,cnn,0.021255834279141926
+Energy,energy,False,SCAR-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.5542737639327576
+Energy,energy,False,SCAR-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,4.094313669353668
+Energy,energy,False,SCAR-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.1293881205015334
+Energy,energy,False,SCAR-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.15887318927796218
+Energy,energy,False,SCAR-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,2.3459100230851813
+Energy,energy,False,SCAR-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,11.853652724231821
+Energy,energy,False,SCAR-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.5045120106345313
+Energy,energy,False,SCAR-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.5912754075910465
+Energy,energy,False,SCAR-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.1556452291706417
+Energy,energy,False,SCAR-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,1.150235988275203
+Energy,energy,False,SCAR-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.03722669552313594
+Energy,energy,False,SCAR-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.2721511243604815
+Energy,energy,False,SCAR-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.4915869964552916
+Energy,energy,False,SCAR-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,3.3347418337113734
+Energy,energy,False,SCAR-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.13770417027933082
+Energy,energy,False,SCAR-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,1.015809151474946
+Energy,energy,False,SCAR-style,mobilenet_v3_small_b1_seq1,cnn,0.00014725528571448858
+Energy,energy,False,SCAR-style,mobilenet_v3_small_b8_seq1,cnn,0.0007954088422260301
+Energy,energy,False,SCAR-style,replknet31b_b1_seq1,cnn,0.0034667957219411656
+Energy,energy,False,SCAR-style,replknet31b_b8_seq1,cnn,0.023139587663068298
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,25.878910327365574
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,297.15930241188005
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_8b_decode_kv1024_b1_seq1,decode,0.2248023697865127
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_8b_decode_kv1024_b8_seq1,decode,4.269626242242559
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,104.317035104745
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1056.9935776963478
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6514222728161473
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_70b_decode_kv1024_b8_seq1,decode,9.896660625646346
+Energy x Cost,energy,True,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,6.179438892926344
+Energy x Cost,energy,True,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,172.52102294206335
+Energy x Cost,energy,True,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.9893063583024703
+Energy x Cost,energy,True,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,10.955321684111963
+Energy x Cost,energy,True,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,18.037940260286653
+Energy x Cost,energy,True,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,391.3279201800253
+Energy x Cost,energy,True,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.9330704089580815
+Energy x Cost,energy,True,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,37.010506361915716
+Energy x Cost,energy,True,Fengshui (Full),mobilenet_v3_small_b1_seq1,cnn,0.005563447608246954
+Energy x Cost,energy,True,Fengshui (Full),mobilenet_v3_small_b8_seq1,cnn,0.035410461891630066
+Energy x Cost,energy,True,Fengshui (Full),replknet31b_b1_seq1,cnn,0.17697753006515096
+Energy x Cost,energy,True,Fengshui (Full),replknet31b_b8_seq1,cnn,1.225683204335864
+Energy x Cost,energy,True,SCAR-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,91.90732311185474
+Energy x Cost,energy,True,SCAR-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,1439.4408649548207
+Energy x Cost,energy,True,SCAR-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,19.578442855101727
+Energy x Cost,energy,True,SCAR-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,58.90419073959217
+Energy x Cost,energy,True,SCAR-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,423.23747011027945
+Energy x Cost,energy,True,SCAR-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,3809.4150246045083
+Energy x Cost,energy,True,SCAR-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,76.86799042355663
+Energy x Cost,energy,True,SCAR-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,191.1631783028214
+Energy x Cost,energy,True,SCAR-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,24.144628548197545
+Energy x Cost,energy,True,SCAR-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,778.7501958081341
+Energy x Cost,energy,True,SCAR-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,5.6717304769419385
+Energy x Cost,energy,True,SCAR-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,133.6254750833488
+Energy x Cost,energy,True,SCAR-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,79.070669800598
+Energy x Cost,energy,True,SCAR-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1851.1801438757586
+Energy x Cost,energy,True,SCAR-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,21.082612192271906
+Energy x Cost,energy,True,SCAR-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,447.0498107031012
+Energy x Cost,energy,True,SCAR-style,mobilenet_v3_small_b1_seq1,cnn,0.02331866100138072
+Energy x Cost,energy,True,SCAR-style,mobilenet_v3_small_b8_seq1,cnn,0.12549449436023252
+Energy x Cost,energy,True,SCAR-style,replknet31b_b1_seq1,cnn,0.5469687449760489
+Energy x Cost,energy,True,SCAR-style,replknet31b_b8_seq1,cnn,3.650815403754131
+EDP,edp,False,Fengshui (Full),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00015758766836418395
+EDP,edp,False,Fengshui (Full),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.009367838511421018
+EDP,edp,False,Fengshui (Full),llama3.1_8b_decode_kv1024_b1_seq1,decode,2.5175086104862847e-08
+EDP,edp,False,Fengshui (Full),llama3.1_8b_decode_kv1024_b8_seq1,decode,1.4322056383779376e-06
+EDP,edp,False,Fengshui (Full),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.002307145249737857
+EDP,edp,False,Fengshui (Full),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.14256089838845293
+EDP,edp,False,Fengshui (Full),llama3.1_70b_decode_kv1024_b1_seq1,decode,1.6186985414918802e-07
+EDP,edp,False,Fengshui (Full),llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0559406815407855e-05
+EDP,edp,False,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.2798971264741874e-05
+EDP,edp,False,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.0002984054264505237
+EDP,edp,False,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,5.622217237288215e-07
+EDP,edp,False,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.9656155940808975e-06
+EDP,edp,False,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,7.48365486912162e-05
+EDP,edp,False,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.0035035579016987357
+EDP,edp,False,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.7470274831048083e-07
+EDP,edp,False,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,7.42316797259462e-05
+EDP,edp,False,Fengshui (Full),mobilenet_v3_small_b1_seq1,cnn,2.3474437813306373e-10
+EDP,edp,False,Fengshui (Full),mobilenet_v3_small_b8_seq1,cnn,1.2233547388076132e-08
+EDP,edp,False,Fengshui (Full),replknet31b_b1_seq1,cnn,6.259917261853028e-07
+EDP,edp,False,Fengshui (Full),replknet31b_b8_seq1,cnn,2.773779788466969e-05
+EDP,edp,False,SCAR-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0022735250535003532
+EDP,edp,False,SCAR-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.14579641495131512
+EDP,edp,False,SCAR-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.00043171782613474186
+EDP,edp,False,SCAR-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0005303568353752645
+EDP,edp,False,SCAR-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.0523288641706015
+EDP,edp,False,SCAR-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.9892148482090647
+EDP,edp,False,SCAR-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006733206699176232
+EDP,edp,False,SCAR-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.00789307554820448
+EDP,edp,False,SCAR-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.00029673794070428675
+EDP,edp,False,SCAR-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.008223476470326946
+EDP,edp,False,SCAR-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.6649548977538374e-05
+EDP,edp,False,SCAR-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.001558602957585493
+EDP,edp,False,SCAR-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.0021087263276045125
+EDP,edp,False,SCAR-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.07947121972275853
+EDP,edp,False,SCAR-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.00039405645693805754
+EDP,edp,False,SCAR-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.023254845766457036
+EDP,edp,False,SCAR-style,mobilenet_v3_small_b1_seq1,cnn,5.917390339778174e-09
+EDP,edp,False,SCAR-style,mobilenet_v3_small_b8_seq1,cnn,7.909863690632532e-08
+EDP,edp,False,SCAR-style,replknet31b_b1_seq1,cnn,3.3890072544548062e-06
+EDP,edp,False,SCAR-style,replknet31b_b8_seq1,cnn,0.00016079176512384975
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.042827019268372596
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,1.9554523636967112
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_8b_decode_kv1024_b1_seq1,decode,3.011339051666872e-06
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00040280480488407827
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.8467367130071645
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,31.046875695673613
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8035747951273957e-05
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002668261938854471
+EDP x Cost,edp,True,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0032508224224930384
+EDP x Cost,edp,True,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.22602017203007094
+EDP x Cost,edp,True,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00015912889711021684
+EDP x Cost,edp,True,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0018649257399288024
+EDP x Cost,edp,True,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.022726817248327084
+EDP x Cost,edp,True,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.9373499616551524
+EDP x Cost,edp,True,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.828444601457546e-05
+EDP x Cost,edp,True,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.02545504428227942
+EDP x Cost,edp,True,Fengshui (Full),mobilenet_v3_small_b1_seq1,cnn,2.8277814054349168e-08
+EDP x Cost,edp,True,Fengshui (Full),mobilenet_v3_small_b8_seq1,cnn,1.6761658753700515e-06
+EDP x Cost,edp,True,Fengshui (Full),replknet31b_b1_seq1,cnn,4.0966924941205564e-05
+EDP x Cost,edp,True,Fengshui (Full),replknet31b_b8_seq1,cnn,0.0018822026293742672
+EDP x Cost,edp,True,SCAR-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.3897198433900798
+EDP x Cost,edp,True,SCAR-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,43.9087473278078
+EDP x Cost,edp,True,SCAR-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.06532564779320384
+EDP x Cost,edp,True,SCAR-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.19663632569453615
+EDP x Cost,edp,True,SCAR-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,10.016462647043163
+EDP x Cost,edp,True,SCAR-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,283.24361050039806
+EDP x Cost,edp,True,SCAR-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,1.025878585964988
+EDP x Cost,edp,True,SCAR-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,2.551882572837621
+EDP x Cost,edp,True,SCAR-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.04693568779669603
+EDP x Cost,edp,True,SCAR-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,5.56758263240715
+EDP x Cost,edp,True,SCAR-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00406023303998938
+EDP x Cost,edp,True,SCAR-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.7652698887909365
+EDP x Cost,edp,True,SCAR-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.3681247321813276
+EDP x Cost,edp,True,SCAR-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,44.1160219580258
+EDP x Cost,edp,True,SCAR-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.060330340371200365
+EDP x Cost,edp,True,SCAR-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,10.234279128839724
+EDP x Cost,edp,True,SCAR-style,mobilenet_v3_small_b1_seq1,cnn,9.326269246049807e-07
+EDP x Cost,edp,True,SCAR-style,mobilenet_v3_small_b8_seq1,cnn,1.2479674497158962e-05
+EDP x Cost,edp,True,SCAR-style,replknet31b_b1_seq1,cnn,0.0005346957805884039
+EDP x Cost,edp,True,SCAR-style,replknet31b_b8_seq1,cnn,0.02536869115640621

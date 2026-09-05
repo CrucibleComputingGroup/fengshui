@@ -1,0 +1,161 @@
+metric,objective,cost_aware,config,network,category,value
+Energy,energy,False,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.33264013279646193
+Energy,energy,False,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.3413494464801152
+Energy,energy,False,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002224049987082776
+Energy,energy,False,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.01835725425452371
+Energy,energy,False,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.2403685408485237
+Energy,energy,False,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.780731581887176
+Energy,energy,False,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006434686232025822
+Energy,energy,False,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05289238802655947
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.07156071128905983
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.553854813974445
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.009018554552331083
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0796956377974147
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.21033416845455044
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.599336899632733
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.018919610189435578
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.2992331824928576
+Energy,energy,False,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,8.058165843368917e-05
+Energy,energy,False,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,0.000540239222958497
+Energy,energy,False,Full Fengshui,replknet31b_b1_seq1,cnn,0.0030578511097053497
+Energy,energy,False,Full Fengshui,replknet31b_b8_seq1,cnn,0.021255834279141926
+Energy,energy,False,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.33264013279646193
+Energy,energy,False,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.3413494464801152
+Energy,energy,False,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.05346594440209331
+Energy,energy,False,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.063932613177637
+Energy,energy,False,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.2403685408485237
+Energy,energy,False,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.780731581887176
+Energy,energy,False,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.20868073774929896
+Energy,energy,False,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.2356394214635261
+Energy,energy,False,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.07156071128905983
+Energy,energy,False,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.553854813974445
+Energy,energy,False,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.015621979549131611
+Energy,energy,False,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.09273117348705748
+Energy,energy,False,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.21033416845455044
+Energy,energy,False,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.599336899632733
+Energy,energy,False,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.05762536911883068
+Energy,energy,False,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.33802635789666047
+Energy,energy,False,w/o Near-bank PIM,mobilenet_v3_small_b1_seq1,cnn,8.058165843368917e-05
+Energy,energy,False,w/o Near-bank PIM,mobilenet_v3_small_b8_seq1,cnn,0.000540239222958497
+Energy,energy,False,w/o Near-bank PIM,replknet31b_b1_seq1,cnn,0.0030578511097053497
+Energy,energy,False,w/o Near-bank PIM,replknet31b_b8_seq1,cnn,0.021255834279141926
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,25.878910327365574
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,297.15930241188005
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.2248023697865127
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.269626242242559
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,104.317035104745
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1056.9935776963478
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6514222728161473
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,9.896660625646346
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,6.179438892926344
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,172.52102294206335
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.9893063583024703
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,10.955321684111963
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,18.037940260286653
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,391.3279201800253
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.9330704089580815
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,37.010506361915716
+Energy x Cost,energy,True,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,0.005563447608246954
+Energy x Cost,energy,True,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,0.035410461891630066
+Energy x Cost,energy,True,Full Fengshui,replknet31b_b1_seq1,cnn,0.17697753006515096
+Energy x Cost,energy,True,Full Fengshui,replknet31b_b8_seq1,cnn,1.225683204335864
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,25.878910327365574
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,297.15930241188005
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.868183251779232
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b8_seq1,decode,12.821649112636427
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,104.317035104745
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1056.9935776963478
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b1_seq1,decode,19.032403444004792
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b8_seq1,decode,40.70601155025605
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,6.179438892926344
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,172.52102294206335
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,1.384173083504674
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,18.752669887534836
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,18.037940260286653
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,391.3279201800253
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.151520018467188
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,58.258590039747254
+Energy x Cost,energy,True,w/o Near-bank PIM,mobilenet_v3_small_b1_seq1,cnn,0.005563447608246954
+Energy x Cost,energy,True,w/o Near-bank PIM,mobilenet_v3_small_b8_seq1,cnn,0.035410461891630066
+Energy x Cost,energy,True,w/o Near-bank PIM,replknet31b_b1_seq1,cnn,0.17697753006515096
+Energy x Cost,energy,True,w/o Near-bank PIM,replknet31b_b8_seq1,cnn,1.225683204335864
+EDP,edp,False,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00015758766836418395
+EDP,edp,False,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.009367838511421018
+EDP,edp,False,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,2.5175086104862847e-08
+EDP,edp,False,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.4322056383779376e-06
+EDP,edp,False,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.002307145249737857
+EDP,edp,False,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.14256089838845293
+EDP,edp,False,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,1.6186985414918802e-07
+EDP,edp,False,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0559406815407855e-05
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.2798971264741874e-05
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.0002984054264505237
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,5.622217237288215e-07
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.9656155940808975e-06
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,7.48365486912162e-05
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.0035035579016987357
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.7470274831048083e-07
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,7.424247782491887e-05
+EDP,edp,False,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,2.3474437813306373e-10
+EDP,edp,False,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,1.2233547388076132e-08
+EDP,edp,False,Full Fengshui,replknet31b_b1_seq1,cnn,6.259917261853028e-07
+EDP,edp,False,Full Fengshui,replknet31b_b8_seq1,cnn,2.773779788466969e-05
+EDP,edp,False,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00015758766836418395
+EDP,edp,False,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.009367838511421018
+EDP,edp,False,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b1_seq1,decode,1.5687153604733507e-05
+EDP,edp,False,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.890289463355869e-05
+EDP,edp,False,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.002307145249737857
+EDP,edp,False,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.14256089838845293
+EDP,edp,False,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.00024530718979551015
+EDP,edp,False,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.00028039308408537466
+EDP,edp,False,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.2798971264741874e-05
+EDP,edp,False,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.0002984054264505237
+EDP,edp,False,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.785043771851065e-07
+EDP,edp,False,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.798565002311434e-06
+EDP,edp,False,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,7.48365486912162e-05
+EDP,edp,False,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.0035035579016987357
+EDP,edp,False,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.4452783817944235e-05
+EDP,edp,False,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,8.421942927447706e-05
+EDP,edp,False,w/o Near-bank PIM,mobilenet_v3_small_b1_seq1,cnn,2.3474437813306373e-10
+EDP,edp,False,w/o Near-bank PIM,mobilenet_v3_small_b8_seq1,cnn,1.2233547388076132e-08
+EDP,edp,False,w/o Near-bank PIM,replknet31b_b1_seq1,cnn,6.259917261853028e-07
+EDP,edp,False,w/o Near-bank PIM,replknet31b_b8_seq1,cnn,2.773779788466969e-05
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.042827019268372596
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,1.9554523636967112
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,3.011339051666872e-06
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00040280480488407827
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.8467367130071645
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,31.046875695673613
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8035747951273957e-05
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002668261938854471
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0032508224224930384
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.22602017203007094
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00015912889711021684
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0018649257399288024
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.022726817248327084
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.9441646612615504
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.828444601457546e-05
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.02545504428227942
+EDP x Cost,edp,True,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,2.8277814054349168e-08
+EDP x Cost,edp,True,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,1.6761658753700515e-06
+EDP x Cost,edp,True,Full Fengshui,replknet31b_b1_seq1,cnn,4.0966924941205564e-05
+EDP x Cost,edp,True,Full Fengshui,replknet31b_b8_seq1,cnn,0.0018822026293742672
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.043035198871965843
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,1.9554523636967112
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.004505627347220309
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.010151664401344164
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.8615949086975214
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,31.046875695673613
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.07098909410408787
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.13038488223052433
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0032508224224930384
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.22602017203007094
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00023746748027282094
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0036820167160174127
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.022726817248327084
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.9373499616551524
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.003487687457225598
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.041753609896335094
+EDP x Cost,edp,True,w/o Near-bank PIM,mobilenet_v3_small_b1_seq1,cnn,2.8277814054349168e-08
+EDP x Cost,edp,True,w/o Near-bank PIM,mobilenet_v3_small_b8_seq1,cnn,1.6761658753700515e-06
+EDP x Cost,edp,True,w/o Near-bank PIM,replknet31b_b1_seq1,cnn,4.0966924941205564e-05
+EDP x Cost,edp,True,w/o Near-bank PIM,replknet31b_b8_seq1,cnn,0.0018822026293742672

@@ -1,0 +1,33 @@
+problem:
+  instance:
+    B: 1
+    H: 32
+    Q: 1024
+    R: 4
+  shape:
+    data_spaces:
+    - name: PRM
+      projection:
+      - - - B
+      - - - H
+      - - - R
+      - - - Q
+    - name: RD0
+      projection:
+      - - - B
+      - - - H
+      - - - R
+      - - - Q
+    - name: SPD
+      projection:
+      - - - B
+      - - - H
+      - - - R
+      - - - Q
+      read_write: true
+    dimensions:
+    - B
+    - H
+    - R
+    - Q
+    name: flashattn_spd

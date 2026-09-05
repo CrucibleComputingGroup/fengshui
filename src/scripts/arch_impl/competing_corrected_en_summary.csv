@@ -1,0 +1,3 @@
+metric,framework,geomean,norm_to_full,decode_norm,decode-MoE_norm,prefill_norm,prefill-MoE_norm,cnn_norm,detail
+Energy,SCAR-style,0.06059545729286187,inf,inf,inf,inf,inf,inf,"{""dram"": ""GDDR7"", ""chiplets"": [""eyeriss_like@glb1@pe_x_scale1@pe_y_scale1"", ""gemmini_like@glb1@pe_x_scale1@pe_y_scale1"", ""simba_like@glb1@pe_x_scale2@pe_y_scale2""]}"
+Energy,Gemini-style,0.06781552648323522,inf,inf,inf,inf,inf,inf,"{""dram"": ""GDDR7"", ""design"": ""gemmini_like@glb1@pe_x_scale3@pe_y_scale2""}"

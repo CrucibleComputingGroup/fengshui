@@ -1,0 +1,81 @@
+% =====================================================================
+% !!!  OBSOLETE — NOT THE PAPER'S ABLATION.  DO NOT USE FOR EVALUATION  !!!
+% =====================================================================
+% This file is a DEAD historical draft (2026-06-12 one-at-a-time run on the
+% pre-determinism v6 pool and the pre-DRAM-fix database). Every number below is
+% STALE and WILL NOT match the artifact's output. It is retained only so the
+% history of the ablation section is not lost.
+%
+% It is NOT \input by the paper, and its label has been renamed to
+% tab:ablation_obsolete_do_not_use so it can never collide with the paper's
+% tab:ablation.
+%
+% THE CURRENT ARTIFACT for the paper's ablation table is:
+%   src/scripts/arch_impl/generate_ablation_heatmap.py
+%     reads  arch_impl/ablation_factorial_ae_summary.csv   (2^4 factorial, AE pool)
+%     writes arch_impl/ablation_constants.tex              <-- the \Abl... macros
+%                                                              that ARE the table
+%     writes ablation_heatmap.{pdf,png} into $FENGSHUI_FIG_OUT
+% Reviewers verifying the ablation must compare against ablation_constants.tex,
+% NOT against anything in this file.
+% =====================================================================
+%
+% [historical header follows]
+% Component-wise ablation (rebuttal C3). Pool fixed = co-designed N=8 Fengshui pool
+% (same as Fig.~\ref{fig:big_eval}); one technique disabled at a time; geomean over the
+% Fig.~11 workload suite; normalized to Full Fengshui = 1.0 (HIGHER = worse, i.e. lost benefit).
+% Each technique is ablated FAIRLY and independently:
+%   - Near-bank PIM:  remove the PIM chiplet from the pool (chiplet-pool ablation).
+%   - Heterogeneous memory allocation: force one DRAM technology for all operators.
+%       We use GDDR7 -- the strongest single-memory baseline, under which ALL chiplet
+%       types (incl. near-bank PIM) remain feasible -- so the baseline gets its best case.
+%   - Tensor parallelism: TP=1.   - Layer fusion: every operator its own group.
+\begin{table}[t]
+\centering
+\caption{[OBSOLETE DRAFT — superseded; see arch\_impl/ablation\_constants.tex]
+Component-wise ablation: each \textsc{Fengshui} technique disabled in isolation on the
+fixed co-designed 8-chiplet pool, across the Fig.~\ref{fig:big_eval} workloads. Geomeans
+normalized to Full \textsc{Fengshui}=1.0; \textbf{higher = worse} (lost benefit). Each technique
+dominates a distinct workload regime, so none is redundant.}
+\label{tab:ablation_obsolete_do_not_use}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Configuration} & \multicolumn{4}{c}{\textbf{Energy} (norm., $\uparrow$=worse)} \\
+ & Overall & Decode & Prefill & CNN \\
+\midrule
+Full \textsc{Fengshui}                       & 1.00 & 1.00 & 1.00 & 1.00 \\
+\;w/o Near-bank PIM                           & 1.76 & \textbf{4.13} & 1.00 & 1.00 \\
+\;w/o Heterogeneous Memory (homog.\ DRAM)     & 1.04 & 1.03 & 1.05 & 1.05 \\
+\;w/o Tensor Parallelism                      & 1.02 & 1.00 & 1.04 & 1.00 \\
+\;w/o Layer Fusion                            & 1.17 & 1.00 & 1.02 & \textbf{2.11} \\
+\midrule
+\textbf{Configuration} & \multicolumn{4}{c}{\textbf{EDP} (norm., $\uparrow$=worse)} \\
+ & Overall & Decode & Prefill & CNN \\
+\midrule
+Full \textsc{Fengshui}                       & 1.00 & 1.00 & 1.00 & 1.00 \\
+\;w/o Near-bank PIM                           & 3.34 & \textbf{20.4} & 1.00 & 1.00 \\
+\;w/o Heterogeneous Memory (homog.\ DRAM)     & 1.50 & 1.47 & 1.82 & 1.05 \\
+\;w/o Tensor Parallelism                      & 1.39 & 1.22 & \textbf{1.88} & 1.00 \\
+\;w/o Layer Fusion                            & 1.08 & 1.00 & 1.01 & \textbf{1.42} \\
+\midrule
+\textbf{Configuration} & \multicolumn{4}{c}{\textbf{Energy$\times$Cost} (norm., $\uparrow$=worse)} \\
+ & Overall & Decode & Prefill & CNN \\
+\midrule
+Full \textsc{Fengshui}                       & 1.00 & 1.00 & 1.00 & 1.00 \\
+\;w/o Near-bank PIM                           & 1.76 & 4.09 & 1.00 & 1.00 \\
+\;w/o Heterogeneous Memory (homog.\ DRAM)     & \textbf{1.43} & 1.03 & 1.69 & 1.95 \\
+\;w/o Tensor Parallelism                      & 1.00 & 1.00 & 1.00 & 1.00 \\
+\;w/o Layer Fusion                            & 1.22 & 1.02 & 1.07 & 2.26 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+{\footnotesize ``Heterogeneous Memory'' homogenizes the DRAM technology assigned to all operators
+to a single type. We report \textbf{GDDR7}, the strongest single-memory baseline (it keeps every
+chiplet type, including near-bank PIM, feasible), so the ablated baseline is given its best case;
+its benefit is therefore a \emph{conservative} lower bound. A naive homogeneous-HBM3 design fares
+far worse, as it both overpays for HBM capacity ($110$/GB vs.\ $2.31$/GB for LPDDR5) and, in our
+chiplet library, cannot host the GDDR-based near-bank PIM substrate.}
+\end{table}

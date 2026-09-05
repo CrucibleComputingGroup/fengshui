@@ -1,0 +1,19 @@
+# Fengshui AE — unified analysis + chiplet-pool-search environment (Python 3.13).
+# Versions pinned to the proven `base` conda env that produced the paper's
+# chiplet pools and figures (v6/v7 were built there). `gym` is the ONLY
+# dependency beyond the analysis stack that the pool search needs
+# (chiplet_pool_env.py subclasses gym.Env); everything else is shared.
+numpy==2.3.4
+pandas==3.0.1
+scipy==1.17.1
+scikit-learn==1.8.0
+matplotlib==3.10.7
+seaborn==0.13.2
+networkx==3.5
+joblib==1.5.3
+tqdm==4.67.3
+PyYAML==6.0.3
+gym==0.26.2
+# Notebook interface reviewers use to run reproduce_all.ipynb
+# (pinned to the version in the shipped fengshui-analysis image)
+jupyterlab==4.6.1

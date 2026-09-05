@@ -1,0 +1,608 @@
+{
+  "base_n": 8,
+  "base_pool": [
+    {
+      "arch_target": "simba_like",
+      "glb_scale": 1,
+      "pe_x_scale": 3,
+      "pe_y_scale": 4
+    },
+    {
+      "arch_target": "PIM",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 1
+    },
+    {
+      "arch_target": "switch_8port",
+      "glb_scale": 1,
+      "pe_x_scale": 4,
+      "pe_y_scale": 3
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 1
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 3
+    },
+    {
+      "arch_target": "eyeriss_like",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 4
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 4,
+      "pe_y_scale": 4
+    },
+    {
+      "arch_target": "simba_like",
+      "glb_scale": 1,
+      "pe_x_scale": 4,
+      "pe_y_scale": 4
+    }
+  ],
+  "base_pool_ids": [
+    "simba_like@glb1@pe_x_scale3@pe_y_scale4",
+    "PIM@glb1@pe_x_scale1@pe_y_scale1",
+    "switch_8port@glb1@pe_x_scale4@pe_y_scale3",
+    "gemmini_like@glb1@pe_x_scale1@pe_y_scale1",
+    "gemmini_like@glb1@pe_x_scale1@pe_y_scale3",
+    "eyeriss_like@glb1@pe_x_scale1@pe_y_scale4",
+    "gemmini_like@glb1@pe_x_scale4@pe_y_scale4",
+    "simba_like@glb1@pe_x_scale4@pe_y_scale4"
+  ],
+  "base_cross": 0.5715619268859135,
+  "base_per_net": {
+    "llama3.1_70b_prefill_s2048_b1_seq2048": {
+      "value": 2.065701311743554,
+      "latency": 0.016187392000000002,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110100"
+    },
+    "llama3.1_70b_prefill_s2048_b8_seq2048": {
+      "value": 15.994301769172713,
+      "latency": 0.039452672,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_70b_prefill_s512_b1_seq512": {
+      "value": 0.5533540662723524,
+      "latency": 0.004957373000000001,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110101"
+    },
+    "llama3.1_70b_prefill_s512_b8_seq512": {
+      "value": 4.009311914962517,
+      "latency": 0.009863168,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_8b_prefill_s2048_b1_seq2048": {
+      "value": 0.5532519641260465,
+      "latency": 0.004112384,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110100"
+    },
+    "llama3.1_8b_prefill_s2048_b8_seq2048": {
+      "value": 4.376069713558541,
+      "latency": 0.010092544,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_8b_prefill_s512_b1_seq512": {
+      "value": 0.13970374197943192,
+      "latency": 0.002056192,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110100"
+    },
+    "llama3.1_8b_prefill_s512_b8_seq512": {
+      "value": 1.0498295405847256,
+      "latency": 0.006029311999999999,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110100"
+    },
+    "qwen3_235b_a22b_prefill_s2048_b1_seq2048": {
+      "value": 0.29107129720482683,
+      "latency": 0.001540096,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_prefill_s2048_b8_seq2048": {
+      "value": 2.2571062359741405,
+      "latency": 0.004194304,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_prefill_s512_b1_seq512": {
+      "value": 0.06509069339827994,
+      "latency": 0.000360448,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_prefill_s512_b8_seq512": {
+      "value": 0.517996751818774,
+      "latency": 0.001441792,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_prefill_s2048_b1_seq2048": {
+      "value": 0.10358751054931967,
+      "latency": 0.0008192,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_prefill_s2048_b8_seq2048": {
+      "value": 0.7837464089270046,
+      "latency": 0.001540096,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_prefill_s512_b1_seq512": {
+      "value": 0.01849771123532877,
+      "latency": 9.0112e-05,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_prefill_s512_b8_seq512": {
+      "value": 0.1498216616191851,
+      "latency": 0.000524288,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    }
+  },
+  "finetune_n": 9,
+  "finetune_pool": [
+    {
+      "arch_target": "simba_like",
+      "glb_scale": 1,
+      "pe_x_scale": 3,
+      "pe_y_scale": 4
+    },
+    {
+      "arch_target": "PIM",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 1
+    },
+    {
+      "arch_target": "switch_8port",
+      "glb_scale": 1,
+      "pe_x_scale": 4,
+      "pe_y_scale": 3
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 1
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 3
+    },
+    {
+      "arch_target": "eyeriss_like",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 4
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 4,
+      "pe_y_scale": 4
+    },
+    {
+      "arch_target": "simba_like",
+      "glb_scale": 1,
+      "pe_x_scale": 4,
+      "pe_y_scale": 4
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 4,
+      "pe_y_scale": 1
+    }
+  ],
+  "finetune_pool_ids": [
+    "simba_like@glb1@pe_x_scale3@pe_y_scale4",
+    "PIM@glb1@pe_x_scale1@pe_y_scale1",
+    "switch_8port@glb1@pe_x_scale4@pe_y_scale3",
+    "gemmini_like@glb1@pe_x_scale1@pe_y_scale1",
+    "gemmini_like@glb1@pe_x_scale1@pe_y_scale3",
+    "eyeriss_like@glb1@pe_x_scale1@pe_y_scale4",
+    "gemmini_like@glb1@pe_x_scale4@pe_y_scale4",
+    "simba_like@glb1@pe_x_scale4@pe_y_scale4",
+    "gemmini_like@glb1@pe_x_scale4@pe_y_scale1"
+  ],
+  "new_chiplet_ids": [
+    "gemmini_like@glb1@pe_x_scale4@pe_y_scale1"
+  ],
+  "changed_prefix_ids": [],
+  "finetune_cross": 0.5675209615115127,
+  "finetune_per_net": {
+    "llama3.1_70b_prefill_s2048_b1_seq2048": {
+      "value": 2.065701311743554,
+      "latency": 0.016187392000000002,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110100"
+    },
+    "llama3.1_70b_prefill_s2048_b8_seq2048": {
+      "value": 15.994301769172713,
+      "latency": 0.039452672,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_70b_prefill_s512_b1_seq512": {
+      "value": 0.5376684534243024,
+      "latency": 0.004957373000000001,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110101"
+    },
+    "llama3.1_70b_prefill_s512_b8_seq512": {
+      "value": 4.009311914962517,
+      "latency": 0.009863168,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_8b_prefill_s2048_b1_seq2048": {
+      "value": 0.5532519641260465,
+      "latency": 0.004112384,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110100"
+    },
+    "llama3.1_8b_prefill_s2048_b8_seq2048": {
+      "value": 4.373889082064831,
+      "latency": 0.010092544,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_8b_prefill_s512_b1_seq512": {
+      "value": 0.13902727610700957,
+      "latency": 0.000630784,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_8b_prefill_s512_b8_seq512": {
+      "value": 1.0416463586329598,
+      "latency": 0.006029311999999999,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "110100"
+    },
+    "qwen3_235b_a22b_prefill_s2048_b1_seq2048": {
+      "value": 0.29107129720482683,
+      "latency": 0.001540096,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_prefill_s2048_b8_seq2048": {
+      "value": 2.2571062359741405,
+      "latency": 0.004194304,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_prefill_s512_b1_seq512": {
+      "value": 0.06442349480247091,
+      "latency": 0.000360448,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_prefill_s512_b8_seq512": {
+      "value": 0.511309723774983,
+      "latency": 0.001441792,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_prefill_s2048_b1_seq2048": {
+      "value": 0.10303616493655189,
+      "latency": 0.0008192,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_prefill_s2048_b8_seq2048": {
+      "value": 0.780655323246275,
+      "latency": 0.001540096,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_prefill_s512_b1_seq512": {
+      "value": 0.018155542565524166,
+      "latency": 9.0112e-05,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_prefill_s512_b8_seq512": {
+      "value": 0.14680616635147628,
+      "latency": 0.000524288,
+      "buffer_config": [
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3",
+        "HBM3"
+      ],
+      "binary_string": "1111111"
+    }
+  },
+  "time_s": 2901.7296904232353,
+  "objective": "energy",
+  "cost_aware": false
+}

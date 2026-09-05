@@ -1,0 +1,7 @@
+technology,global_cycle_seconds,width|datawidth,energy,area,action,comment
+15nm,1e-9,16,1.06E-01,1.36E+02,add|read,Jouppi ISCA2021 Table2 BF16/INT32 energy ratio (3.67) applied to Aladdin INT32; area=energy (Dally area-proportional-to-energy)
+15nm,1e-9,16,3.49E-03,1.36E+02,leak,
+15nm,1e-9,16,0,1.36E+02,update|write,
+40nm,1e-9,16,7.70E-01,1.02E+03,add|read,Jouppi ISCA2021 Table2 BF16/INT32 energy ratio (3.67) applied to Aladdin INT32; area=energy (Dally area-proportional-to-energy)
+40nm,1e-9,16,8.80E-03,1.02E+03,leak,
+40nm,1e-9,16,0,1.02E+03,update|write,

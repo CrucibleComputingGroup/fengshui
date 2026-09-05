@@ -1,0 +1,35 @@
+problem:
+  version: '0.4'
+  shape:
+#Inputs--Q, Weights--K, Outputs--QK
+    name: QK
+
+    dimensions: [B, E, H, M, P]
+
+    data_spaces:
+    - name: Inputs
+      projection:
+      - - - B
+      - - - E
+      - - - H
+      - - - P
+    - name: Weights
+      projection:
+      - - - B
+      - - - E
+      - - - H
+      - - - M
+    - name: Outputs
+      projection:
+      - - - B
+      - - - H
+      - - - M
+      - - - P
+      read_write: True
+
+  instance:
+    B: 1     # LLM-Inference
+    E: 128
+    H: 72    # 40 attention heads
+    M: 2048  # key length
+    P: 2048  # query length

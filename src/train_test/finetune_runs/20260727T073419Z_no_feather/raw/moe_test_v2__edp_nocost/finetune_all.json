@@ -1,0 +1,42 @@
+{
+  "args": {
+    "base_n": 8,
+    "n_evals": 500,
+    "saeo_candidates": 2000,
+    "saeo_mutation_rate": 0.3,
+    "seed": 42
+  },
+  "splits": {
+    "moe_test_v2": {
+      "test_nets": [
+        "qwen3_235b_a22b_decode_kv2048_b1_seq1",
+        "qwen3_235b_a22b_decode_kv2048_b8_seq1",
+        "qwen3_235b_a22b_decode_kv512_b1_seq1",
+        "qwen3_235b_a22b_decode_kv512_b8_seq1",
+        "qwen3_235b_a22b_prefill_s2048_b1_seq2048",
+        "qwen3_235b_a22b_prefill_s2048_b8_seq2048",
+        "qwen3_235b_a22b_prefill_s512_b1_seq512",
+        "qwen3_235b_a22b_prefill_s512_b8_seq512",
+        "qwen3_30b_a3b_decode_kv2048_b1_seq1",
+        "qwen3_30b_a3b_decode_kv2048_b8_seq1",
+        "qwen3_30b_a3b_decode_kv512_b1_seq1",
+        "qwen3_30b_a3b_decode_kv512_b8_seq1",
+        "qwen3_30b_a3b_prefill_s2048_b1_seq2048",
+        "qwen3_30b_a3b_prefill_s2048_b8_seq2048",
+        "qwen3_30b_a3b_prefill_s512_b1_seq512",
+        "qwen3_30b_a3b_prefill_s512_b8_seq512"
+      ],
+      "configs": {
+        "edp_nocost": {
+          "base_cross": 1.3550326834122323e-05,
+          "finetune_cross": 1.2825525178654517e-05,
+          "new_chiplet_ids": [
+            "gemmini_like@glb1@pe_x_scale1@pe_y_scale1"
+          ],
+          "changed_prefix_ids": [],
+          "time_s": 2707.147416370921
+        }
+      }
+    }
+  }
+}

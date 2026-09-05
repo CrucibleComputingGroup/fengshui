@@ -1,0 +1,481 @@
+metric,objective,cost_aware,config,network,category,value
+Energy,energy,False,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.2727417917439938
+Energy,energy,False,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.0845555207317155
+Energy,energy,False,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002196173006030053
+Energy,energy,False,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.01716722542798486
+Energy,energy,False,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0409629392838502
+Energy,energy,False,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,7.960413457855175
+Energy,energy,False,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006443678620006838
+Energy,energy,False,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05172511969294963
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.039363922614758025
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3134841295398976
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003786602613160759
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.02334163184616802
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.12745077978141128
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.013838024770751
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010796570463193383
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.0838735311475229
+Energy,energy,False,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,4.896642643368916e-05
+Energy,energy,False,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,0.00037465701495849703
+Energy,energy,False,Full Fengshui,replknet31b_b1_seq1,cnn,0.0027206970617051503
+Energy,energy,False,Full Fengshui,replknet31b_b8_seq1,cnn,0.020354624167141525
+Energy,energy,False,w/o Heterogeneous Batching,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.2754247815128106
+Energy,energy,False,w/o Heterogeneous Batching,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.0845555207317155
+Energy,energy,False,w/o Heterogeneous Batching,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0022345044545765084
+Energy,energy,False,w/o Heterogeneous Batching,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.01732300086797476
+Energy,energy,False,w/o Heterogeneous Batching,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.047209022508439
+Energy,energy,False,w/o Heterogeneous Batching,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,7.964712212219989
+Energy,energy,False,w/o Heterogeneous Batching,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006541431235373038
+Energy,energy,False,w/o Heterogeneous Batching,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05202959268399968
+Energy,energy,False,w/o Heterogeneous Batching,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.040049577218545976
+Energy,energy,False,w/o Heterogeneous Batching,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3134841295398976
+Energy,energy,False,w/o Heterogeneous Batching,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.004104445479207627
+Energy,energy,False,w/o Heterogeneous Batching,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.023371924954163018
+Energy,energy,False,w/o Heterogeneous Batching,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.12908263339528253
+Energy,energy,False,w/o Heterogeneous Batching,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.013838024770751
+Energy,energy,False,w/o Heterogeneous Batching,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010875049006617813
+Energy,energy,False,w/o Heterogeneous Batching,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.0839514188675329
+Energy,energy,False,w/o Heterogeneous Batching,mobilenet_v3_small_b1_seq1,cnn,4.896642643368916e-05
+Energy,energy,False,w/o Heterogeneous Batching,mobilenet_v3_small_b8_seq1,cnn,0.00037465701495849703
+Energy,energy,False,w/o Heterogeneous Batching,replknet31b_b1_seq1,cnn,0.0027206970617051503
+Energy,energy,False,w/o Heterogeneous Batching,replknet31b_b8_seq1,cnn,0.020354624167141525
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.2813402723164619
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.1142826733717164
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002196173006030053
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017496950563277717
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0676996612038496
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.057081329087174
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006443678620006838
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05172511969294963
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0426167816998466
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.34217409202226495
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.0051581598080718445
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.03026106629312621
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.1345304958225593
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.074380886068042
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.01402485017341367
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.11193653493564944
+Energy,energy,False,w/o Heterogeneous Memory,mobilenet_v3_small_b1_seq1,cnn,5.4474778433689165e-05
+Energy,energy,False,w/o Heterogeneous Memory,mobilenet_v3_small_b8_seq1,cnn,0.00040537330295839697
+Energy,energy,False,w/o Heterogeneous Memory,replknet31b_b1_seq1,cnn,0.00283371798970525
+Energy,energy,False,w/o Heterogeneous Memory,replknet31b_b8_seq1,cnn,0.020925880679141633
+Energy,energy,False,w/o Tensor Parallelism,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.2770199649367484
+Energy,energy,False,w/o Tensor Parallelism,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.148948065175297
+Energy,energy,False,w/o Tensor Parallelism,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002196173006030053
+Energy,energy,False,w/o Tensor Parallelism,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.01716722542798486
+Energy,energy,False,w/o Tensor Parallelism,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0409629392838502
+Energy,energy,False,w/o Tensor Parallelism,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.335033203708049
+Energy,energy,False,w/o Tensor Parallelism,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006443678620006838
+Energy,energy,False,w/o Tensor Parallelism,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05172511969294963
+Energy,energy,False,w/o Tensor Parallelism,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.04259114792471479
+Energy,energy,False,w/o Tensor Parallelism,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3250507730385761
+Energy,energy,False,w/o Tensor Parallelism,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003786602613160759
+Energy,energy,False,w/o Tensor Parallelism,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0233509345836133
+Energy,energy,False,w/o Tensor Parallelism,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.12959159528561975
+Energy,energy,False,w/o Tensor Parallelism,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0549889597447848
+Energy,energy,False,w/o Tensor Parallelism,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010796570463193383
+Energy,energy,False,w/o Tensor Parallelism,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.0838735311475229
+Energy,energy,False,w/o Tensor Parallelism,mobilenet_v3_small_b1_seq1,cnn,4.896642643368916e-05
+Energy,energy,False,w/o Tensor Parallelism,mobilenet_v3_small_b8_seq1,cnn,0.00037465701495849703
+Energy,energy,False,w/o Tensor Parallelism,replknet31b_b1_seq1,cnn,0.0027206970617051503
+Energy,energy,False,w/o Tensor Parallelism,replknet31b_b8_seq1,cnn,0.020354624167141525
+Energy,energy,False,w/o Layer Fusion,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.273706475597563
+Energy,energy,False,w/o Layer Fusion,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.111974349742704
+Energy,energy,False,w/o Layer Fusion,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0022622222136525426
+Energy,energy,False,w/o Layer Fusion,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017952587490875326
+Energy,energy,False,w/o Layer Fusion,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.044585303371926
+Energy,energy,False,w/o Layer Fusion,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.063557767566401
+Energy,energy,False,w/o Layer Fusion,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.0064823333384249684
+Energy,energy,False,w/o Layer Fusion,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05216868097686084
+Energy,energy,False,w/o Layer Fusion,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.039363922614758025
+Energy,energy,False,w/o Layer Fusion,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3134841295398976
+Energy,energy,False,w/o Layer Fusion,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.003786602613160759
+Energy,energy,False,w/o Layer Fusion,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.02334163184616802
+Energy,energy,False,w/o Layer Fusion,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.12745077978141128
+Energy,energy,False,w/o Layer Fusion,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.013838024770751
+Energy,energy,False,w/o Layer Fusion,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.010796570463193383
+Energy,energy,False,w/o Layer Fusion,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.0838735311475229
+Energy,energy,False,w/o Layer Fusion,mobilenet_v3_small_b1_seq1,cnn,8.311443126430602e-05
+Energy,energy,False,w/o Layer Fusion,mobilenet_v3_small_b8_seq1,cnn,0.0006952757269070681
+Energy,energy,False,w/o Layer Fusion,replknet31b_b1_seq1,cnn,0.003580384042265531
+Energy,energy,False,w/o Layer Fusion,replknet31b_b8_seq1,cnn,0.028702209710434023
+Energy,energy,False,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.2727417917439938
+Energy,energy,False,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.0845555207317155
+Energy,energy,False,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.014521610578093305
+Energy,energy,False,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.019571556921636795
+Energy,energy,False,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0409629392838502
+Energy,energy,False,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,7.960413457855175
+Energy,energy,False,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.056845442005298695
+Energy,energy,False,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.07259869851952495
+Energy,energy,False,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.039363922614758025
+Energy,energy,False,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.3134841295398976
+Energy,energy,False,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.004155872310731409
+Energy,energy,False,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.02401943146972017
+Energy,energy,False,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.12745077978141128
+Energy,energy,False,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.013838024770751
+Energy,energy,False,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.015436234194030316
+Energy,energy,False,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.08799421125985955
+Energy,energy,False,w/o Near-bank PIM,mobilenet_v3_small_b1_seq1,cnn,4.896642643368916e-05
+Energy,energy,False,w/o Near-bank PIM,mobilenet_v3_small_b8_seq1,cnn,0.00037465701495849703
+Energy,energy,False,w/o Near-bank PIM,replknet31b_b1_seq1,cnn,0.0027206970617051503
+Energy,energy,False,w/o Near-bank PIM,replknet31b_b8_seq1,cnn,0.020354624167141525
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.426286271885214
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,254.8135301435899
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.22632028152808542
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.313010861304696
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,90.04913448487869
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,931.1284166012744
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.050841807480579
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.7382593692347696
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,85.96057230232068
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.49599643450344977
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.675295119445667
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.459199036671405
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,210.6165404292903
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3980361875862606
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.908094228571436
+Energy x Cost,energy,True,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,0.0038888818500870657
+Energy x Cost,energy,True,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,0.026374049316057836
+Energy x Cost,energy,True,Full Fengshui,replknet31b_b1_seq1,cnn,0.1622931771358099
+Energy x Cost,energy,True,Full Fengshui,replknet31b_b8_seq1,cnn,1.1765009492634384
+Energy x Cost,energy,True,w/o Heterogeneous Batching,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.514571104324194
+Energy x Cost,energy,True,w/o Heterogeneous Batching,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,254.95346577872618
+Energy x Cost,energy,True,w/o Heterogeneous Batching,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.22829452472839168
+Energy x Cost,energy,True,w/o Heterogeneous Batching,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.316255306497857
+Energy x Cost,energy,True,w/o Heterogeneous Batching,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,90.21397593539432
+Energy x Cost,energy,True,w/o Heterogeneous Batching,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,931.1692108157262
+Energy x Cost,energy,True,w/o Heterogeneous Batching,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6662349559102333
+Energy x Cost,energy,True,w/o Heterogeneous Batching,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.057330697866812
+Energy x Cost,energy,True,w/o Heterogeneous Batching,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.7627384844469365
+Energy x Cost,energy,True,w/o Heterogeneous Batching,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,85.96057230232068
+Energy x Cost,energy,True,w/o Heterogeneous Batching,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.4968218827168326
+Energy x Cost,energy,True,w/o Heterogeneous Batching,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.67610623074389
+Energy x Cost,energy,True,w/o Heterogeneous Batching,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.509472412423063
+Energy x Cost,energy,True,w/o Heterogeneous Batching,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,210.6165404292903
+Energy x Cost,energy,True,w/o Heterogeneous Batching,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3996868278527188
+Energy x Cost,energy,True,w/o Heterogeneous Batching,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.90971645116797
+Energy x Cost,energy,True,w/o Heterogeneous Batching,mobilenet_v3_small_b1_seq1,cnn,0.0038888818500870657
+Energy x Cost,energy,True,w/o Heterogeneous Batching,mobilenet_v3_small_b8_seq1,cnn,0.026374049316057836
+Energy x Cost,energy,True,w/o Heterogeneous Batching,replknet31b_b1_seq1,cnn,0.1622931771358099
+Energy x Cost,energy,True,w/o Heterogeneous Batching,replknet31b_b8_seq1,cnn,1.1765009492634384
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,37.12263967965193
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,430.0974592671616
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.22632028152808542
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.313010861304696
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,148.43286386872364
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1593.3723873052925
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.050841807480579
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,5.227555727190617
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,120.94005394927377
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.5420026415317661
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.934995829601247
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,17.611254724648767
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,322.4424677052715
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.514647642114287
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,17.951541095532384
+Energy x Cost,energy,True,w/o Heterogeneous Memory,mobilenet_v3_small_b1_seq1,cnn,0.006502028203551747
+Energy x Cost,energy,True,w/o Heterogeneous Memory,mobilenet_v3_small_b8_seq1,cnn,0.046501767207181466
+Energy x Cost,energy,True,w/o Heterogeneous Memory,replknet31b_b1_seq1,cnn,0.33393823317294713
+Energy x Cost,energy,True,w/o Heterogeneous Memory,replknet31b_b8_seq1,cnn,2.4835234674122915
+Energy x Cost,energy,True,w/o Tensor Parallelism,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.426286271885214
+Energy x Cost,energy,True,w/o Tensor Parallelism,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,254.8135301435899
+Energy x Cost,energy,True,w/o Tensor Parallelism,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.22632028152808542
+Energy x Cost,energy,True,w/o Tensor Parallelism,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.313010861304696
+Energy x Cost,energy,True,w/o Tensor Parallelism,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,90.04913448487869
+Energy x Cost,energy,True,w/o Tensor Parallelism,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,931.1284166012744
+Energy x Cost,energy,True,w/o Tensor Parallelism,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,w/o Tensor Parallelism,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.050841807480579
+Energy x Cost,energy,True,w/o Tensor Parallelism,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.7382593692347696
+Energy x Cost,energy,True,w/o Tensor Parallelism,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,85.96057230232068
+Energy x Cost,energy,True,w/o Tensor Parallelism,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.49599643450344977
+Energy x Cost,energy,True,w/o Tensor Parallelism,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.675295119445667
+Energy x Cost,energy,True,w/o Tensor Parallelism,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.459199036671405
+Energy x Cost,energy,True,w/o Tensor Parallelism,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,210.6165404292903
+Energy x Cost,energy,True,w/o Tensor Parallelism,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3980361875862606
+Energy x Cost,energy,True,w/o Tensor Parallelism,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.908094228571436
+Energy x Cost,energy,True,w/o Tensor Parallelism,mobilenet_v3_small_b1_seq1,cnn,0.0038888818500870657
+Energy x Cost,energy,True,w/o Tensor Parallelism,mobilenet_v3_small_b8_seq1,cnn,0.026374049316057836
+Energy x Cost,energy,True,w/o Tensor Parallelism,replknet31b_b1_seq1,cnn,0.1622931771358099
+Energy x Cost,energy,True,w/o Tensor Parallelism,replknet31b_b8_seq1,cnn,1.1765009492634384
+Energy x Cost,energy,True,w/o Layer Fusion,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,23.007888570260487
+Energy x Cost,energy,True,w/o Layer Fusion,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,269.62489494743085
+Energy x Cost,energy,True,w/o Layer Fusion,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.23039156949085526
+Energy x Cost,energy,True,w/o Layer Fusion,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.49017415916593
+Energy x Cost,energy,True,w/o Layer Fusion,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,97.94922079419652
+Energy x Cost,energy,True,w/o Layer Fusion,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1003.0650949204907
+Energy x Cost,energy,True,w/o Layer Fusion,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,w/o Layer Fusion,llama3.1_70b_decode_kv1024_b8_seq1,decode,10.418508203979643
+Energy x Cost,energy,True,w/o Layer Fusion,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.7382593692347696
+Energy x Cost,energy,True,w/o Layer Fusion,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,85.96057230232068
+Energy x Cost,energy,True,w/o Layer Fusion,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.49599643450344977
+Energy x Cost,energy,True,w/o Layer Fusion,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.675295119445667
+Energy x Cost,energy,True,w/o Layer Fusion,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.459199036671405
+Energy x Cost,energy,True,w/o Layer Fusion,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,210.6165404292903
+Energy x Cost,energy,True,w/o Layer Fusion,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.3980361875862606
+Energy x Cost,energy,True,w/o Layer Fusion,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,16.908094228571436
+Energy x Cost,energy,True,w/o Layer Fusion,mobilenet_v3_small_b1_seq1,cnn,0.009130432898843193
+Energy x Cost,energy,True,w/o Layer Fusion,mobilenet_v3_small_b8_seq1,cnn,0.07494050394194882
+Energy x Cost,energy,True,w/o Layer Fusion,replknet31b_b1_seq1,cnn,0.21451993182807286
+Energy x Cost,energy,True,w/o Layer Fusion,replknet31b_b8_seq1,cnn,1.6701785680862757
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.426286271885214
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,254.8135301435899
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b1_seq1,decode,1.8592455497235842
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b8_seq1,decode,6.467519465426383
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,90.04913448487869
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,931.1284166012744
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b1_seq1,decode,7.216173780550505
+Energy x Cost,energy,True,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b8_seq1,decode,20.600957785014966
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.7382593692347696
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,86.44500956524175
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.539396014768685
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,7.259797542612147
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,12.459199036671405
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,210.6165404292903
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,2.008843344989739
+Energy x Cost,energy,True,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,22.505172981368716
+Energy x Cost,energy,True,w/o Near-bank PIM,mobilenet_v3_small_b1_seq1,cnn,0.0038888818500870657
+Energy x Cost,energy,True,w/o Near-bank PIM,mobilenet_v3_small_b8_seq1,cnn,0.026374049316057836
+Energy x Cost,energy,True,w/o Near-bank PIM,replknet31b_b1_seq1,cnn,0.1622931771358099
+Energy x Cost,energy,True,w/o Near-bank PIM,replknet31b_b8_seq1,cnn,1.1765009492634384
+EDP,edp,False,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00012548461852316488
+EDP,edp,False,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.007910079057280715
+EDP,edp,False,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,3.9370491538836114e-08
+EDP,edp,False,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.3765507204430781e-06
+EDP,edp,False,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.0019256775610473863
+EDP,edp,False,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.12222566832724742
+EDP,edp,False,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0461578924138415e-07
+EDP,edp,False,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0342776209261763e-05
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.227344422193724e-06
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.0001682661802105447
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.4733752077520926e-07
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.5413782931416151e-06
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,4.3477008828635296e-05
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.002157555118379963
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.4079426001059074e-07
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.1223500144473654e-05
+EDP,edp,False,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,1.2625205326906375e-10
+EDP,edp,False,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,6.6724168715948765e-09
+EDP,edp,False,Full Fengshui,replknet31b_b1_seq1,cnn,5.549140565512548e-07
+EDP,edp,False,Full Fengshui,replknet31b_b8_seq1,cnn,2.56082680595299e-05
+EDP,edp,False,w/o Heterogeneous Batching,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00012698777604483642
+EDP,edp,False,w/o Heterogeneous Batching,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.007910079057280715
+EDP,edp,False,w/o Heterogeneous Batching,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.002139548570519e-08
+EDP,edp,False,w/o Heterogeneous Batching,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.386710162503133e-06
+EDP,edp,False,w/o Heterogeneous Batching,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.0019372856975936117
+EDP,edp,False,w/o Heterogeneous Batching,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.12222566832724742
+EDP,edp,False,w/o Heterogeneous Batching,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0745553389342735e-07
+EDP,edp,False,w/o Heterogeneous Batching,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0399529257923906e-05
+EDP,edp,False,w/o Heterogeneous Batching,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.292226004019742e-06
+EDP,edp,False,w/o Heterogeneous Batching,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.0001682661802105447
+EDP,edp,False,w/o Heterogeneous Batching,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.491674137522453e-07
+EDP,edp,False,w/o Heterogeneous Batching,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.5432009906701037e-06
+EDP,edp,False,w/o Heterogeneous Batching,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,4.393946441332784e-05
+EDP,edp,False,w/o Heterogeneous Batching,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.002157555118379963
+EDP,edp,False,w/o Heterogeneous Batching,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.437358911163484e-07
+EDP,edp,False,w/o Heterogeneous Batching,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.1239267106185922e-05
+EDP,edp,False,w/o Heterogeneous Batching,mobilenet_v3_small_b1_seq1,cnn,1.2625205326906375e-10
+EDP,edp,False,w/o Heterogeneous Batching,mobilenet_v3_small_b8_seq1,cnn,6.6724168715948765e-09
+EDP,edp,False,w/o Heterogeneous Batching,replknet31b_b1_seq1,cnn,5.549140565512548e-07
+EDP,edp,False,w/o Heterogeneous Batching,replknet31b_b8_seq1,cnn,2.56082680595299e-05
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.000286469529958089
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.008380694724690368
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b1_seq1,decode,3.9370491538836114e-08
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.4064803803502174e-06
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004215211733614215
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.17107575234409667
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0461578924138415e-07
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0342776209261763e-05
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.1298714963033936e-05
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00027389376651289904
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.941800619963056e-07
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.00440834830869e-06
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.00010366425797962268
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.0031851864472707014
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.250259654007594e-07
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,7.413863385079675e-05
+EDP,edp,False,w/o Heterogeneous Memory,mobilenet_v3_small_b1_seq1,cnn,1.5063265861374883e-10
+EDP,edp,False,w/o Heterogeneous Memory,mobilenet_v3_small_b8_seq1,cnn,7.21573865591613e-09
+EDP,edp,False,w/o Heterogeneous Memory,replknet31b_b1_seq1,cnn,5.639683089846421e-07
+EDP,edp,False,w/o Heterogeneous Memory,replknet31b_b8_seq1,cnn,2.592928939394192e-05
+EDP,edp,False,w/o Tensor Parallelism,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00028072372354673926
+EDP,edp,False,w/o Tensor Parallelism,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.017500259385512168
+EDP,edp,False,w/o Tensor Parallelism,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.335772895265393e-08
+EDP,edp,False,w/o Tensor Parallelism,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.91431334666992e-06
+EDP,edp,False,w/o Tensor Parallelism,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004319281497166922
+EDP,edp,False,w/o Tensor Parallelism,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.2647002821518862
+EDP,edp,False,w/o Tensor Parallelism,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.789850319771225e-07
+EDP,edp,False,w/o Tensor Parallelism,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.800342779152852e-05
+EDP,edp,False,w/o Tensor Parallelism,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,5.654041900691335e-06
+EDP,edp,False,w/o Tensor Parallelism,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.0003378200457136612
+EDP,edp,False,w/o Tensor Parallelism,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.692437030912872e-07
+EDP,edp,False,w/o Tensor Parallelism,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.5413782931416151e-06
+EDP,edp,False,w/o Tensor Parallelism,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,7.632808480393877e-05
+EDP,edp,False,w/o Tensor Parallelism,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004551228442311273
+EDP,edp,False,w/o Tensor Parallelism,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.5877100101258273e-07
+EDP,edp,False,w/o Tensor Parallelism,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.1220610980820536e-05
+EDP,edp,False,w/o Tensor Parallelism,mobilenet_v3_small_b1_seq1,cnn,1.2625205326906375e-10
+EDP,edp,False,w/o Tensor Parallelism,mobilenet_v3_small_b8_seq1,cnn,6.6724168715948765e-09
+EDP,edp,False,w/o Tensor Parallelism,replknet31b_b1_seq1,cnn,5.549140565512548e-07
+EDP,edp,False,w/o Tensor Parallelism,replknet31b_b8_seq1,cnn,2.56082680595299e-05
+EDP,edp,False,w/o Layer Fusion,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00012551721594602794
+EDP,edp,False,w/o Layer Fusion,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.008008681171807756
+EDP,edp,False,w/o Layer Fusion,llama3.1_8b_decode_kv1024_b1_seq1,decode,3.9370491538836114e-08
+EDP,edp,False,w/o Layer Fusion,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.5335175542908444e-06
+EDP,edp,False,w/o Layer Fusion,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.0019302764986667397
+EDP,edp,False,w/o Layer Fusion,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.12380330215983482
+EDP,edp,False,w/o Layer Fusion,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0461578924138415e-07
+EDP,edp,False,w/o Layer Fusion,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0388238534684878e-05
+EDP,edp,False,w/o Layer Fusion,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.227344422193724e-06
+EDP,edp,False,w/o Layer Fusion,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.0001682661802105447
+EDP,edp,False,w/o Layer Fusion,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.4733752077520926e-07
+EDP,edp,False,w/o Layer Fusion,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.5413782931416151e-06
+EDP,edp,False,w/o Layer Fusion,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,4.3477008828635296e-05
+EDP,edp,False,w/o Layer Fusion,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.002157555118379963
+EDP,edp,False,w/o Layer Fusion,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.4079426001059074e-07
+EDP,edp,False,w/o Layer Fusion,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.1220610980820536e-05
+EDP,edp,False,w/o Layer Fusion,mobilenet_v3_small_b1_seq1,cnn,1.8722941690599927e-10
+EDP,edp,False,w/o Layer Fusion,mobilenet_v3_small_b8_seq1,cnn,9.399977932460297e-09
+EDP,edp,False,w/o Layer Fusion,replknet31b_b1_seq1,cnn,5.606230186296734e-07
+EDP,edp,False,w/o Layer Fusion,replknet31b_b8_seq1,cnn,2.5681598911811706e-05
+EDP,edp,False,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00012548461852316488
+EDP,edp,False,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.007910079057280715
+EDP,edp,False,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.565613876431282e-06
+EDP,edp,False,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b8_seq1,decode,6.249570332582306e-06
+EDP,edp,False,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.0019256775610473863
+EDP,edp,False,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.12222566832724742
+EDP,edp,False,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b1_seq1,decode,7.165242540308624e-05
+EDP,edp,False,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b8_seq1,decode,9.449038847576761e-05
+EDP,edp,False,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,4.227344422193724e-06
+EDP,edp,False,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.0001682661802105447
+EDP,edp,False,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,2.75099646659808e-07
+EDP,edp,False,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.5471555493405763e-06
+EDP,edp,False,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,4.3477008828635296e-05
+EDP,edp,False,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.002157555118379963
+EDP,edp,False,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,4.105619719092547e-06
+EDP,edp,False,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,2.2635589804161476e-05
+EDP,edp,False,w/o Near-bank PIM,mobilenet_v3_small_b1_seq1,cnn,1.2625205326906375e-10
+EDP,edp,False,w/o Near-bank PIM,mobilenet_v3_small_b8_seq1,cnn,6.6724168715948765e-09
+EDP,edp,False,w/o Near-bank PIM,replknet31b_b1_seq1,cnn,5.549140565512548e-07
+EDP,edp,False,w/o Near-bank PIM,replknet31b_b8_seq1,cnn,2.56082680595299e-05
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.03474340207102657
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,1.7005113337708453
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.343020711743431e-06
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00040748084553943686
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.7553146147939177
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,28.133271741381975
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002696081120437637
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0011215475571909387
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10533860883689945
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.325942522354318e-05
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009132598821098237
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.014633184042719285
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0836057173259597
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.445093864193522e-05
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.010912334520725977
+EDP x Cost,edp,True,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,1.628963066319379e-08
+EDP x Cost,edp,True,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,9.96405322941146e-07
+EDP x Cost,edp,True,Full Fengshui,replknet31b_b1_seq1,cnn,3.684822009660321e-05
+EDP x Cost,edp,True,Full Fengshui,replknet31b_b8_seq1,cnn,0.0017395820039925792
+EDP x Cost,edp,True,w/o Heterogeneous Batching,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.03482808526958774
+EDP x Cost,edp,True,w/o Heterogeneous Batching,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,1.7007510850403162
+EDP x Cost,edp,True,w/o Heterogeneous Batching,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.376545212900786e-06
+EDP x Cost,edp,True,w/o Heterogeneous Batching,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004077965456992791
+EDP x Cost,edp,True,w/o Heterogeneous Batching,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.7561487493035979
+EDP x Cost,edp,True,w/o Heterogeneous Batching,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,28.133271741381975
+EDP x Cost,edp,True,w/o Heterogeneous Batching,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.867325248103556e-05
+EDP x Cost,edp,True,w/o Heterogeneous Batching,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002697844696274537
+EDP x Cost,edp,True,w/o Heterogeneous Batching,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0011274902567783034
+EDP x Cost,edp,True,w/o Heterogeneous Batching,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10533860883689945
+EDP x Cost,edp,True,w/o Heterogeneous Batching,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.344714387841758e-05
+EDP x Cost,edp,True,w/o Heterogeneous Batching,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009134453054740362
+EDP x Cost,edp,True,w/o Heterogeneous Batching,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.014667899434400921
+EDP x Cost,edp,True,w/o Heterogeneous Batching,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0595757486233854
+EDP x Cost,edp,True,w/o Heterogeneous Batching,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.451653793282024e-05
+EDP x Cost,edp,True,w/o Heterogeneous Batching,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.01091381450916579
+EDP x Cost,edp,True,w/o Heterogeneous Batching,mobilenet_v3_small_b1_seq1,cnn,1.628963066319379e-08
+EDP x Cost,edp,True,w/o Heterogeneous Batching,mobilenet_v3_small_b8_seq1,cnn,9.96405322941146e-07
+EDP x Cost,edp,True,w/o Heterogeneous Batching,replknet31b_b1_seq1,cnn,3.684822009660321e-05
+EDP x Cost,edp,True,w/o Heterogeneous Batching,replknet31b_b8_seq1,cnn,0.0017395820039925792
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.037616514652604606
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,1.9798543713575107
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.343020711743431e-06
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00040748084553943686
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.8131355361911666
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,29.558385720245706
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002696081120437637
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0013480939696359727
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.1082631196888448
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.034901672524003e-05
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009552396981677221
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.017360552660473413
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.2427278902587933
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.445093864193522e-05
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.011585454752794752
+EDP x Cost,edp,True,w/o Heterogeneous Memory,mobilenet_v3_small_b1_seq1,cnn,1.842674025388191e-08
+EDP x Cost,edp,True,w/o Heterogeneous Memory,mobilenet_v3_small_b8_seq1,cnn,1.051951155608604e-06
+EDP x Cost,edp,True,w/o Heterogeneous Memory,replknet31b_b1_seq1,cnn,6.793866555141506e-05
+EDP x Cost,edp,True,w/o Heterogeneous Memory,replknet31b_b8_seq1,cnn,0.0032359505490209056
+EDP x Cost,edp,True,w/o Tensor Parallelism,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.03606020444606477
+EDP x Cost,edp,True,w/o Tensor Parallelism,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.218350394160171
+EDP x Cost,edp,True,w/o Tensor Parallelism,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.415682580904626e-06
+EDP x Cost,edp,True,w/o Tensor Parallelism,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004706881510570336
+EDP x Cost,edp,True,w/o Tensor Parallelism,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.8283966402201277
+EDP x Cost,edp,True,w/o Tensor Parallelism,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,40.59975488250487
+EDP x Cost,edp,True,w/o Tensor Parallelism,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,w/o Tensor Parallelism,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.0034721598032598122
+EDP x Cost,edp,True,w/o Tensor Parallelism,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.001129132232108652
+EDP x Cost,edp,True,w/o Tensor Parallelism,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.12048220143848289
+EDP x Cost,edp,True,w/o Tensor Parallelism,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.525151531900389e-05
+EDP x Cost,edp,True,w/o Tensor Parallelism,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009132598821098237
+EDP x Cost,edp,True,w/o Tensor Parallelism,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.015323661430179554
+EDP x Cost,edp,True,w/o Tensor Parallelism,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0595757486233854
+EDP x Cost,edp,True,w/o Tensor Parallelism,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,6.34590101119612e-05
+EDP x Cost,edp,True,w/o Tensor Parallelism,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.010912334520725977
+EDP x Cost,edp,True,w/o Tensor Parallelism,mobilenet_v3_small_b1_seq1,cnn,1.628963066319379e-08
+EDP x Cost,edp,True,w/o Tensor Parallelism,mobilenet_v3_small_b8_seq1,cnn,9.96405322941146e-07
+EDP x Cost,edp,True,w/o Tensor Parallelism,replknet31b_b1_seq1,cnn,3.684822009660321e-05
+EDP x Cost,edp,True,w/o Tensor Parallelism,replknet31b_b8_seq1,cnn,0.0017395820039925792
+EDP x Cost,edp,True,w/o Layer Fusion,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.03474340207102657
+EDP x Cost,edp,True,w/o Layer Fusion,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,1.7168116206340025
+EDP x Cost,edp,True,w/o Layer Fusion,llama3.1_8b_decode_kv1024_b1_seq1,decode,4.343020711743431e-06
+EDP x Cost,edp,True,w/o Layer Fusion,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.0004615242999035291
+EDP x Cost,edp,True,w/o Layer Fusion,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.7554087799120913
+EDP x Cost,edp,True,w/o Layer Fusion,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,28.47641968527187
+EDP x Cost,edp,True,w/o Layer Fusion,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,w/o Layer Fusion,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002733764682937495
+EDP x Cost,edp,True,w/o Layer Fusion,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0011215475571909387
+EDP x Cost,edp,True,w/o Layer Fusion,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10533860883689945
+EDP x Cost,edp,True,w/o Layer Fusion,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,8.325942522354318e-05
+EDP x Cost,edp,True,w/o Layer Fusion,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0009132598821098237
+EDP x Cost,edp,True,w/o Layer Fusion,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.014633184042719285
+EDP x Cost,edp,True,w/o Layer Fusion,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0595757486233854
+EDP x Cost,edp,True,w/o Layer Fusion,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,5.445093864193522e-05
+EDP x Cost,edp,True,w/o Layer Fusion,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.011510780093065253
+EDP x Cost,edp,True,w/o Layer Fusion,mobilenet_v3_small_b1_seq1,cnn,2.2601456842722858e-08
+EDP x Cost,edp,True,w/o Layer Fusion,mobilenet_v3_small_b8_seq1,cnn,1.4100763478666912e-06
+EDP x Cost,edp,True,w/o Layer Fusion,replknet31b_b1_seq1,cnn,3.752587954518981e-05
+EDP x Cost,edp,True,w/o Layer Fusion,replknet31b_b8_seq1,cnn,0.00175690349467209
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.03540140064840945
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,1.7005113337708453
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0016373445948138616
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.005387990882442164
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.7553146147939177
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,28.133271741381975
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.025635847311710112
+EDP x Cost,edp,True,w/o Near-bank PIM,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.07024852671893511
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0011215475571909387
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.10533860883689945
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.19847706107822e-05
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.001272505297249193
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.014633184042719285
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.0595757486233854
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.001375467085060003
+EDP x Cost,edp,True,w/o Near-bank PIM,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.015561809531332071
+EDP x Cost,edp,True,w/o Near-bank PIM,mobilenet_v3_small_b1_seq1,cnn,1.628963066319379e-08
+EDP x Cost,edp,True,w/o Near-bank PIM,mobilenet_v3_small_b8_seq1,cnn,9.96405322941146e-07
+EDP x Cost,edp,True,w/o Near-bank PIM,replknet31b_b1_seq1,cnn,3.684822009660321e-05
+EDP x Cost,edp,True,w/o Near-bank PIM,replknet31b_b8_seq1,cnn,0.0017395820039925792

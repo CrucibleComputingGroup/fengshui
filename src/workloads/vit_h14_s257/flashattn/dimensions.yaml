@@ -1,0 +1,22 @@
+dimensions:
+  B:
+    value: 1
+    description: Batch size
+  D:
+    value: 80
+    description: Head dimension (Q/K/V)
+  H:
+    value: 16
+    description: Number of attention heads
+  K:
+    value: 257
+    description: KV sequence length (K = R * T)
+  Q:
+    value: 257
+    description: Query sequence length
+  R:
+    value: 2
+    description: Number of KV tiles (rounds)
+  T:
+    value: 256
+    description: KV tile size

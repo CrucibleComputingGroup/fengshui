@@ -1,0 +1,241 @@
+metric,objective,cost_aware,framework,network,category,value
+Energy,energy,False,Fengshui (Full),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.26928802223493836
+Energy,energy,False,Fengshui (Full),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.0815289696900403
+Energy,energy,False,Fengshui (Full),llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002200653022007134
+Energy,energy,False,Fengshui (Full),llama3.1_8b_decode_kv1024_b8_seq1,decode,0.01695788498679726
+Energy,energy,False,Fengshui (Full),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.0217680357602186
+Energy,energy,False,Fengshui (Full),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.109638179014542
+Energy,energy,False,Fengshui (Full),llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006450207860713182
+Energy,energy,False,Fengshui (Full),llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05159733233426734
+Energy,energy,False,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,0.03990129839927497
+Energy,energy,False,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,0.31151272596457763
+Energy,energy,False,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,0.003727677565918374
+Energy,energy,False,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,0.023072215808397183
+Energy,energy,False,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,0.13029594006430403
+Energy,energy,False,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,1.0126256594556955
+Energy,energy,False,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,0.010710895331371574
+Energy,energy,False,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,0.08308161766913773
+Energy,energy,False,Fengshui (Full),mobilenet_v3_small_b1_seq1,cnn,4.898774773385527e-05
+Energy,energy,False,Fengshui (Full),mobilenet_v3_small_b8_seq1,cnn,0.0003716671446383544
+Energy,energy,False,Fengshui (Full),replknet31b_b1_seq1,cnn,0.0027206970617051503
+Energy,energy,False,Fengshui (Full),replknet31b_b8_seq1,cnn,0.020354624167141525
+Energy,energy,False,SCAR-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.329851934588667
+Energy,energy,False,SCAR-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.428401181842255
+Energy,energy,False,SCAR-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.0202659457193619
+Energy,energy,False,SCAR-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.027405238121274867
+Energy,energy,False,SCAR-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.238007438140823
+Energy,energy,False,SCAR-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.886576420482712
+Energy,energy,False,SCAR-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.07918280078154935
+Energy,energy,False,SCAR-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.10320840003428976
+Energy,energy,False,SCAR-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,0.05380986922749137
+Energy,energy,False,SCAR-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,0.40323290636846637
+Energy,energy,False,SCAR-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,0.005716574538088672
+Energy,energy,False,SCAR-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,0.046990142696875875
+Energy,energy,False,SCAR-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,0.17921957437503622
+Energy,energy,False,SCAR-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,1.283526457414159
+Energy,energy,False,SCAR-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,0.02124716833011608
+Energy,energy,False,SCAR-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,0.1776108682860328
+Energy,energy,False,SCAR-style,mobilenet_v3_small_b1_seq1,cnn,8.36995560768851e-05
+Energy,energy,False,SCAR-style,mobilenet_v3_small_b8_seq1,cnn,0.00040929764222607016
+Energy,energy,False,SCAR-style,replknet31b_b1_seq1,cnn,0.0029392459619409653
+Energy,energy,False,SCAR-style,replknet31b_b8_seq1,cnn,0.021859390743067995
+Energy,energy,False,Gemini-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.31913024284386154
+Energy,energy,False,Gemini-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.850340536229723
+Energy,energy,False,Gemini-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.023669106328381557
+Energy,energy,False,Gemini-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.03244877476198599
+Energy,energy,False,Gemini-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.3253436737666364
+Energy,energy,False,Gemini-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,10.150711902490615
+Energy,energy,False,Gemini-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.09289164235642978
+Energy,energy,False,Gemini-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.12357894031106223
+Energy,energy,False,Gemini-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,0.052330520645183676
+Energy,energy,False,Gemini-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,0.4459342463390418
+Energy,energy,False,Gemini-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,0.006487972546425699
+Energy,energy,False,Gemini-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,0.060314627681452224
+Energy,energy,False,Gemini-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,0.17409109818706822
+Energy,energy,False,Gemini-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,1.5790561429837815
+Energy,energy,False,Gemini-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,0.02435360288337199
+Energy,energy,False,Gemini-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,0.2309393680201314
+Energy,energy,False,Gemini-style,mobilenet_v3_small_b1_seq1,cnn,5.451003393729833e-05
+Energy,energy,False,Gemini-style,mobilenet_v3_small_b8_seq1,cnn,0.0004506937120289069
+Energy,energy,False,Gemini-style,replknet31b_b1_seq1,cnn,0.003405587180649544
+Energy,energy,False,Gemini-style,replknet31b_b8_seq1,cnn,0.03320847559008148
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,22.315205433419933
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,274.8188843274165
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_8b_decode_kv1024_b1_seq1,decode,0.2268313621960487
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_8b_decode_kv1024_b8_seq1,decode,4.31035111568372
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,88.77324140913306
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,942.8983850092517
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6612004117506934
+Energy x Cost,energy,True,Fengshui (Full),llama3.1_70b_decode_kv1024_b8_seq1,decode,10.05040205680822
+Energy x Cost,energy,True,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,3.6676041651794904
+Energy x Cost,energy,True,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,84.42162973947886
+Energy x Cost,energy,True,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,0.4955481363105974
+Energy x Cost,energy,True,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,5.672456385963399
+Energy x Cost,energy,True,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,12.002619625481904
+Energy x Cost,energy,True,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,220.72673536062095
+Energy x Cost,energy,True,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,1.3970689730340762
+Energy x Cost,energy,True,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,16.898946708659718
+Energy x Cost,energy,True,Fengshui (Full),mobilenet_v3_small_b1_seq1,cnn,0.0038188946092666135
+Energy x Cost,energy,True,Fengshui (Full),mobilenet_v3_small_b8_seq1,cnn,0.026374049316057836
+Energy x Cost,energy,True,Fengshui (Full),replknet31b_b1_seq1,cnn,0.1622931771358099
+Energy x Cost,energy,True,Fengshui (Full),replknet31b_b8_seq1,cnn,1.1765009492634384
+Energy x Cost,energy,True,SCAR-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,43.71052909952974
+Energy x Cost,energy,True,SCAR-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,533.6425450259787
+Energy x Cost,energy,True,SCAR-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,2.194571456820189
+Energy x Cost,energy,True,SCAR-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,8.070873399395511
+Energy x Cost,energy,True,SCAR-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,176.64184037108012
+Energy x Cost,energy,True,SCAR-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1849.3539670022965
+Energy x Cost,energy,True,SCAR-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,8.622269610744507
+Energy x Cost,energy,True,SCAR-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,27.705784444047183
+Energy x Cost,energy,True,SCAR-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,6.341772167618127
+Energy x Cost,energy,True,SCAR-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,150.29043451421498
+Energy x Cost,energy,True,SCAR-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,0.6048757663164328
+Energy x Cost,energy,True,SCAR-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,15.702007995142734
+Energy x Cost,energy,True,SCAR-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,21.826266469971706
+Energy x Cost,energy,True,SCAR-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,398.8321858472675
+Energy x Cost,energy,True,SCAR-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,2.28226517017384
+Energy x Cost,energy,True,SCAR-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,55.79968624395685
+Energy x Cost,energy,True,SCAR-style,mobilenet_v3_small_b1_seq1,cnn,0.009519748251248118
+Energy x Cost,energy,True,SCAR-style,mobilenet_v3_small_b8_seq1,cnn,0.046501767207181466
+Energy x Cost,energy,True,SCAR-style,replknet31b_b1_seq1,cnn,0.33393823317294713
+Energy x Cost,energy,True,SCAR-style,replknet31b_b8_seq1,cnn,2.4835234674122915
+Energy x Cost,energy,True,Gemini-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,45.801300305469
+Energy x Cost,energy,True,Gemini-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,610.1954659647787
+Energy x Cost,energy,True,Gemini-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,2.286594587526098
+Energy x Cost,energy,True,Gemini-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,8.786094304863342
+Energy x Cost,energy,True,Gemini-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,169.7491912056071
+Energy x Cost,energy,True,Gemini-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,2245.8538039063155
+Energy x Cost,energy,True,Gemini-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,8.98500031579153
+Energy x Cost,energy,True,Gemini-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,30.53697358559608
+Energy x Cost,energy,True,Gemini-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,6.16859947715918
+Energy x Cost,energy,True,Gemini-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,155.6196700147391
+Energy x Cost,energy,True,Gemini-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,0.6274161437631487
+Energy x Cost,energy,True,Gemini-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,17.546528390564372
+Energy x Cost,energy,True,Gemini-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,21.018201882343664
+Energy x Cost,energy,True,Gemini-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,464.8174518418183
+Energy x Cost,energy,True,Gemini-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,2.3713238955560256
+Energy x Cost,energy,True,Gemini-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,63.114619660582896
+Energy x Cost,energy,True,Gemini-style,mobilenet_v3_small_b1_seq1,cnn,0.00930916267002591
+Energy x Cost,energy,True,Gemini-style,mobilenet_v3_small_b8_seq1,cnn,0.07332069524096835
+Energy x Cost,energy,True,Gemini-style,replknet31b_b1_seq1,cnn,0.44427476086547174
+Energy x Cost,energy,True,Gemini-style,replknet31b_b8_seq1,cnn,3.3808428011332063
+EDP,edp,False,Fengshui (Full),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0001301897311763192
+EDP,edp,False,Fengshui (Full),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.00813585977501676
+EDP,edp,False,Fengshui (Full),llama3.1_8b_decode_kv1024_b1_seq1,decode,3.9370491538836114e-08
+EDP,edp,False,Fengshui (Full),llama3.1_8b_decode_kv1024_b8_seq1,decode,1.3432125961212e-06
+EDP,edp,False,Fengshui (Full),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.0020040510982519727
+EDP,edp,False,Fengshui (Full),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.12439633801678437
+EDP,edp,False,Fengshui (Full),llama3.1_70b_decode_kv1024_b1_seq1,decode,2.0461578924138415e-07
+EDP,edp,False,Fengshui (Full),llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0259533745530329e-05
+EDP,edp,False,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,4.329723824250374e-06
+EDP,edp,False,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,0.00017127598640942815
+EDP,edp,False,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,2.2938636669635308e-07
+EDP,edp,False,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,1.4718674516556203e-06
+EDP,edp,False,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,4.442891097749901e-05
+EDP,edp,False,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,0.0021229649582899606
+EDP,edp,False,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,3.322418085517818e-07
+EDP,edp,False,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,2.0521824217218377e-05
+EDP,edp,False,Fengshui (Full),mobilenet_v3_small_b1_seq1,cnn,1.3109355308607232e-10
+EDP,edp,False,Fengshui (Full),mobilenet_v3_small_b8_seq1,cnn,7.068905534264046e-09
+EDP,edp,False,Fengshui (Full),replknet31b_b1_seq1,cnn,5.59991318227939e-07
+EDP,edp,False,Fengshui (Full),replknet31b_b8_seq1,cnn,1.9854715902964524e-05
+EDP,edp,False,SCAR-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0006052809387856806
+EDP,edp,False,SCAR-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.03564908476711994
+EDP,edp,False,SCAR-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,1.4876318785026201e-05
+EDP,edp,False,SCAR-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,2.012676314435984e-05
+EDP,edp,False,SCAR-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.009515784840630509
+EDP,edp,False,SCAR-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.5218220423743084
+EDP,edp,False,SCAR-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.00023248988829951958
+EDP,edp,False,SCAR-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.0003031057318895033
+EDP,edp,False,SCAR-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,1.6979464810308737e-05
+EDP,edp,False,SCAR-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,0.000845640696056442
+EDP,edp,False,SCAR-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,9.003376234508135e-07
+EDP,edp,False,SCAR-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,5.92060761134973e-05
+EDP,edp,False,SCAR-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,0.00018792534441987798
+EDP,edp,False,SCAR-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,0.010767000308876073
+EDP,edp,False,SCAR-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,1.337636729390788e-05
+EDP,edp,False,SCAR-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,0.0008945335859052386
+EDP,edp,False,SCAR-style,mobilenet_v3_small_b1_seq1,cnn,3.3422802607279017e-09
+EDP,edp,False,SCAR-style,mobilenet_v3_small_b8_seq1,cnn,3.772493291714419e-08
+EDP,edp,False,SCAR-style,replknet31b_b1_seq1,cnn,2.481016571451181e-06
+EDP,edp,False,SCAR-style,replknet31b_b8_seq1,cnn,0.00015189596605127157
+EDP,edp,False,Gemini-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0003534372585789265
+EDP,edp,False,Gemini-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.01811495033766686
+EDP,edp,False,Gemini-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,3.9740038763114445e-05
+EDP,edp,False,Gemini-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,5.805422159557206e-05
+EDP,edp,False,Gemini-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.00953039488969527
+EDP,edp,False,Gemini-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.26712495481156495
+EDP,edp,False,Gemini-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.0006307225869483294
+EDP,edp,False,Gemini-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.0009110746618335569
+EDP,edp,False,Gemini-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,1.536283089650323e-05
+EDP,edp,False,Gemini-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,0.0007883601967259486
+EDP,edp,False,Gemini-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,2.132181444856133e-06
+EDP,edp,False,Gemini-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,0.0001953440150115744
+EDP,edp,False,Gemini-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,0.00016066933639935052
+EDP,edp,False,Gemini-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,0.01167048766470558
+EDP,edp,False,Gemini-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,3.2959289168939384e-05
+EDP,edp,False,Gemini-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,0.0030676552024862572
+EDP,edp,False,Gemini-style,mobilenet_v3_small_b1_seq1,cnn,1.562173632073208e-10
+EDP,edp,False,Gemini-style,mobilenet_v3_small_b8_seq1,cnn,5.0448629887634765e-08
+EDP,edp,False,Gemini-style,replknet31b_b1_seq1,cnn,7.67096692661635e-07
+EDP,edp,False,Gemini-style,replknet31b_b8_seq1,cnn,4.990905129401272e-05
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.038775627882769996
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.008792922293753
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_8b_decode_kv1024_b1_seq1,decode,4.343020711743431e-06
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00040748084553943686
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.7719821739556976
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,38.22826785105346
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8456577035634793e-05
+EDP x Cost,edp,True,Fengshui (Full),llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002696081120437637
+EDP x Cost,edp,True,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,0.0011215475571909387
+EDP x Cost,edp,True,Fengshui (Full),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,0.10233462378342638
+EDP x Cost,edp,True,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,8.325942522354318e-05
+EDP x Cost,edp,True,Fengshui (Full),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,0.0009132598821098237
+EDP x Cost,edp,True,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,0.013822713437360612
+EDP x Cost,edp,True,Fengshui (Full),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,1.0836057173259597
+EDP x Cost,edp,True,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,5.445093864193522e-05
+EDP x Cost,edp,True,Fengshui (Full),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,0.010912334520725977
+EDP x Cost,edp,True,Fengshui (Full),mobilenet_v3_small_b1_seq1,cnn,1.628963066319379e-08
+EDP x Cost,edp,True,Fengshui (Full),mobilenet_v3_small_b8_seq1,cnn,9.522031384137261e-07
+EDP x Cost,edp,True,Fengshui (Full),replknet31b_b1_seq1,cnn,3.684822009660321e-05
+EDP x Cost,edp,True,Fengshui (Full),replknet31b_b8_seq1,cnn,0.0013838377853953227
+EDP x Cost,edp,True,SCAR-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.0945713792805999
+EDP x Cost,edp,True,SCAR-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,7.833906714104249
+EDP x Cost,edp,True,SCAR-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.001610936150736144
+EDP x Cost,edp,True,SCAR-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.005927354345870256
+EDP x Cost,edp,True,SCAR-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.5076612556918896
+EDP x Cost,edp,True,SCAR-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,108.5945383769904
+EDP x Cost,edp,True,SCAR-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.02531598376042072
+EDP x Cost,edp,True,SCAR-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.08136723434037998
+EDP x Cost,edp,True,SCAR-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,0.0024956577222188564
+EDP x Cost,edp,True,SCAR-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,0.31518188532235497
+EDP x Cost,edp,True,SCAR-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,9.52655136917729e-05
+EDP x Cost,edp,True,SCAR-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,0.019784027609624
+EDP x Cost,edp,True,SCAR-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,0.02685309058326996
+EDP x Cost,edp,True,SCAR-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,3.3456468648558753
+EDP x Cost,edp,True,SCAR-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,0.0014368228605346428
+EDP x Cost,edp,True,SCAR-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,0.2810340037739638
+EDP x Cost,edp,True,SCAR-style,mobilenet_v3_small_b1_seq1,cnn,3.7724363169074933e-07
+EDP x Cost,edp,True,SCAR-style,mobilenet_v3_small_b8_seq1,cnn,4.286064387956149e-06
+EDP x Cost,edp,True,SCAR-style,replknet31b_b1_seq1,cnn,0.0002813120513748161
+EDP x Cost,edp,True,SCAR-style,replknet31b_b8_seq1,cnn,0.01725744329874438
+EDP x Cost,edp,True,Gemini-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.08037314697018981
+EDP x Cost,edp,True,Gemini-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,7.869211303724065
+EDP x Cost,edp,True,Gemini-style,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.004008888288334992
+EDP x Cost,edp,True,Gemini-style,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.017753651522670697
+EDP x Cost,edp,True,Gemini-style,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.72571299032876
+EDP x Cost,edp,True,Gemini-style,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,82.32905199543488
+EDP x Cost,edp,True,Gemini-style,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.06352049909988841
+EDP x Cost,edp,True,Gemini-style,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.2701838873503931
+EDP x Cost,edp,True,Gemini-style,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill-MoE,0.0021713011477842332
+EDP x Cost,edp,True,Gemini-style,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill-MoE,0.3093843679804858
+EDP x Cost,edp,True,Gemini-style,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode-MoE,0.00021779456244059675
+EDP x Cost,edp,True,Gemini-style,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode-MoE,0.08042401189289444
+EDP x Cost,edp,True,Gemini-style,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill-MoE,0.024662537050763846
+EDP x Cost,edp,True,Gemini-style,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill-MoE,3.408283442885337
+EDP x Cost,edp,True,Gemini-style,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode-MoE,0.0033729388704028434
+EDP x Cost,edp,True,Gemini-style,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode-MoE,1.2435940553493272
+EDP x Cost,edp,True,Gemini-style,mobilenet_v3_small_b1_seq1,cnn,1.9846912787944522e-08
+EDP x Cost,edp,True,Gemini-style,mobilenet_v3_small_b8_seq1,cnn,6.4123100779269975e-06
+EDP x Cost,edp,True,Gemini-style,replknet31b_b1_seq1,cnn,0.00010154312054861544
+EDP x Cost,edp,True,Gemini-style,replknet31b_b8_seq1,cnn,0.006085519890372331

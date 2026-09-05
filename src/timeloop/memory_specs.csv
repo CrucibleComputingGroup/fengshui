@@ -1,0 +1,7 @@
+mem_type,size_gb,read_energy_j,write_energy_j,leakage_energy_j,cost,area,bandwidth_gbps
+dram,0.25,8e-12,8e-12,0.0,1.4775,0.0,32.0
+dram,0.5,8e-12,8e-12,0.0,2.955,0.0,32.0
+dram,1.0,8e-12,8e-12,0.0,5.91,0.0,32.0
+dram,2.0,8e-12,8e-12,0.0,11.82,0.0,32.0
+dram,4.0,8e-12,8e-12,0.0,23.64,0.0,32.0
+dram,8.0,8e-12,8e-12,0.0,47.28,0.0,32.0

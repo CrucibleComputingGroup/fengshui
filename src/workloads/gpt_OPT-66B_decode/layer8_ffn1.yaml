@@ -1,0 +1,31 @@
+problem:
+  version: '0.4'
+  shape:
+#Inputs--O, Weights--W_1, Outputs--FFN
+#(B, P, O) x (O, I)
+    name: FFN_1
+
+    dimensions: [B, P, O, I]
+
+    data_spaces:
+    - name: Inputs
+      projection:
+      - - - B
+      - - - P
+      - - - O
+    - name: Weights
+      projection:
+      - - - O
+      - - - I
+    - name: Outputs
+      projection:
+      - - - B
+      - - - P
+      - - - I
+      read_write: True
+
+  instance:
+    B: 1     # batch
+    P: 1  # length
+    O: 9216  # original embedding dim (merged from 72 heads × 128)
+    I: 36864 # 4× hidden dim, common in FFN

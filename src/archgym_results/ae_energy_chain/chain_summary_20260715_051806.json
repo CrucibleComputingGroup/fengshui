@@ -1,0 +1,127 @@
+{
+  "n1": {
+    "algorithm": "saeo",
+    "best_value": 0.05488672272220925,
+    "time": 205.26400155527517,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale1@pe_y_scale3"
+    ]
+  },
+  "n2": {
+    "algorithm": "saeo",
+    "best_value": 0.04918243823193891,
+    "time": 268.1798010072671,
+    "best_chiplets": [
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "eyeriss_like@glb1@pe_x_scale2@pe_y_scale3"
+    ]
+  },
+  "n3": {
+    "algorithm": "saeo",
+    "best_value": 0.03749628018740833,
+    "time": 396.39246562868357,
+    "best_chiplets": [
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "gemmini_like@glb1@pe_x_scale3@pe_y_scale2",
+      "simba_like@glb1@pe_x_scale3@pe_y_scale3"
+    ]
+  },
+  "n4": {
+    "algorithm": "saeo",
+    "best_value": 0.036646365135930774,
+    "time": 473.2440966209397,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale3@pe_y_scale2",
+      "simba_like@glb1@pe_x_scale3@pe_y_scale4",
+      "switch_8port@glb4@pe_x_scale4@pe_y_scale4",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1"
+    ]
+  },
+  "n5": {
+    "algorithm": "saeo",
+    "best_value": 0.03558916446887527,
+    "time": 661.2062856531702,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale3@pe_y_scale2",
+      "simba_like@glb1@pe_x_scale3@pe_y_scale4",
+      "switch_8port@glb4@pe_x_scale4@pe_y_scale1",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "eyeriss_like@glb1@pe_x_scale4@pe_y_scale2"
+    ]
+  },
+  "n6": {
+    "algorithm": "saeo",
+    "best_value": 0.0351780399327445,
+    "time": 835.0874103163369,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+      "gemmini_like@glb1@pe_x_scale4@pe_y_scale2",
+      "switch_8port@glb4@pe_x_scale3@pe_y_scale1",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "eyeriss_like@glb1@pe_x_scale1@pe_y_scale4",
+      "simba_like@glb1@pe_x_scale3@pe_y_scale4"
+    ]
+  },
+  "n7": {
+    "algorithm": "isaeo",
+    "best_value": 0.035032464941659916,
+    "time": 1029.8904589307494,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+      "gemmini_like@glb1@pe_x_scale4@pe_y_scale2",
+      "switch_8port@glb4@pe_x_scale3@pe_y_scale1",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "eyeriss_like@glb1@pe_x_scale1@pe_y_scale4",
+      "simba_like@glb1@pe_x_scale3@pe_y_scale4",
+      "gemmini_like@glb1@pe_x_scale1@pe_y_scale4"
+    ]
+  },
+  "n8": {
+    "algorithm": "isaeo",
+    "best_value": 0.03492755385851297,
+    "time": 1323.4483467768878,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+      "gemmini_like@glb1@pe_x_scale4@pe_y_scale2",
+      "switch_8port@glb4@pe_x_scale3@pe_y_scale4",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "eyeriss_like@glb1@pe_x_scale1@pe_y_scale4",
+      "simba_like@glb1@pe_x_scale3@pe_y_scale4",
+      "gemmini_like@glb1@pe_x_scale3@pe_y_scale4",
+      "eyeriss_like@glb1@pe_x_scale4@pe_y_scale3"
+    ]
+  },
+  "n9": {
+    "algorithm": "isaeo",
+    "best_value": 0.0348593849266393,
+    "time": 1690.0873305122368,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+      "gemmini_like@glb1@pe_x_scale4@pe_y_scale2",
+      "switch_8port@glb4@pe_x_scale3@pe_y_scale4",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "gemmini_like@glb1@pe_x_scale1@pe_y_scale4",
+      "simba_like@glb1@pe_x_scale3@pe_y_scale4",
+      "gemmini_like@glb1@pe_x_scale3@pe_y_scale4",
+      "eyeriss_like@glb1@pe_x_scale4@pe_y_scale3",
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale3"
+    ]
+  },
+  "n10": {
+    "algorithm": "isaeo",
+    "best_value": 0.03472660901031714,
+    "time": 2052.5877154930495,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+      "gemmini_like@glb1@pe_x_scale4@pe_y_scale2",
+      "switch_8port@glb4@pe_x_scale4@pe_y_scale4",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "gemmini_like@glb1@pe_x_scale1@pe_y_scale4",
+      "simba_like@glb1@pe_x_scale3@pe_y_scale4",
+      "gemmini_like@glb1@pe_x_scale3@pe_y_scale4",
+      "eyeriss_like@glb1@pe_x_scale4@pe_y_scale3",
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale2",
+      "simba_like@glb1@pe_x_scale4@pe_y_scale3"
+    ]
+  }
+}

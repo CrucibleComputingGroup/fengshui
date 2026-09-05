@@ -1,0 +1,608 @@
+{
+  "base_n": 8,
+  "base_pool": [
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 2
+    },
+    {
+      "arch_target": "eyeriss_like",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 1
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 2,
+      "pe_y_scale": 1
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 4,
+      "pe_x_scale": 4,
+      "pe_y_scale": 3
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 4,
+      "pe_x_scale": 3,
+      "pe_y_scale": 4
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 2,
+      "pe_y_scale": 3
+    },
+    {
+      "arch_target": "switch_8port",
+      "glb_scale": 4,
+      "pe_x_scale": 3,
+      "pe_y_scale": 1
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 9,
+      "pe_x_scale": 4,
+      "pe_y_scale": 3
+    }
+  ],
+  "base_pool_ids": [
+    "gemmini_like@glb1@pe_x_scale1@pe_y_scale2",
+    "eyeriss_like@glb1@pe_x_scale1@pe_y_scale1",
+    "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+    "gemmini_like@glb4@pe_x_scale4@pe_y_scale3",
+    "gemmini_like@glb4@pe_x_scale3@pe_y_scale4",
+    "gemmini_like@glb1@pe_x_scale2@pe_y_scale3",
+    "switch_8port@glb4@pe_x_scale3@pe_y_scale1",
+    "gemmini_like@glb9@pe_x_scale4@pe_y_scale3"
+  ],
+  "base_cross": 4.99279277530902,
+  "base_per_net": {
+    "llama3.1_70b_decode_kv2048_b1_seq1": {
+      "value": 7.3379987269616604,
+      "latency": 0.0077595150000000015,
+      "buffer_config": [
+        "LPDDR5",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "110100"
+    },
+    "llama3.1_70b_decode_kv2048_b8_seq1": {
+      "value": 25.74266558576742,
+      "latency": 0.0029368320000000003,
+      "buffer_config": [
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_70b_decode_kv512_b1_seq1": {
+      "value": 7.149732566747936,
+      "latency": 0.0077595150000000015,
+      "buffer_config": [
+        "LPDDR5",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "110100"
+    },
+    "llama3.1_70b_decode_kv512_b8_seq1": {
+      "value": 17.96004458159783,
+      "latency": 0.0029368320000000003,
+      "buffer_config": [
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_8b_decode_kv2048_b1_seq1": {
+      "value": 1.92106420538935,
+      "latency": 0.001939894,
+      "buffer_config": [
+        "LPDDR5",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "110100"
+    },
+    "llama3.1_8b_decode_kv2048_b8_seq1": {
+      "value": 8.4321654160214,
+      "latency": 0.0007344130000000001,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_8b_decode_kv512_b1_seq1": {
+      "value": 1.826931120532161,
+      "latency": 0.001939894,
+      "buffer_config": [
+        "LPDDR5",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "110100"
+    },
+    "llama3.1_8b_decode_kv512_b8_seq1": {
+      "value": 5.16038681684592,
+      "latency": 0.0007344130000000001,
+      "buffer_config": [
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "110111"
+    },
+    "qwen3_235b_a22b_decode_kv2048_b1_seq1": {
+      "value": 2.1313531213102443,
+      "latency": 0.00062956,
+      "buffer_config": [
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_decode_kv2048_b8_seq1": {
+      "value": 28.956073661602975,
+      "latency": 0.000955113,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_decode_kv512_b1_seq1": {
+      "value": 1.9445445883995078,
+      "latency": 0.00062956,
+      "buffer_config": [
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_decode_kv512_b8_seq1": {
+      "value": 18.591428031972097,
+      "latency": 0.000955113,
+      "buffer_config": [
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_decode_kv2048_b1_seq1": {
+      "value": 0.6195363611629979,
+      "latency": 0.000157496,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_decode_kv2048_b8_seq1": {
+      "value": 10.169349471945738,
+      "latency": 0.000239244,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_decode_kv512_b1_seq1": {
+      "value": 0.5077516136470126,
+      "latency": 0.000157496,
+      "buffer_config": [
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_decode_kv512_b8_seq1": {
+      "value": 5.639568186244045,
+      "latency": 0.000239244,
+      "buffer_config": [
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    }
+  },
+  "finetune_n": 9,
+  "finetune_pool": [
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 2
+    },
+    {
+      "arch_target": "eyeriss_like",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 1
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 2,
+      "pe_y_scale": 1
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 4,
+      "pe_x_scale": 4,
+      "pe_y_scale": 3
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 4,
+      "pe_x_scale": 3,
+      "pe_y_scale": 4
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 1,
+      "pe_x_scale": 2,
+      "pe_y_scale": 3
+    },
+    {
+      "arch_target": "switch_8port",
+      "glb_scale": 4,
+      "pe_x_scale": 3,
+      "pe_y_scale": 1
+    },
+    {
+      "arch_target": "gemmini_like",
+      "glb_scale": 9,
+      "pe_x_scale": 4,
+      "pe_y_scale": 3
+    },
+    {
+      "arch_target": "PIM",
+      "glb_scale": 1,
+      "pe_x_scale": 1,
+      "pe_y_scale": 1
+    }
+  ],
+  "finetune_pool_ids": [
+    "gemmini_like@glb1@pe_x_scale1@pe_y_scale2",
+    "eyeriss_like@glb1@pe_x_scale1@pe_y_scale1",
+    "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+    "gemmini_like@glb4@pe_x_scale4@pe_y_scale3",
+    "gemmini_like@glb4@pe_x_scale3@pe_y_scale4",
+    "gemmini_like@glb1@pe_x_scale2@pe_y_scale3",
+    "switch_8port@glb4@pe_x_scale3@pe_y_scale1",
+    "gemmini_like@glb9@pe_x_scale4@pe_y_scale3",
+    "PIM@glb1@pe_x_scale1@pe_y_scale1"
+  ],
+  "new_chiplet_ids": [
+    "PIM@glb1@pe_x_scale1@pe_y_scale1"
+  ],
+  "changed_prefix_ids": [],
+  "finetune_cross": 2.2491609403742028,
+  "finetune_per_net": {
+    "llama3.1_70b_decode_kv2048_b1_seq1": {
+      "value": 0.7290390728656718,
+      "latency": 6.094549702e-05,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7"
+      ],
+      "binary_string": "111111"
+    },
+    "llama3.1_70b_decode_kv2048_b8_seq1": {
+      "value": 14.057805126482956,
+      "latency": 0.00034430198808,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_70b_decode_kv512_b1_seq1": {
+      "value": 0.6246240641321308,
+      "latency": 4.303774851e-05,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_70b_decode_kv512_b8_seq1": {
+      "value": 8.705915101045477,
+      "latency": 0.00034430198808,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_8b_decode_kv2048_b1_seq1": {
+      "value": 0.2639224676569339,
+      "latency": 3.3103990277608204e-05,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7"
+      ],
+      "binary_string": "111101"
+    },
+    "llama3.1_8b_decode_kv2048_b8_seq1": {
+      "value": 6.553115841309457,
+      "latency": 0.0001071639611104328,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_8b_decode_kv512_b1_seq1": {
+      "value": 0.2049049571221266,
+      "latency": 1.33954951388041e-05,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7"
+      ],
+      "binary_string": "110111"
+    },
+    "llama3.1_8b_decode_kv512_b8_seq1": {
+      "value": 3.188968737681863,
+      "latency": 0.0001071639611104328,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7"
+      ],
+      "binary_string": "110111"
+    },
+    "qwen3_235b_a22b_decode_kv2048_b1_seq1": {
+      "value": 1.4596970970923846,
+      "latency": 7.8823e-05,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_decode_kv2048_b8_seq1": {
+      "value": 20.916769298762702,
+      "latency": 0.000630584,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_decode_kv512_b1_seq1": {
+      "value": 1.3762174038883574,
+      "latency": 7.8823e-05,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_235b_a22b_decode_kv512_b8_seq1": {
+      "value": 15.543016239268965,
+      "latency": 0.000630584,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_decode_kv2048_b1_seq1": {
+      "value": 0.5623434449759294,
+      "latency": 0.000157496,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_decode_kv2048_b8_seq1": {
+      "value": 7.899242377722744,
+      "latency": 0.000158008,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_decode_kv512_b1_seq1": {
+      "value": 0.47050637959683694,
+      "latency": 0.000157496,
+      "buffer_config": [
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    },
+    "qwen3_30b_a3b_decode_kv512_b8_seq1": {
+      "value": 4.988475414927917,
+      "latency": 0.000158008,
+      "buffer_config": [
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5",
+        "GDDR7",
+        "GDDR7",
+        "LPDDR5"
+      ],
+      "binary_string": "1111111"
+    }
+  },
+  "time_s": 2956.175791823305,
+  "objective": "energy",
+  "cost_aware": true
+}

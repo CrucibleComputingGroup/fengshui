@@ -1,0 +1,5 @@
+metric,config,geomean,norm_to_full,decode_norm,prefill_norm,cnn_norm
+Energy,Full Fengshui,0.8825116377703288,1.0,inf,1.0,inf
+Energy,w/o Heterogeneous Memory,0.8825116377703288,1.0,inf,1.0,inf
+Energy,w/o Tensor Parallelism,0.9132527676227019,1.034833682114426,inf,1.034833682114426,inf
+Energy,w/o Layer Fusion,0.9380248078255536,1.0629036124616773,inf,1.0629036124616773,inf

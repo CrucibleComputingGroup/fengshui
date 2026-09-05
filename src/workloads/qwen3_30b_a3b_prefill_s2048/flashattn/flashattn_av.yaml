@@ -1,0 +1,32 @@
+problem:
+  instance:
+    B: 1
+    D: 128
+    H: 32
+    Q: 2048
+  shape:
+    data_spaces:
+    - name: RNV
+      projection:
+      - - - B
+      - - - D
+      - - - H
+      - - - Q
+    - name: RD
+      projection:
+      - - - B
+      - - - H
+      - - - Q
+    - name: AV
+      projection:
+      - - - B
+      - - - D
+      - - - H
+      - - - Q
+      read_write: true
+    dimensions:
+    - B
+    - D
+    - H
+    - Q
+    name: flashattn_av

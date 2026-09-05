@@ -1,0 +1,31 @@
+problem:
+  version: '0.4'
+  shape:
+#Inputs--I, Weights--W_q, Outputs--Q
+#(B, P, O) x (O, D)
+    name: Projection
+
+    dimensions: [B, P, O, D]
+
+    data_spaces:
+    - name: Inputs
+      projection:
+      - - - B
+      - - - P
+      - - - O
+    - name: Weights
+      projection:
+      - - - O
+      - - - D
+    - name: Outputs
+      projection:
+      - - - B
+      - - - P
+      - - - D
+      read_write: True
+
+  instance:
+    B: 1     # batch
+    P: 2048  # length
+    O: 9216  # original embedding dim (merged from 72 heads × 128)
+    D: 9216  # usually same as O

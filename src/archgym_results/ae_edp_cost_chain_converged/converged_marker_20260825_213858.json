@@ -1,0 +1,64 @@
+{
+  "metric": "edp_cost",
+  "objective": "edp",
+  "cost_aware": true,
+  "threshold_pct": 1.0,
+  "patience": 2,
+  "n_max": 16,
+  "converged_n": 13,
+  "source_dir": "src/archgym_results/ae_edp_cost_chain",
+  "curve": [
+    {
+      "n": 1,
+      "best_value": 0.0147812122708028
+    },
+    {
+      "n": 2,
+      "best_value": 0.0037261920561136
+    },
+    {
+      "n": 3,
+      "best_value": 0.0025497781338321
+    },
+    {
+      "n": 4,
+      "best_value": 0.001926837893027
+    },
+    {
+      "n": 5,
+      "best_value": 0.0017561722201403
+    },
+    {
+      "n": 6,
+      "best_value": 0.0016959204924003
+    },
+    {
+      "n": 7,
+      "best_value": 0.0016702685728079
+    },
+    {
+      "n": 8,
+      "best_value": 0.0016373251909073
+    },
+    {
+      "n": 9,
+      "best_value": 0.0016198852606028
+    },
+    {
+      "n": 10,
+      "best_value": 0.0016134592371369
+    },
+    {
+      "n": 11,
+      "best_value": 0.001577979930095801
+    },
+    {
+      "n": 12,
+      "best_value": 0.0015662403513275382
+    },
+    {
+      "n": 13,
+      "best_value": 0.0015607326827680246
+    }
+  ]
+}

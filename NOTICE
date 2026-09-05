@@ -1,0 +1,28 @@
+Fengshui
+Copyright (C) 2026 The Fengshui authors
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License version 3, as published by the Free
+Software Foundation. See LICENSE.
+
+--------------------------------------------------------------------------------
+THIRD-PARTY COMPONENTS
+--------------------------------------------------------------------------------
+
+arch-gym  (Apache License 2.0)
+    src/scripts/run_archgym_chiplet.py and src/scripts/chiplet_pool_env.py derive
+    from the arch-gym project. Apache-2.0 section 4(d) requires that attribution
+    be preserved; this NOTICE discharges that requirement.
+    https://github.com/srivatsankrishnan/oss-arch-gym
+
+Accelergy / CACTI
+    src/timeloop/cacti_wrapper.py is a modified Accelergy CACTI estimation
+    plug-in. The component energy/area tables under src/timeloop/ are derived
+    from CACTI and Aladdin characterization data.
+    Accelergy: https://github.com/Accelergy-Project/accelergy
+    CACTI:     https://github.com/HewlettPackard/cacti
+
+Timeloop
+    The characterization database distributed via Zenodo was produced with
+    Timeloop. Timeloop itself is not vendored here.
+    https://github.com/NVlabs/timeloop

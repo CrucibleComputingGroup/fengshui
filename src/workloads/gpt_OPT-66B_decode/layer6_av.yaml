@@ -1,0 +1,35 @@
+problem:
+  version: '0.4'
+  shape:
+#Inputs--A, Weights--V, Outputs--AV
+    name: AV
+
+    dimensions: [B, F, H, M, P]
+
+    data_spaces:
+    - name: Inputs
+      projection:
+      - - - B
+      - - - H
+      - - - M
+      - - - P
+    - name: Weights
+      projection:
+      - - - B
+      - - - F
+      - - - H
+      - - - M
+    - name: Outputs
+      projection:
+      - - - B
+      - - - F
+      - - - H
+      - - - P
+      read_write: True
+
+  instance:
+    B: 1     # Batch size
+    F: 128   # Feature dim per head (e.g. embed_dim / num_heads = 9216 / 72 = 128)
+    H: 72    # Number of attention heads
+    M: 2048  # Number of Key/Value tokens
+    P: 1  # Number of Query tokens

@@ -1,0 +1,80 @@
+network:
+  model_name: llama3.1_8b
+  phase: prefill (seq_len=1024)
+  batch_size: 1
+  attention: 'Q@K^T: (1024 x 1024)'
+architecture:
+  hidden_size: 4096
+  num_attention_heads: 32
+  num_key_value_heads: 8
+  head_dim: 128
+  gqa_ratio: 32Q / 8KV = 4:1
+  intermediate_size: 14336
+  vocab_size: 128256
+  num_hidden_layers: 32
+structure:
+  description: Only unique operator YAMLs are stored. v_proj has the same dimensions
+    as k_proj. up_proj has the same dimensions as gate_proj. All 32 decoder layers
+    are identical.
+  unique_yamls:
+  - layer0_q_proj
+  - layer0_k_proj
+  - layer0_attn_qk
+  - layer0_softmax_max
+  - layer0_softmax_sub_exp
+  - layer0_softmax_sum
+  - layer0_softmax_div
+  - layer0_attn_v
+  - layer0_o_proj
+  - layer0_gate_proj
+  - layer0_down_proj
+  - lm_head
+  total_operators_in_model: 417
+  operators_per_layer: 13
+  num_layers: 32
+  layer_operator_sequence:
+  - yaml: layer0_q_proj.yaml
+    count: 1
+    description: 'Query projection: (B*S, 4096) @ (4096, 4096)'
+  - yaml: layer0_k_proj.yaml
+    count: 1
+    description: 'Key projection: (B*S, 4096) @ (4096, 1024)'
+  - yaml: layer0_k_proj.yaml
+    count: 1
+    alias: v_proj
+    description: 'Value projection: same dimensions as k_proj (GQA)'
+  - yaml: layer0_attn_qk.yaml
+    count: 1
+    description: 'Attention scores: Q @ K^T, batched over 32 heads'
+  - yaml: layer0_softmax_max.yaml
+    count: 1
+    description: 'Softmax step 1: row-wise max over K'
+  - yaml: layer0_softmax_sub_exp.yaml
+    count: 1
+    description: 'Softmax step 2: subtract max and exponentiate'
+  - yaml: layer0_softmax_sum.yaml
+    count: 1
+    description: 'Softmax step 3: row-wise sum of exp values'
+  - yaml: layer0_softmax_div.yaml
+    count: 1
+    description: 'Softmax step 4: divide by sum'
+  - yaml: layer0_attn_v.yaml
+    count: 1
+    description: 'Attention context: A @ V'
+  - yaml: layer0_o_proj.yaml
+    count: 1
+    description: 'Output projection: (4096) -> (4096)'
+  - yaml: layer0_gate_proj.yaml
+    count: 1
+    description: 'MLP gate projection: (4096) -> (14336) with SiLU activation'
+  - yaml: layer0_gate_proj.yaml
+    count: 1
+    alias: up_proj
+    description: 'MLP up projection: same dimensions as gate_proj (SwiGLU)'
+  - yaml: layer0_down_proj.yaml
+    count: 1
+    description: 'MLP down projection: (14336) -> (4096)'
+  global_operators:
+  - yaml: lm_head.yaml
+    count: 1
+    description: 'Language model head: (4096) -> (128256)'

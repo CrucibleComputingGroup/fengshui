@@ -1,0 +1,241 @@
+metric,objective,cost_aware,config,network,category,value
+Energy,energy,False,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.33264013279646193
+Energy,energy,False,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.3413494464801152
+Energy,energy,False,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002224049987082776
+Energy,energy,False,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.01835725425452371
+Energy,energy,False,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.2403685408485237
+Energy,energy,False,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.780731581887176
+Energy,energy,False,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006434686232025822
+Energy,energy,False,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05289238802655947
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.07156071128905983
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.553854813974445
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.009018554552331083
+Energy,energy,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0796956377974147
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.21033416845455044
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.599336899632733
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.018919610189435578
+Energy,energy,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.2992331824928576
+Energy,energy,False,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,8.058165843368917e-05
+Energy,energy,False,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,0.000540239222958497
+Energy,energy,False,Full Fengshui,replknet31b_b1_seq1,cnn,0.0030578511097053497
+Energy,energy,False,Full Fengshui,replknet31b_b8_seq1,cnn,0.021255834279141926
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.33264013279646193
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.3413494464801152
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.05347343965209331
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.063934420037637
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.2403685408485237
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.780731581887176
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.20871294821929898
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.23565576467352609
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.07156071128905983
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.553854813974445
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.015621979549131611
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.09273117348705748
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.21033416845455044
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.599336899632733
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.057626378238830676
+Energy,energy,False,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.33802635789666047
+Energy,energy,False,w/o Heterogeneous Memory,mobilenet_v3_small_b1_seq1,cnn,8.058165843368917e-05
+Energy,energy,False,w/o Heterogeneous Memory,mobilenet_v3_small_b8_seq1,cnn,0.000540239222958497
+Energy,energy,False,w/o Heterogeneous Memory,replknet31b_b1_seq1,cnn,0.0030578511097053497
+Energy,energy,False,w/o Heterogeneous Memory,replknet31b_b8_seq1,cnn,0.021255834279141926
+Energy,energy,False,homo GDDR7 (PIM kept),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.338757385916462
+Energy,energy,False,homo GDDR7 (PIM kept),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.373721346896115
+Energy,energy,False,homo GDDR7 (PIM kept),llama3.1_8b_decode_kv1024_b1_seq1,decode,0.002224049987082776
+Energy,energy,False,homo GDDR7 (PIM kept),llama3.1_8b_decode_kv1024_b8_seq1,decode,0.01835725425452371
+Energy,energy,False,homo GDDR7 (PIM kept),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,1.3073583530846928
+Energy,energy,False,homo GDDR7 (PIM kept),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,8.87738507437762
+Energy,energy,False,homo GDDR7 (PIM kept),llama3.1_70b_decode_kv1024_b1_seq1,decode,0.006434686232025822
+Energy,energy,False,homo GDDR7 (PIM kept),llama3.1_70b_decode_kv1024_b8_seq1,decode,0.05289238802655947
+Energy,energy,False,homo GDDR7 (PIM kept),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.08027493115939506
+Energy,energy,False,homo GDDR7 (PIM kept),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.580494919528738
+Energy,energy,False,homo GDDR7 (PIM kept),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00967284687648266
+Energy,energy,False,homo GDDR7 (PIM kept),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0870653814766651
+Energy,energy,False,homo GDDR7 (PIM kept),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.22209033502004427
+Energy,energy,False,homo GDDR7 (PIM kept),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.6729798362561779
+Energy,energy,False,homo GDDR7 (PIM kept),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.018919610189435578
+Energy,energy,False,homo GDDR7 (PIM kept),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.3276111528615893
+Energy,energy,False,homo GDDR7 (PIM kept),mobilenet_v3_small_b1_seq1,cnn,8.609001043368916e-05
+Energy,energy,False,homo GDDR7 (PIM kept),mobilenet_v3_small_b8_seq1,cnn,0.000570955510958497
+Energy,energy,False,homo GDDR7 (PIM kept),replknet31b_b1_seq1,cnn,0.00317087203770535
+Energy,energy,False,homo GDDR7 (PIM kept),replknet31b_b8_seq1,cnn,0.021827090791141927
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,25.878910327365574
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,297.15930241188005
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.2248023697865127
+Energy x Cost,energy,True,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,4.269626242242559
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,104.317035104745
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1056.9935776963478
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6514222728161473
+Energy x Cost,energy,True,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,9.896660625646346
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,6.179438892926344
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,172.52102294206335
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.9893063583024703
+Energy x Cost,energy,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,10.955321684111963
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,18.037940260286653
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,391.3279201800253
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.9330704089580815
+Energy x Cost,energy,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,37.010506361915716
+Energy x Cost,energy,True,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,0.005563447608246954
+Energy x Cost,energy,True,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,0.035410461891630066
+Energy x Cost,energy,True,Full Fengshui,replknet31b_b1_seq1,cnn,0.17697753006515096
+Energy x Cost,energy,True,Full Fengshui,replknet31b_b8_seq1,cnn,1.225683204335864
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,3789.3776148875077
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,44702.79508101791
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b1_seq1,decode,551.9599826316008
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b8_seq1,decode,1362.1822168022086
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,15235.029705628724
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,145918.19765858847
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b1_seq1,decode,2165.83910596458
+Energy x Cost,energy,True,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b8_seq1,decode,4087.1123610267964
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,802.2990185498066
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,23580.512906058982
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,162.1286819402847
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,2190.333966499737
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,2396.8541225256454
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,54260.13678635497
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,599.9023259278254
+Energy x Cost,energy,True,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,6083.8797331764135
+Energy x Cost,energy,True,w/o Heterogeneous Memory,mobilenet_v3_small_b1_seq1,cnn,0.8647713390419487
+Energy x Cost,energy,True,w/o Heterogeneous Memory,mobilenet_v3_small_b8_seq1,cnn,5.753332017945212
+Energy x Cost,energy,True,w/o Heterogeneous Memory,replknet31b_b1_seq1,cnn,32.80037623225299
+Energy x Cost,energy,True,w/o Heterogeneous Memory,replknet31b_b8_seq1,cnn,234.0061200655127
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,43.92351560985612
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,538.2584138441396
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),llama3.1_8b_decode_kv1024_b1_seq1,decode,0.2248023697865127
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),llama3.1_8b_decode_kv1024_b8_seq1,decode,4.269626242242559
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,181.17218730106995
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,1847.1591305827062
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),llama3.1_70b_decode_kv1024_b1_seq1,decode,0.6514222728161473
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),llama3.1_70b_decode_kv1024_b8_seq1,decode,9.896660625646346
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,9.918785832109808
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,273.61201327369224
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.9893063583024703
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,12.415387348345476
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,29.875402481033586
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,651.6929665083784
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.9330704089580815
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,42.681519044865574
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),mobilenet_v3_small_b1_seq1,cnn,0.009971334390511635
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),mobilenet_v3_small_b8_seq1,cnn,0.06531415334308505
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),replknet31b_b1_seq1,cnn,0.36450874056758
+Energy x Cost,energy,True,homo GDDR7 (PIM kept),replknet31b_b8_seq1,cnn,2.5859131674972207
+EDP,edp,False,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00015758766836418395
+EDP,edp,False,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.009367838511421018
+EDP,edp,False,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,2.5175086104862847e-08
+EDP,edp,False,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.4322056383779376e-06
+EDP,edp,False,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.002307145249737857
+EDP,edp,False,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.14256089838845293
+EDP,edp,False,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,1.6186985414918802e-07
+EDP,edp,False,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0559406815407855e-05
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.2798971264741874e-05
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.0002984054264505237
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,5.622217237288215e-07
+EDP,edp,False,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,4.966216369621634e-06
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,7.48365486912162e-05
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.0035035579016987357
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.7470274831048083e-07
+EDP,edp,False,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,7.42316797259462e-05
+EDP,edp,False,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,2.3474437813306373e-10
+EDP,edp,False,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,1.2233547388076132e-08
+EDP,edp,False,Full Fengshui,replknet31b_b1_seq1,cnn,6.259917261853028e-07
+EDP,edp,False,Full Fengshui,replknet31b_b8_seq1,cnn,2.773779788466969e-05
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00015758766836418395
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.009367838511421018
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b1_seq1,decode,1.5689292483425458e-05
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b8_seq1,decode,1.890341311384255e-05
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.002307145249737857
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.14256089838845293
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b1_seq1,decode,0.00024534404049577637
+EDP,edp,False,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.0002804103941805039
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,1.2798971264741874e-05
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.0002984054264505237
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,9.785043771851065e-07
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,5.798565002311434e-06
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,7.48365486912162e-05
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.0035035579016987357
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,1.4453026732063913e-05
+EDP,edp,False,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,8.421942927447706e-05
+EDP,edp,False,w/o Heterogeneous Memory,mobilenet_v3_small_b1_seq1,cnn,2.3474437813306373e-10
+EDP,edp,False,w/o Heterogeneous Memory,mobilenet_v3_small_b8_seq1,cnn,1.2233547388076132e-08
+EDP,edp,False,w/o Heterogeneous Memory,replknet31b_b1_seq1,cnn,6.259917261853028e-07
+EDP,edp,False,w/o Heterogeneous Memory,replknet31b_b8_seq1,cnn,2.773779788466969e-05
+EDP,edp,False,homo GDDR7 (PIM kept),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.00035522257732242
+EDP,edp,False,homo GDDR7 (PIM kept),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,0.009880104607832134
+EDP,edp,False,homo GDDR7 (PIM kept),llama3.1_8b_decode_kv1024_b1_seq1,decode,2.5175086104862847e-08
+EDP,edp,False,homo GDDR7 (PIM kept),llama3.1_8b_decode_kv1024_b8_seq1,decode,1.4322056383779376e-06
+EDP,edp,False,homo GDDR7 (PIM kept),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.004948267493751873
+EDP,edp,False,homo GDDR7 (PIM kept),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,0.1961106302157313
+EDP,edp,False,homo GDDR7 (PIM kept),llama3.1_70b_decode_kv1024_b1_seq1,decode,1.6186985414918802e-07
+EDP,edp,False,homo GDDR7 (PIM kept),llama3.1_70b_decode_kv1024_b8_seq1,decode,1.0559406815407855e-05
+EDP,edp,False,homo GDDR7 (PIM kept),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,3.583363196949303e-05
+EDP,edp,False,homo GDDR7 (PIM kept),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.00046191972110299956
+EDP,edp,False,homo GDDR7 (PIM kept),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,1.575667904099237e-06
+EDP,edp,False,homo GDDR7 (PIM kept),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,1.3943125622627462e-05
+EDP,edp,False,homo GDDR7 (PIM kept),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.00020442170065735517
+EDP,edp,False,homo GDDR7 (PIM kept),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,0.004980008667584844
+EDP,edp,False,homo GDDR7 (PIM kept),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.7470274831048083e-07
+EDP,edp,False,homo GDDR7 (PIM kept),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.0002095318890772251
+EDP,edp,False,homo GDDR7 (PIM kept),mobilenet_v3_small_b1_seq1,cnn,2.6905396856574887e-10
+EDP,edp,False,homo GDDR7 (PIM kept),mobilenet_v3_small_b8_seq1,cnn,1.2776869172396133e-08
+EDP,edp,False,homo GDDR7 (PIM kept),replknet31b_b1_seq1,cnn,6.350459786187004e-07
+EDP,edp,False,homo GDDR7 (PIM kept),replknet31b_b8_seq1,cnn,2.789450979732981e-05
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.043035198871965843
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,1.9554523636967112
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_decode_kv1024_b1_seq1,decode,3.011339051666872e-06
+EDP x Cost,edp,True,Full Fengshui,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00040280480488407827
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.8467367130071645
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,31.046875695673613
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8035747951273957e-05
+EDP x Cost,edp,True,Full Fengshui,llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002668261938854471
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0032508224224930384
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.22602017203007094
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00015912889711021684
+EDP x Cost,edp,True,Full Fengshui,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0018649257399288024
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.022726817248327084
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,1.9441646612615504
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.828444601457546e-05
+EDP x Cost,edp,True,Full Fengshui,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.02545504428227942
+EDP x Cost,edp,True,Full Fengshui,mobilenet_v3_small_b1_seq1,cnn,2.8277814054349168e-08
+EDP x Cost,edp,True,Full Fengshui,mobilenet_v3_small_b8_seq1,cnn,1.6761658753700515e-06
+EDP x Cost,edp,True,Full Fengshui,replknet31b_b1_seq1,cnn,4.0966924941205564e-05
+EDP x Cost,edp,True,Full Fengshui,replknet31b_b8_seq1,cnn,0.0018822026293742672
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,2.4932384484175723
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,165.4252282322763
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b1_seq1,decode,0.15966138196905635
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_8b_decode_kv1024_b8_seq1,decode,0.40424018039240445
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b1_seq1024,prefill,46.686037934938824
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_70b_prefill_s1024_b8_seq1024,prefill,2274.6124158332905
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b1_seq1,decode,2.5063011965332653
+EDP x Cost,edp,True,w/o Heterogeneous Memory,llama3.1_70b_decode_kv1024_b8_seq1,decode,4.902640521793839
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.13454109856774993
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,12.308849822690219
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.01004790641173945
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.13721329215578887
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.8985659755187162
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,114.36640167049592
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,0.14870268501782982
+EDP x Cost,edp,True,w/o Heterogeneous Memory,qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,1.5234562549133492
+EDP x Cost,edp,True,w/o Heterogeneous Memory,mobilenet_v3_small_b1_seq1,cnn,2.535254227181211e-06
+EDP x Cost,edp,True,w/o Heterogeneous Memory,mobilenet_v3_small_b8_seq1,cnn,0.00013394425295686944
+EDP x Cost,edp,True,w/o Heterogeneous Memory,replknet31b_b1_seq1,cnn,0.00645223351974068
+EDP x Cost,edp,True,w/o Heterogeneous Memory,replknet31b_b8_seq1,cnn,0.3095559005098025
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.046310013445220004
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.366598376265259
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),llama3.1_8b_decode_kv1024_b1_seq1,decode,3.011339051666872e-06
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),llama3.1_8b_decode_kv1024_b8_seq1,decode,0.00040280480488407827
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),llama3.1_70b_prefill_s1024_b1_seq1024,prefill,0.9185546238050252
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),llama3.1_70b_prefill_s1024_b8_seq1024,prefill,33.75719367162272
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),llama3.1_70b_decode_kv1024_b1_seq1,decode,2.8035747951273957e-05
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),llama3.1_70b_decode_kv1024_b8_seq1,decode,0.002668261938854471
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),qwen3_30b_a3b_prefill_s1024_b1_seq1024,prefill,0.0043101334994436954
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),qwen3_30b_a3b_prefill_s1024_b8_seq1024,prefill,0.22985404699198664
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),qwen3_30b_a3b_decode_kv1024_b1_seq1,decode,0.00015912889711021684
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),qwen3_30b_a3b_decode_kv1024_b8_seq1,decode,0.0019917790329875063
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),qwen3_235b_a22b_prefill_s1024_b1_seq1024,prefill,0.028125728232962954
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),qwen3_235b_a22b_prefill_s1024_b8_seq1024,prefill,2.5017292334252934
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),qwen3_235b_a22b_decode_kv1024_b1_seq1,decode,3.828444601457546e-05
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),qwen3_235b_a22b_decode_kv1024_b8_seq1,decode,0.02737384786476077
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),mobilenet_v3_small_b1_seq1,cnn,3.2380745481530096e-08
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),mobilenet_v3_small_b8_seq1,cnn,1.8046257733780074e-06
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),replknet31b_b1_seq1,cnn,7.625379601121169e-05
+EDP x Cost,edp,True,homo GDDR7 (PIM kept),replknet31b_b8_seq1,cnn,0.0035539070799087864

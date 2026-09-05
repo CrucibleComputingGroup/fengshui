@@ -1,0 +1,9 @@
+metric,objective,cost_aware,config,network,category,value
+Energy,energy,False,Full Fengshui,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.33264013279646193
+Energy,energy,False,Full Fengshui,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.3413494464801152
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.33264013279646193
+Energy,energy,False,w/o Heterogeneous Memory,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.3413494464801152
+Energy,energy,False,w/o Tensor Parallelism,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.3390836962006698
+Energy,energy,False,w/o Tensor Parallelism,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.4596600394403665
+Energy,energy,False,w/o Layer Fusion,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.3592910066327107
+Energy,energy,False,w/o Layer Fusion,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.4489634414803065

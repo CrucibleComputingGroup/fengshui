@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use Fengshui, please cite the MICRO 2026 paper."
+title: "Fengshui: Demystifying Chiplet Ecosystem and Bespoke Neural Network Accelerator Codesign"
+type: software
+repository-code: "https://github.com/CrucibleComputingGroup/fengshui"
+license: GPL-3.0
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21524898
+    description: Archived artifact and characterization database
+preferred-citation:
+  type: conference-paper
+  title: "Fengshui: Demystifying Chiplet Ecosystem and Bespoke Neural Network Accelerator Codesign"
+  year: 2026
+  collection-title: "Proceedings of the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO)"

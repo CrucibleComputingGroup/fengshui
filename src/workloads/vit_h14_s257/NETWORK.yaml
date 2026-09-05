@@ -1,0 +1,78 @@
+network:
+  model_name: vit_h14
+  model_type: Vision Transformer (ViT)
+  batch_size: 1
+  seq_len: 257 (num_patches + 1 class token)
+  attention: 'Q@K^T: (257 x 257)'
+architecture:
+  hidden_size: 1280
+  num_attention_heads: 16
+  head_dim: 80
+  mlp_dim: 5120
+  num_layers: 32
+  num_classes: 1000
+  attention_type: standard MHA (no GQA)
+  mlp_type: GELU (fc1 + fc2), not SwiGLU
+structure:
+  description: Only unique operator YAMLs are stored. k_proj and v_proj have the same
+    dimensions as q_proj (standard MHA). gate_proj.yaml is fc1, down_proj.yaml is
+    fc2 (no up_proj in ViT GELU MLP). lm_head.yaml is the classification head. All
+    32 encoder layers are identical.
+  unique_yamls:
+  - layer0_q_proj
+  - layer0_attn_qk
+  - layer0_softmax_max
+  - layer0_softmax_sub_exp
+  - layer0_softmax_sum
+  - layer0_softmax_div
+  - layer0_attn_v
+  - layer0_gate_proj
+  - layer0_down_proj
+  - lm_head
+  total_operators_in_model: 385
+  operators_per_layer: 12
+  num_layers: 32
+  layer_operator_sequence:
+  - yaml: layer0_q_proj.yaml
+    count: 1
+    description: 'Query projection: (B*S, 1280) @ (1280, 1280)'
+  - yaml: layer0_q_proj.yaml
+    count: 1
+    alias: k_proj
+    description: 'Key projection: same dims as q_proj (standard MHA)'
+  - yaml: layer0_q_proj.yaml
+    count: 1
+    alias: v_proj
+    description: 'Value projection: same dims as q_proj (standard MHA)'
+  - yaml: layer0_attn_qk.yaml
+    count: 1
+    description: 'Attention scores: Q @ K^T, batched over 16 heads'
+  - yaml: layer0_softmax_max.yaml
+    count: 1
+    description: 'Softmax step 1: row-wise max'
+  - yaml: layer0_softmax_sub_exp.yaml
+    count: 1
+    description: 'Softmax step 2: subtract max and exponentiate'
+  - yaml: layer0_softmax_sum.yaml
+    count: 1
+    description: 'Softmax step 3: row-wise sum'
+  - yaml: layer0_softmax_div.yaml
+    count: 1
+    description: 'Softmax step 4: divide by sum'
+  - yaml: layer0_attn_v.yaml
+    count: 1
+    description: 'Attention context: A @ V'
+  - yaml: layer0_q_proj.yaml
+    count: 1
+    alias: o_proj
+    description: 'Output projection: same dims as q_proj (1280) -> (1280)'
+  - yaml: layer0_gate_proj.yaml
+    count: 1
+    description: 'MLP fc1: (1280) -> (5120) with GELU'
+  - yaml: layer0_down_proj.yaml
+    count: 1
+    description: 'MLP fc2: (5120) -> (1280)'
+  global_operators:
+  - yaml: lm_head.yaml
+    count: 1
+    description: 'Classification head: (1280) -> (1000)'

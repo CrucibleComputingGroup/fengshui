@@ -1,0 +1,29 @@
+problem:
+  instance:
+    B: 1
+    C: 1024
+    M: 1000
+    N: 197
+  shape:
+    data_spaces:
+    - name: Inputs1
+      projection:
+      - - - M
+      - - - C
+    - name: Inputs2
+      projection:
+      - - - B
+      - - - N
+      - - - C
+    - name: Outputs
+      projection:
+      - - - B
+      - - - N
+      - - - M
+      read_write: true
+    dimensions:
+    - B
+    - N
+    - C
+    - M
+    name: lm_head

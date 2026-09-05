@@ -1,0 +1,32 @@
+# syntax=docker/dockerfile:1
+#
+# Fengshui AE — analysis + chiplet-pool-search image (the submission image).
+# Reproduces every MAIN result from the precomputed Timeloop database in minutes:
+#   - T1 main results (GA remap on the fixed AE pool: Fig 11, tab:competitors, ablation, Fig 14)
+#   - T2 chiplet-pool search (run_saeo_isaeo_chain.py — needs gym, included here)
+# The Timeloop *generation* stack (pytimeloop) is a SEPARATE image (Dockerfile.timeloop),
+# needed only for the small provenance demo (T3).
+#
+# Code and the 4.6 GB database are MOUNTED at run time (kept out of the image):
+#   docker run -it --rm \
+#     -v <repo>/chiplet_timeloop:/fengshui/chiplet_timeloop \
+#     fengshui-analysis:latest
+# The corrected database is chiplet_timeloop/unified_database.csv. For the public
+# release these become a curated COPY of src/ plus a Zenodo download_data.sh.
+
+FROM python:3.13-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    FENGSHUI_DETERMINISTIC=1 \
+    FENGSHUI_GA_SEED=0
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        git ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /fengshui
+COPY requirements.txt /fengshui/requirements.txt
+RUN pip install --no-cache-dir -r /fengshui/requirements.txt
+
+CMD ["bash"]

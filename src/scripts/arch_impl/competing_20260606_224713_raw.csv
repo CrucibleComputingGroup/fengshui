@@ -1,0 +1,7 @@
+metric,objective,cost_aware,framework,network,category,value
+Energy,energy,False,Fengshui (Full),llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.33264013279646193
+Energy,energy,False,Fengshui (Full),llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.3413494464801152
+Energy,energy,False,SCAR-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.42963161086049667
+Energy,energy,False,SCAR-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,2.997580315319663
+Energy,energy,False,Gemini-style,llama3.1_8b_prefill_s1024_b1_seq1024,prefill,0.46664244911397046
+Energy,energy,False,Gemini-style,llama3.1_8b_prefill_s1024_b8_seq1024,prefill,4.049801155266957
