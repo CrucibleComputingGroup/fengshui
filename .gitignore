@@ -46,5 +46,7 @@ bundle*/
 *.feather
 **/flashattn_database*.csv
 **/pim_database*.csv
-**/vit_pim_database*.csv
+# vit_pim_database.csv (36K) is a required input for generate_paper_fig14.py,
+# which emits case_study/av_vision_results.csv behind the paper's AV macros.
+# Only the large side databases are excluded.
 convergence_runs/
