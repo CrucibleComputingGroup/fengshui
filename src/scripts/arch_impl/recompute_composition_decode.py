@@ -14,10 +14,13 @@ from chiplet_sel import run_single_optimization, NET_DIR
 
 DB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..', 'unified_database.csv')
 ARCHGYM = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..', 'archgym_results')
+# Pool generation to read. 'ae' is the deterministic pool behind the camera-ready
+# main results; 'v7' is the superseded generation this diagnostic originally used.
+_CHAIN_VER = os.environ.get('FENGSHUI_CHAIN_VERSION', 'ae')
 
 
 def pool(obj, n):
-    f = sorted(glob.glob(f'{ARCHGYM}/v7_{obj}_chain/chain_summary_*.json'))[-1]
+    f = sorted(glob.glob(f'{ARCHGYM}/{_CHAIN_VER}_{obj}_chain/chain_summary_*.json'))[-1]
     return [ChipletConfig.from_identifier(s) for s in json.load(open(f))[f'n{n}']['best_chiplets']]
 
 

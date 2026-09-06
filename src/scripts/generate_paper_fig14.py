@@ -66,18 +66,26 @@ BASE = os.path.join(PROJECT_DIR, 'archgym_results')
 DATABASE = os.path.join(PROJECT_DIR, 'unified_database.csv')
 VIT_PIM_DATABASE = os.path.join(PROJECT_DIR, 'timeloop_experiments', 'vit_pim_database.csv')
 NET_DIR = os.path.join(PROJECT_DIR, 'workloads')
-DEFAULT_OUT = os.path.join(
-    PROJECT_DIR, '..', 'Overleaf', 'MICRO-Mozart-2026', 'src',
-    'case_studies', 'images', 'comparison_plot_automibile.pdf')
+# Repo-relative by default; the paper's Overleaf tree is not part of this repo.
+# (The edge-AV figure itself was dropped from the camera-ready -- the case study is
+# prose-only -- but this script still emits RESULTS_CSV, which backs the macros.)
+DEFAULT_OUT = os.environ.get(
+    'FENGSHUI_FIG_OUT',
+    os.path.join(PROJECT_DIR, 'figures', 'comparison_plot_automibile.pdf'))
 # Per-network results CSV: single source of truth for the AV case-study macros
 # (\AVEnergyRed / \AVECRed). build_case_study_constants.py reads this so the
 # paper numbers can never silently drift from the compute again.
 RESULTS_CSV = os.path.join(PROJECT_DIR, 'case_study', 'av_vision_results.csv')
 
 # v7 = corrected-DB pool (energy double-count + ViT-softmax fixed, 2026-06-15),
-# matching generate_paper_fig10.py CHAIN_VERSION='v7'. Was v5 (pre-correction).
-V7_ENERGY_DIR = os.path.join(BASE, 'v7_energy_chain')
-V7_ENERGY_COST_DIR = os.path.join(BASE, 'v7_energy_cost_chain')
+# NOTE: v7 is intentional here. The shipped av_vision_results.csv -- the single
+# source of truth for the paper's \AVEnergyRed / \AVECRed macros -- was produced
+# on the v7 pool, so this script must read v7 to reproduce those numbers.
+# generate_paper_fig10.py moved to CHAIN_VERSION='ae' for the main results;
+# this case study was not regenerated. Override with FENGSHUI_CHAIN_VERSION.
+_CHAIN_VER = os.environ.get('FENGSHUI_CHAIN_VERSION', 'v7')
+V7_ENERGY_DIR = os.path.join(BASE, f'{_CHAIN_VER}_energy_chain')
+V7_ENERGY_COST_DIR = os.path.join(BASE, f'{_CHAIN_VER}_energy_cost_chain')
 
 # All vision workloads: (net_name, display_name, seq_len, is_vit)
 ALL_WORKLOADS = [
