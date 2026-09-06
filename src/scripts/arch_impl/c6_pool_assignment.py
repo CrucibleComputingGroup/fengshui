@@ -11,10 +11,39 @@ COLS=("net,layer_name,batch_size,sequence_length,mapper_idx,fused_layer_type,tp_
       "arch_target,glb_scale,pe_x_scale,pe_y_scale,dram_i,dram_o,latency,static_power,"
       "dynamic_energy,area,utilization,i_access,w_access,o_access").split(",")
 DF={"eyeriss_like":"RS","gemmini_like":"OS","simba_like":"WS"}
-# 6 compute chiplets of the v7 energy N=8 pool (corrected DB, 2026-06-15): (arch,glb,pe_x,pe_y)
-# (excludes PIM + switch_8port, which are not compute targets for these ops)
-POOL=[("gemmini_like",1,2,4),("gemmini_like",1,1,1),("gemmini_like",1,4,2),
-      ("simba_like",1,3,4),("simba_like",1,4,3),("eyeriss_like",1,4,2)]
+
+# Compute chiplets of the energy N=8 pool, read from the shipped chain summary rather
+# than hardcoded. This used to pin the v7 pool, which the deterministic AE pool
+# superseded -- the paper then described two chiplets (simba 4x3, gemmini 2x4) that
+# the shipped pool does not contain. Override with FENGSHUI_ARCHGYM / --chain-dir.
+_ARCHGYM = os.environ.get(
+    "FENGSHUI_ARCHGYM",
+    os.path.normpath(os.path.join(HERE, "..", "..", "archgym_results")))
+_CHAIN_VERSION = os.environ.get("FENGSHUI_CHAIN_VERSION", "ae")
+_NON_COMPUTE = ("PIM", "switch_8port")
+
+
+def _load_pool(chain_dir=None, n_key="n8"):
+    """Return [(arch, glb, pe_x, pe_y), ...] for the compute chiplets of the pool."""
+    import glob as _glob, json as _json
+    d = chain_dir or os.path.join(_ARCHGYM, f"{_CHAIN_VERSION}_energy_chain")
+    cands = sorted(_glob.glob(os.path.join(d, "chain_summary_*.json")),
+                   key=os.path.getmtime)
+    if not cands:
+        raise FileNotFoundError(f"no chain_summary_*.json in {d}")
+    pool = []
+    for ident in _json.load(open(cands[-1]))[n_key]["best_chiplets"]:
+        arch = ident.split("@")[0]
+        if arch in _NON_COMPUTE:
+            continue
+        glb = int(ident.split("@glb")[1].split("@")[0])
+        px = int(ident.split("pe_x_scale")[1].split("@")[0])
+        py = int(ident.split("pe_y_scale")[1])
+        pool.append((arch, glb, px, py))
+    return pool, os.path.basename(cands[-1])
+
+
+POOL, _POOL_SRC = _load_pool()
 ORDER=["layer0_q_proj","layer0_k_proj","layer0_v_proj","layer0_attn_qk","layer0_softmax",
        "layer0_attn_v","layer0_o_proj","router","expert_gate_proj","expert_down_proj","lm_head"]
 LAB={"layer0_q_proj":"Q proj","layer0_k_proj":"K proj","layer0_v_proj":"V proj",
