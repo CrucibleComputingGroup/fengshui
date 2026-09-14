@@ -414,7 +414,7 @@ def evaluate_solution(
             src_stats = cost_matrix.get(src_op, {}).get(src_die)
             if src_stats:
                 bonding = topology.dies[src_die].bonding
-                comm_bits = (src_stats['o_access'] + src_stats['w_access']) * 16
+                comm_bits = src_stats['o_access'] * 16
                 comm_energy = calculate_inter_chiplet_communication(
                     comm_bits, bonding, num_hop=1)
                 total_energy += comm_energy

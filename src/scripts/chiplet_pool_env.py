@@ -67,8 +67,8 @@ class ChipletPoolEnv(gym.Env):
     """
     Gym environment for chiplet pool composition optimization.
 
-    Action: MultiDiscrete array encoding N chiplets, each with 5 discrete params
-            [arch_0, glb_0, pe_x_0, pe_y_0, dram_0, arch_1, glb_1, pe_x_1, pe_y_1, dram_1, ...]
+    Action: MultiDiscrete array encoding N chiplets, each with 4 discrete params
+            [arch_0, glb_0, pe_x_0, pe_y_0, arch_1, glb_1, pe_x_1, pe_y_1, ...]
 
     Observation: Array of per-workload metric values + aggregate metric.
 
@@ -235,7 +235,7 @@ class ChipletPoolEnv(gym.Env):
 
     def get_search_space_size(self):
         """Return the total search space size."""
-        per_chiplet = N_ARCH * N_GLB * N_PE * N_PE * N_DRAM  # 3*4*4*4*4 = 768
+        per_chiplet = N_ARCH * N_GLB * N_PE * N_PE  # 3*4*4*4 = 192; this env's action space does not encode DRAM
         return per_chiplet ** self.n_chiplets
 
     def sample_random_action(self):

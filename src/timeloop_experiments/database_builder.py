@@ -26,6 +26,19 @@ from parse_stats import *
 from fit_tile_size import fit_power_function
 import fcntl
 
+# NOTE: this builder is legacy and is NOT part of the reproduction flow.
+# It needs pytimeloop plus the Timeloop architecture templates in ../arch/
+# (top.yaml.jinja2, arch_bf.yaml), which are not shipped in this artifact --
+# docker/Dockerfile.timeloop does not ship them either -- so it cannot run here.
+# The legacy `else` branch below also still passes 18 positional args to
+# timeloop_helper.run_mapper(), which takes 15, and export_only()'s tuple is
+# 17-wide. Note that run_mapper swallows exceptions and returns (None, None,
+# None), so a run without ../arch/ yields an EMPTY database rather than an error.
+# The precomputed database ships from Zenodo: bash tools/download_data.sh
+# (record 21524898 -> src/unified_database.csv). To inspect the generating
+# pipeline, use the maintained drivers: run_sweep.py, run_cnn_sweep.py,
+# run_vit_sweep.py, run_softmax_sweep.py.
+
 class TimeloopDBBuilder:
     def __init__(self, 
                 arch_targets: List[str],
@@ -211,7 +224,8 @@ class TimeloopDBBuilder:
 
                 # Deduplicate (batch, seq) combos that produce the same effective N.
                 # For projections: N_eff = batch * seq (from workload file, seq already baked into N).
-                # Since run_mapper_llama multiplies N by batch_size, combos with the
+                # Since batch_size scales the workload multiplicatively (run_mapper
+                # scales B for LLM ops), (batch, seq) combos with the
                 # same batch*1 (decode) or batch*seq (prefill) product are redundant.
                 # We keep one representative per unique N_eff and record the mapping
                 # so results can be duplicated later.
@@ -247,7 +261,7 @@ class TimeloopDBBuilder:
                     for pe_y_scale in self.pe_scales
                     for dram_config in self.dram_configs
                 ]
-                mapper_fn = timeloop_helper.run_mapper_llama
+                mapper_fn = timeloop_helper.run_mapper
             else:
                 # Legacy GPT/CNN code path
                 if self.is_transformer:
