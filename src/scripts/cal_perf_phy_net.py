@@ -403,6 +403,37 @@ def calculate_inter_chiplet_communication(num_bits,bonding,num_hop):
     return num_bits*num_hop*0.5*1e-12
 
 
+# --- Unit reconciliation for inter-chiplet communication energy ---------------
+# calculate_inter_chiplet_communication() above applies an energy-per-BIT constant
+# (0.3 pJ/bit for 2.5D, 0.5 pJ/bit for 2D), but Timeloop reports
+# i_access / w_access / o_access as SCALAR (word) counts:
+#
+#   parse_stats.py    i_access = i_scalar_reads + i_scalar_fills + i_scalar_updates
+#   postprocess_bw.py docstring: "i_access, w_access, o_access: scalar counts"
+#
+# Every other per-bit term in this codebase therefore multiplies by word_size
+# before applying a pJ/bit figure -- parse_stats.py (the DRAM re-basing),
+# postprocess_bw.py (apply_bw_throttling_analytical), the MoE switch model below
+# (bits = batch_tokens * H * word_size), and remap.py (explicit words->bits).
+#
+# Two of the four call sites were handing raw scalar counts straight through,
+# which under-charged those paths by a factor of word_size:
+#
+#   main path        (search / reproduction path)  -- scalar counts, now converted
+#   off-CP, non-PIM                                -- scalar counts, now converted
+#   off-CP, PIM      (_in_bits = in_mem * 1e9 * 8) -- already bits, unchanged
+#   remap.py         (explicit * 16 words->bits)    -- already bits, unchanged
+#
+# Measured effect of this correction on the shipped n=10 energy pool, evaluated
+# over the 20 virtual networks: geometric-mean energy 3.472661e-02 -> 3.482846e-02
+# (+0.293%), with no change to the chiplet configuration chosen for any network.
+
+
+def _accesses_to_bits(n_accesses):
+    """Timeloop scalar (word) access count -> bits."""
+    return n_accesses * word_size
+
+
 def calculate_network_performance_with_memory_check(
     physical_network,
     csv_file: str,
@@ -649,8 +680,8 @@ def calculate_network_performance_with_memory_check(
                                 # DB stores per-chip energy; total = per_chip * tp
                                 dynamic_energy *= tp
 
-                                read_inter_chiplet_energy = calculate_inter_chiplet_communication(reads,bonding,num_hop=1)
-                                write_inter_chiplet_energy = calculate_inter_chiplet_communication(writes,bonding,num_hop=1)
+                                read_inter_chiplet_energy = calculate_inter_chiplet_communication(_accesses_to_bits(reads),bonding,num_hop=1)
+                                write_inter_chiplet_energy = calculate_inter_chiplet_communication(_accesses_to_bits(writes),bonding,num_hop=1)
 
                                 group_results["dynamic_energy"] += read_inter_chiplet_energy
                                 group_results["dynamic_energy"] += write_inter_chiplet_energy
@@ -1821,8 +1852,8 @@ def _build_off_cp_functions(off_cp_info: dict, chiplet_group, chiplets_data,
                                     dram_i=dram_i, dram_o=dram_o)
                                 dyn *= tp
 
-                                r_e = calculate_inter_chiplet_communication(reads, bonding, 1)
-                                w_e = calculate_inter_chiplet_communication(writes, bonding, 1)
+                                r_e = calculate_inter_chiplet_communication(_accesses_to_bits(reads), bonding, 1)
+                                w_e = calculate_inter_chiplet_communication(_accesses_to_bits(writes), bonding, 1)
                                 dyn += r_e + w_e
 
                             if try_batch == het_batch and try_batch > batch_size:
