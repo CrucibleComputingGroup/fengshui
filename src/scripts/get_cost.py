@@ -86,26 +86,76 @@ NRE_FIXED_BY_NODE_USD = {
 }
 
 
+# ---------------------------------------------------------------------------
+# CATCH layer definitions, ported from nanocad-lab/CATCH `layer_definitions.xml`
+# (Apache-2.0; arXiv:2503.15753) -- the cost model this file implements.
+#
+# `cost_per_mm2` is CATCH's wafer price divided by wafer area, so the Fengshui
+# equivalent is  wafer_cost = cost_per_mm2 * pi*(wafer_diameter/2)^2.  Sanity
+# check: combined_12nm -> $3,984/wafer, exactly the published IBS 16/12 nm
+# price, which is what validates the unit convention.
+#
+# NOTE CATCH has NO 14 nm and NO 16 nm row -- its logic rows are 40/45/12/10/7/
+# 5/3 nm, with a gap between 12 and 40.  Fengshui's compute is 14 nm
+# (global_parameter.technology_node), so `combined_12nm` is the nearest row and
+# is the default below.  Anything else has to be interpolated and said out loud.
+#
+# `critical_area_ratio` is the fraction of die area that is defect-sensitive.
+# Fengshui previously had no such term and applied D0 to the FULL die area,
+# which is why its yield was 1.5x (100 mm^2) to 3.5x (800 mm^2) more pessimistic
+# than CATCH's own model.
+CATCH_LAYERS: Dict[str, Dict[str, float]] = {
+    "combined_40nm":               {"cost_per_mm2": 0.033497,   "defect_density": 0.005,    "litho_percent": 0.15, "critical_area_ratio": 0.50},
+    "combined_45nm":               {"cost_per_mm2": 0.032171,   "defect_density": 0.005,    "litho_percent": 0.15, "critical_area_ratio": 0.60},
+    "combined_12nm":               {"cost_per_mm2": 0.05636207, "defect_density": 0.005,    "litho_percent": 0.25, "critical_area_ratio": 0.60},
+    "combined_10nm":               {"cost_per_mm2": 0.084769,   "defect_density": 0.005,    "litho_percent": 0.25, "critical_area_ratio": 0.62},
+    "combined_7nm":                {"cost_per_mm2": 0.132219,   "defect_density": 0.005,    "litho_percent": 0.27, "critical_area_ratio": 0.64},
+    "combined_5nm":                {"cost_per_mm2": 0.25024,    "defect_density": 0.005,    "litho_percent": 0.30, "critical_area_ratio": 0.67},
+    "combined_3nm":                {"cost_per_mm2": 0.29461,    "defect_density": 0.005,    "litho_percent": 0.35, "critical_area_ratio": 0.70},
+    "combined_interposer_silicon": {"cost_per_mm2": 0.021905,   "defect_density": 0.00001,  "litho_percent": 0.10, "critical_area_ratio": 0.30},
+    "combined_interposer_glass":   {"cost_per_mm2": 0.043910,   "defect_density": 0.00001,  "litho_percent": 0.10, "critical_area_ratio": 0.30},
+    # DELIBERATELY OMITTED: combined_interposer_organic.  Its upstream value
+    # (5.3820e-7 $/mm^2) is a 100x ft^2->mm^2 exponent slip -- CATCH's own file
+    # states the derivation ("$5 per square foot"), and 5/92,903.04 = 5.381955e-5,
+    # the same five digits two decades higher.  Even corrected, $5/ft^2 is raw
+    # panel laminate, not a build-up ABF substrate.  Do not import it.
+}
+
+# Map Fengshui's integer technology_node (nm) onto the nearest CATCH row.
+NODE_TO_CATCH_LAYER: Dict[int, str] = {
+    40: "combined_40nm", 45: "combined_45nm",
+    14: "combined_12nm", 12: "combined_12nm", 16: "combined_12nm",
+    10: "combined_10nm", 7: "combined_7nm", 5: "combined_5nm", 3: "combined_3nm",
+}
+
+
 @dataclass
 class CostParams:
     """All knobs the C4 sweep can vary. Defaults == current hard-coded values."""
-    # --- die / wafer (was hard-coded inside calculate_die_cost) ---
+    # --- die / wafer ---
     wafer_diameter_mm: float = 300.0
     edge_exclusion_mm: float = 3.0
-    wafer_cost: float = 1375.0
-    litho_percent: float = 0.34
-    reticle_area_mm2: float = 858.0
-    die_yield_para: float = 0.97
-    defect_density_D0: float = 0.008
-    alpha: float = 2.0
+    reticle_area_mm2: float = 858.0       # 26 x 33 mm exposure field
+    die_yield_para: float = 0.97          # CATCH's wafer_process_yield
+    alpha: float = 2.0                    # CATCH's clustering_factor
+
+    # --- CATCH layer selection -------------------------------------------
+    # Supplies cost_per_mm2, defect_density, litho_percent, critical_area_ratio.
+    # CATCH has no 14 nm or 16 nm row (logic rows: 40/45/12/10/7/5/3 nm), so
+    # combined_12nm is the nearest to Fengshui's technology_node = 14.
+    catch_layer: str = "combined_12nm"
+    interposer_layer: str = "combined_interposer_silicon"
 
     # --- multiplicative sweep knobs (1.0 == baseline) ---
     # Folded in where the underlying absolute value is consumed so a sweep can scale
     # one physical quantity without rewriting the absolute default.
-    yield_defect_scale: float = 1.0       # scales defect_density_D0 (chiplet yield sweep)
+    wafer_cost_scale: float = 1.0         # scales the layer's wafer price (wafer-cost sweep)
+    yield_defect_scale: float = 1.0       # scales the layer's defect density (yield sweep)
     interposer_cost_scale: float = 1.0    # scales interposer $/mm^2 (packaging sweep)
     assembly_material_scale: float = 1.0  # scales assembly materials $/mm^2 (packaging sweep)
     mem_cost_scale: float = 1.0           # scales memory $/GB (memory-cost sweep)
+
+
 
     # --- NRE / production volume / GPU baseline (NEW for C4 Option A) ---
     process_node: str = "7nm"             # node used for NRE lookup
@@ -316,31 +366,120 @@ def squares_in_circle(diameter, square_side):
     
     return count
 
+def reticle_utilization(die_area_mm2: float, reticle_area_mm2: float) -> float:
+    """Fraction of an exposure field occupied by WHOLE dies (a packing efficiency).
+
+    Faithful port of ``Layer.reticle_utilization`` from CATCH
+    (github.com/nanocad-lab/CATCH, Apache-2.0; arXiv:2503.15753), the cost model
+    this file implements.  A die larger than one field is assumed to be stitched
+    across whole additional fields.
+
+    Returns a value in (0.5, 1] -- NOT the raw area ratio ``A / reticle_area``.
+
+    Why this matters: ``base_cost`` is proportional to die area, so dividing the
+    litho share by a raw area ratio cancels the area and charges every die the
+    same absolute lithography cost (~$5.91 here) whether it is 10 mm^2 or
+    858 mm^2 -- an 85x overcharge for a small chiplet, where litho then accounts
+    for 98% of die cost.  Shots per wafer are set by the field, not by how the
+    wafer is diced, so litho per die is proportional to area; the only
+    reticle-related penalty is imperfect tiling of the field, which is what this
+    function measures.
+    """
+    if not (math.isfinite(die_area_mm2) and math.isfinite(reticle_area_mm2)):
+        raise ValueError("die_area_mm2 and reticle_area_mm2 must be finite")
+    if die_area_mm2 <= 0 or reticle_area_mm2 <= 0:
+        raise ValueError("die_area_mm2 and reticle_area_mm2 must be positive")
+
+    # CATCH stitches a too-large die across whole additional fields with
+    #     field = R;  while field < A:  field += R
+    # We use the closed form instead.  It is exactly equivalent in exact
+    # arithmetic (both give the least n >= 1 with n*R >= A) but is O(1) rather
+    # than O(A/R), and avoids a real float-accumulation drift in the loop:
+    # at A = 25743, R = 858.1 repeated addition selects 31 fields where 30
+    # suffice.  Unreachable at the shipped R = 858 mm^2 (every Fengshui die is
+    # sub-reticle, so n = 1), but the function is general.
+    n_fields = max(1, math.ceil(die_area_mm2 / reticle_area_mm2))
+    field_area = n_fields * reticle_area_mm2
+
+    # A vanishingly small die tiles the field essentially perfectly, and the
+    # quotient below would overflow for subnormal areas (float division of a
+    # normal by ~1e-308 is +inf), so short-circuit instead of crashing.
+    ratio = field_area / die_area_mm2
+    if not math.isfinite(ratio) or ratio > 1.0e15:
+        return 1.0
+
+    n_whole_dies = max(1, int(ratio))         # n_fields*R >= A, so >=1 die fits
+    return (n_whole_dies * die_area_mm2) / field_area
+
+
+def _effective_layer(p: "CostParams") -> Dict[str, float]:
+    """Per-node cost/yield parameters in force, with sweep scales applied."""
+    try:
+        layer = dict(CATCH_LAYERS[p.catch_layer])
+    except KeyError:
+        raise ValueError(f"unknown catch_layer {p.catch_layer!r}; "
+                         f"expected one of {sorted(CATCH_LAYERS)}")
+    layer["cost_per_mm2"] *= p.wafer_cost_scale
+    layer["defect_density"] *= p.yield_defect_scale
+    return layer
+
+
+def effective_wafer_cost(p: "CostParams" = None) -> float:
+    """$ per processed wafer implied by the selected layer (for sweeps/reporting)."""
+    p = p or DEFAULT_COST_PARAMS
+    return _effective_layer(p)["cost_per_mm2"] * math.pi * (p.wafer_diameter_mm / 2.0) ** 2
+
+
+def effective_defect_density(p: "CostParams" = None) -> float:
+    """Defects/mm^2 implied by the selected layer (for sweeps/reporting)."""
+    p = p or DEFAULT_COST_PARAMS
+    return _effective_layer(p)["defect_density"]
+
+
+def wafer_fit_derate(die_area_mm2: float, p: "CostParams" = None) -> float:
+    """CATCH's circle_area/used_area factor (design.py:1129).
+
+    Dies do not tile a circular wafer perfectly; the wasted area is paid for.
+    Always >= 1.0.  At the shipped 300 mm wafer this is ~1.29x for an 858 mm^2
+    interposer and ~1.32x at 1679.8 mm^2.
+    """
+    p = p or DEFAULT_COST_PARAMS
+    effective_diameter = p.wafer_diameter_mm - 2 * p.edge_exclusion_mm
+    n = squares_in_circle(effective_diameter, math.sqrt(die_area_mm2))
+    if n <= 0:
+        return 1.0
+    circle_area = math.pi * (p.wafer_diameter_mm / 2.0) ** 2
+    return circle_area / (n * die_area_mm2)
+
+
 def calculate_die_cost(
     die_area_mm2: float,
     bonding_tech: str,
     params: "CostParams" = None
 ):
     p = params or DEFAULT_COST_PARAMS
+    layer = _effective_layer(p)
+
     wafer_diameter_mm = p.wafer_diameter_mm
     edge_exclusion_mm = p.edge_exclusion_mm
-    wafer_cost = p.wafer_cost
-    litho_percent = p.litho_percent
+    litho_percent = layer["litho_percent"]
     reticle_area_mm2 = p.reticle_area_mm2
-    die_yield_para = p.die_yield_para
-    D_0 = p.defect_density_D0 * p.yield_defect_scale
-    Alpha = p.alpha
+    die_yield_para = p.die_yield_para          # CATCH's wafer_process_yield
+    D_0 = layer["defect_density"]              # sweep scale already applied
+    CAR = layer["critical_area_ratio"]
+    Alpha = p.alpha                            # CATCH's clustering_factor
+
+    # wafer_cost = cost_per_mm2 * full wafer area.
+    wafer_cost = layer["cost_per_mm2"] * math.pi * (wafer_diameter_mm / 2.0) ** 2
 
     effective_diameter = wafer_diameter_mm - 2 * edge_exclusion_mm
-    effective_area = math.pi * (effective_diameter / 2) ** 2
     dies_per_wafer = squares_in_circle(effective_diameter, math.sqrt(die_area_mm2))
-    # dies_per_wafer = (effective_area / die_area_mm2)
     base_cost = wafer_cost / dies_per_wafer
 
-    die_yield = die_yield_para * (1 + (die_area_mm2 * D_0)/Alpha)**(-Alpha)
-    reticle_utilization = die_area_mm2 / reticle_area_mm2
-    # reticle_utilization = 1
-    litho_cost = base_cost * litho_percent / reticle_utilization
+    # CATCH: defect_yield = (1 + D0*A*CAR/N)^-N, times wafer_process_yield.
+    die_yield = die_yield_para * (1 + (die_area_mm2 * D_0 * CAR)/Alpha)**(-Alpha)
+    util = reticle_utilization(die_area_mm2, reticle_area_mm2)
+    litho_cost = base_cost * litho_percent / util
     die_cost = (base_cost * (1 - litho_percent) + litho_cost) / die_yield
 
     assembly = compute_assembly(die_area_mm2, bonding_tech, n_chips=1, params=p)
@@ -425,7 +564,18 @@ def estimate_tsvs(area_mm2, tsv_pitch_mm, tsv_density_factor=0.02):
 
 def compute_assembly(area_mm2, assembly_name, n_chips=1, params=None):
     p = params or DEFAULT_COST_PARAMS
-    interposer_cost_per_mm2 = 0.0219 * p.interposer_cost_scale
+    # CATCH's combined_interposer_silicon (0.021905), derated for wafer fit the
+    # way CATCH does (design.py:1129).  Previously a flat 0.0219 with no derate,
+    # which under-charged the interposer by ~30%.
+    # Derate uses FENGSHUI's own squares_in_circle, for consistency with how the
+    # die path counts dies_per_wafer.  CATCH's figure is larger (1.287x at
+    # 858 mm^2 vs 1.113x here) because its compute_dies_per_wafer models dicing
+    # lanes and a fill grid squares_in_circle does not; importing CATCH's factor
+    # on top of Fengshui's packing would double-count the waste.
+    _itp_rate = CATCH_LAYERS[p.interposer_layer]["cost_per_mm2"]
+    if area_mm2 > 0:
+        _itp_rate *= wafer_fit_derate(area_mm2, p)
+    interposer_cost_per_mm2 = _itp_rate * p.interposer_cost_scale
     if assembly_name not in ASSEMBLY_DB:
         raise ValueError(f"unknown assembly '{assembly_name}'")
     P = ASSEMBLY_DB[assembly_name]

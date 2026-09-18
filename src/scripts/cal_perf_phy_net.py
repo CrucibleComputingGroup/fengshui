@@ -18,6 +18,12 @@ from utility_functions import cal_opt_val_fused, all_fillings, is_attention_laye
 import utility_functions
 
 from get_cost import calculate_die_cost, area_with_mem_overheads
+import get_cost as _get_cost
+
+
+def get_cost_defaults():
+    """Live handle on the cost-model defaults (re-read, never cached)."""
+    return _get_cost.DEFAULT_COST_PARAMS
 
 # Add project root and timeloop_experiments/ to path
 import sys as _sys
@@ -344,7 +350,10 @@ _AREA_OVERHEAD_CACHE = {}
 _CHIPLET_AREA_CACHE = {}
 
 def _cached_die_cost(area_mm2, bonding):
-    key = (area_mm2, bonding)
+    # catch_layer selects the per-node CATCH cost/yield row, so it is a real
+    # varying parameter; the cache MUST discriminate on it or a second run at a
+    # different node silently returns the first run's costs.
+    key = (area_mm2, bonding, get_cost_defaults().catch_layer)
     r = _DIE_COST_CACHE.get(key)
     if r is None:
         r = calculate_die_cost(area_mm2, bonding)

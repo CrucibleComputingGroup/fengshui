@@ -74,21 +74,52 @@ NRE_PER_DESIGN_USD = 14.8e6
 COST_PARAMS = CostParams(process_node=PROCESS_NODE, nre_fixed_usd=NRE_PER_DESIGN_USD)
 NRE_PER_DESIGN = nre_per_chiplet_type(0.0, COST_PARAMS)   # $ per distinct design (via cost model)
 
-# ── NRE component breakdown for the inset ──
+# ── NRE component breakdown, split per-DESIGN vs per-PRODUCT ──
 # The cost model exposes only a per-design NRE *total*; the component split is the
-# standard CATCH/IBS decomposition. We keep its proportions and rescale them to sum
-# to the model's NRE_PER_DESIGN so the inset stays consistent with the stacked bars.
-_NRE_PROPORTIONS_M = {
+# standard CATCH/IBS decomposition (note: NOT from CATCH's code -- CATCH's own NRE is
+# design + mask + ATPG per die, with no software or per-package line).
+#
+# Corrected 2026-09-17.  The seven components do not all scale with the number of
+# chiplet DESIGNS.  A "design" is one tapeout (one mask set); a "product" is one
+# shipped accelerator (one package, one interposer layout).  They are different
+# counts: the pool has 8 designs but serves a 200-model fleet.
+#
+#   per-DESIGN  Logic Mask, IP Licensing, Labor, Equip Validation, SW + System
+#               SW + System is per-design for the same reason CUDA is: software
+#               enablement (driver, compiler backend, firmware, validation suite)
+#               is written once per architecture and shared by every product that
+#               uses it -- you do not rewrite it per SKU.
+#   per-PRODUCT Interposer Mask, Package Design
+#               One interposer per package, one package layout per package.  These
+#               are the only two lines whose attribution is unambiguous.
+_NRE_PER_DESIGN_M = {
     "Logic Mask":       8.5,
+    "IP Licensing":     2.5,
+    "SW + System":      2.2,
+    "Labor":            0.5,
+    "Equip Validation": 0.3,
+}
+_NRE_PER_PRODUCT_M = {
     "Interposer Mask":  0.3,
     "Package Design":   0.5,
-    "Equip Validation": 0.3,
-    "IP Licensing":     2.5,
-    "Labor":            0.5,
-    "SW + System":      2.2,
 }
+_NRE_PROPORTIONS_M = {**_NRE_PER_DESIGN_M, **_NRE_PER_PRODUCT_M}   # inset display order
+
+# Products in the fleet.  Uniform across paradigms ON PURPOSE: every paradigm must
+# serve all N_PRODUCTS networks, so the per-product term is the SAME constant for
+# each and therefore cannot bias the comparison.  Counting distinct package
+# geometries per paradigm instead would need a 20-net -> 200-net extrapolation that
+# the data does not support (homo_asic's geometry count saturates -- it has one die
+# at 1/2/8/9 copies -- while the pool's does not), and it would hand each paradigm a
+# DIFFERENT additive constant.  Slight over-charge for paradigms that reuse a
+# package layout; uniform, assumption-free and conservative for the pool.
+N_PRODUCTS = 200
+
 _prop_sum = sum(_NRE_PROPORTIONS_M.values()) * 1e6
-NRE_BREAKDOWN = {k: (v * 1e6) * (NRE_PER_DESIGN / _prop_sum) for k, v in _NRE_PROPORTIONS_M.items()}
+_scale = NRE_PER_DESIGN / _prop_sum          # rescale to the calibrated $14.8M total
+NRE_BREAKDOWN = {k: (v * 1e6) * _scale for k, v in _NRE_PROPORTIONS_M.items()}
+NRE_DESIGN_TERM  = sum(_NRE_PER_DESIGN_M.values())  * 1e6 * _scale   # $14.0M
+NRE_PRODUCT_TERM = sum(_NRE_PER_PRODUCT_M.values()) * 1e6 * _scale   # $0.8M
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -132,8 +163,17 @@ def avg_re_cost(paradigm):
 
 
 def nre_per_unit(paradigm, volume):
-    """Per-shipped-unit NRE = (#distinct designs * NRE_PER_DESIGN) / volume, from the cost model."""
-    return paradigm["n_unique_designs"] * NRE_PER_DESIGN / volume
+    """Per-shipped-unit NRE, split per-design and per-product.
+
+        (n_designs * NRE_DESIGN_TERM + N_PRODUCTS * NRE_PRODUCT_TERM) / volume
+
+    Self-consistency check: when n_designs == N_PRODUCTS (homo_basic, 200 of each)
+    this is identical to the old n_designs * $14.8M, because
+    14.0 + 0.8 == 14.8.  That invariant is what keeps the paper's "$3,000 for a
+    200-model fleet" claim unchanged.
+    """
+    return (paradigm["n_unique_designs"] * NRE_DESIGN_TERM
+            + N_PRODUCTS * NRE_PRODUCT_TERM) / volume
 
 
 def op_cost(energy_latency_per_net):
