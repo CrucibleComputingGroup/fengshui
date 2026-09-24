@@ -17,6 +17,7 @@ from convex_hull import *
 from utility_functions import cal_opt_val_fused, all_fillings, is_attention_layers
 import utility_functions
 import gqa_kv
+import network_analysis_sizes
 
 from get_cost import calculate_die_cost, area_with_mem_overheads
 import get_cost as _get_cost
@@ -193,26 +194,20 @@ def _get_net_mem_dict():
     global _NET_MEM_DICT
     if _NET_MEM_DICT is None:
         _NET_MEM_DICT = {}
+        # Whole tensors (tp = 1 rows) in bf16 GB, K / V sized with num_key_value_heads, and the
+        # fused softmax rows the file lacks (network_analysis_sizes)
+        whole = network_analysis_sizes.with_fused_softmax(
+            network_analysis_sizes.whole_tensor_sizes(net_mem_df))
         # Vectorized extraction for speed
         key_cols = ['net_name', 'layer_name', 'fused_layer_type', 'batch_size', 'sequence_length']
-        key_arrays = {c: net_mem_df[c].values for c in key_cols}
-        val_arrays = {c: net_mem_df[c].values for c in _NET_MEM_FIELDS}
-        # GQA: K / V (weight_mem of the attention ops) sized with num_key_value_heads (gqa_kv)
-        val_arrays[gqa_kv.KV_CAPACITY] = gqa_kv.kv_capacity(net_mem_df).values
-        tp_arr = net_mem_df['tp'].values if 'tp' in net_mem_df.columns else None
-        n = len(net_mem_df)
-        with_tp = {}
-        for i in range(n):
-            row_dict = {c: val_arrays[c][i] for c in _NET_MEM_FIELDS}
+        key_arrays = {c: whole[c].values for c in key_cols}
+        val_arrays = {c: whole[c].values for c in _NET_MEM_FIELDS}
+        for i in range(len(whole)):
             key = (key_arrays['net_name'][i], key_arrays['layer_name'][i],
                    key_arrays['fused_layer_type'][i],
                    int(key_arrays['batch_size'][i]),
                    int(key_arrays['sequence_length'][i]))
-            _NET_MEM_DICT[key] = row_dict
-            if tp_arr is not None:
-                key_tp = key + (int(tp_arr[i]),)
-                with_tp[key_tp] = row_dict
-        _NET_MEM_DICT['_with_tp'] = with_tp
+            _NET_MEM_DICT[key] = {c: val_arrays[c][i] for c in _NET_MEM_FIELDS}
     return _NET_MEM_DICT
 
 
@@ -332,10 +327,9 @@ def cal_mem_req_for_fusion_group(net_name, fusion_group, batch_size, sequence_le
     for layer_idx, layer in enumerate(fusion_group.layers):
         fused_layer_type = get_fused_layer_type(layer_idx, len(fusion_group.layers))
 
+        # a layer without sizes cannot be provisioned: a missing row raises
         key = (net_name, layer.name, fused_layer_type, batch_size, sequence_length)
-        layer_row = mem_dict.get(key)
-        if layer_row is None:
-            continue
+        layer_row = mem_dict[key]
 
         i_utilized_capacity = layer_row['in_mem']
         w_utilized_capacity = layer_row['weight_mem']
@@ -823,10 +817,8 @@ def cal_buffer_config(chiplet_max_pes, physical_network: PhysicalNetwork, batch_
             fused_layer_type = get_fused_layer_type(layer_idx, len(fusion_group.layers))
 
             lookup_name = getattr(physical_network.virtual_network, 'original_name', physical_network.virtual_network.network_name)
-            key = (lookup_name, layer.name, fused_layer_type, batch_size, sequence_length, 1)
-            layer_data = mem_dict['_with_tp'].get(key)
-            if layer_data is None:
-                continue
+            key = (lookup_name, layer.name, fused_layer_type, batch_size, sequence_length)
+            layer_data = mem_dict[key]   # a layer without sizes raises
             total_group_compute += layer_data["operations"]
             total_group_iw_memory += layer_data["in_mem"]+layer_data["weight_mem"]
 
@@ -880,10 +872,8 @@ def cal_buffer_configs(chiplet_max_pes, physical_network: PhysicalNetwork, batch
             fused_layer_type = get_fused_layer_type(layer_idx, len(fusion_group.layers))
 
             lookup_name = getattr(physical_network.virtual_network, 'original_name', physical_network.virtual_network.network_name)
-            key = (lookup_name, layer.name, fused_layer_type, batch_size, sequence_length, 1)
-            layer_data = mem_dict['_with_tp'].get(key)
-            if layer_data is None:
-                continue
+            key = (lookup_name, layer.name, fused_layer_type, batch_size, sequence_length)
+            layer_data = mem_dict[key]   # a layer without sizes raises
             total_group_compute += layer_data["operations"]
             total_group_iw_memory += layer_data["in_mem"]+layer_data["weight_mem"]
 
@@ -985,7 +975,7 @@ def _moe_expand_expert_groups(group_parsed, fusion_groups, moe_config, virtual_n
     net_name = virtual_network.network_name
     bs = virtual_network.batch_size
     seq = virtual_network.sequence_length
-    expert_weight_mem = {}   # gi -> single-expert weight_mem in GB
+    expert_weight_mem = {}   # gi -> single-expert weight_mem in GB (bf16, whole tensor)
     expert_glb_idx = {}      # gi -> global layer index (for buffer_config lookup)
     glb_idx = 0
     for gi, fg in enumerate(fusion_groups):
@@ -994,10 +984,8 @@ def _moe_expand_expert_groups(group_parsed, fusion_groups, moe_config, virtual_n
             w_mem = 0.0
             for li, layer in enumerate(fg.layers):
                 flt = get_fused_layer_type(li, len(fg.layers))
-                key = (net_name, layer.name, flt, bs, seq)
-                row = mem_dict.get(key)
-                if row is not None:
-                    w_mem += row['weight_mem']
+                # an expert without sizes cannot be provisioned: a missing row raises
+                w_mem += mem_dict[(net_name, layer.name, flt, bs, seq)]['weight_mem']
             # expert_up_proj has identical shape to expert_gate_proj (SwiGLU);
             # double weight memory only for gate_proj groups (gate + up on same chiplet).
             # expert_down_proj has no parallel partner — use actual weight memory.
@@ -1866,17 +1854,16 @@ def _build_off_cp_functions(off_cp_info: dict, chiplet_group, chiplets_data,
                                 # the whole input (the non-PIM rows split it so: a GEMM's
                                 # per-chip i_access does not shrink with tp); a head-split
                                 # op's dies read only their heads. The output slices add
-                                # up to out_mem.
+                                # up to out_mem. The sizes are bf16 GB (network_analysis_sizes);
+                                # an op without them cannot be priced, so a missing row raises.
                                 dyn *= tp
-                                _m = _get_net_mem_dict().get(
-                                    (net_name, op_name, "single",
-                                     int(lookup_b), int(seq_len)))
-                                if _m is not None:
-                                    _readers = tp if utility_functions.is_gemm_layer(op_name) else 1
-                                    _in_bits = _m['in_mem'] * 1e9 * 8 * _readers
-                                    _out_bits = _m['out_mem'] * 1e9 * 8
-                                    dyn += calculate_inter_chiplet_communication(_in_bits, bonding, 1)
-                                    dyn += calculate_inter_chiplet_communication(_out_bits, bonding, 1)
+                                _m = _get_net_mem_dict()[
+                                    (net_name, op_name, "single", int(lookup_b), int(seq_len))]
+                                _readers = tp if utility_functions.is_gemm_layer(op_name) else 1
+                                _in_bits = _m['in_mem'] * 1e9 * 8 * _readers
+                                _out_bits = _m['out_mem'] * 1e9 * 8
+                                dyn += calculate_inter_chiplet_communication(_in_bits, bonding, 1)
+                                dyn += calculate_inter_chiplet_communication(_out_bits, bonding, 1)
                             else:
                                 reads = row['i_access']
                                 writes = row['o_access']

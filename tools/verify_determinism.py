@@ -30,8 +30,10 @@ and does not prove:
       exit code.
 
 Exit code: 0 only if CHECK 1 and CHECK 2 both pass; 1 otherwise (2 on setup
-error).  Runtime: ~2-3 min per run; 4-5 runs total (~10-15 min) with the
-defaults, plus the one-time database load.
+error).  Runtime: ~2-3 min per run, plus the one-time database load: 2 runs for
+CHECK 1, one per alternate seed CHECK 2 tries (it stops at the first seed that
+changes a value; up to 8, then a base run and up to 8 more on the larger
+subset), 2 for CHECK 3.
 
 Run inside the submission image, from `$DL/fengshui_AE` (same mount as README §1):
 
@@ -45,7 +47,7 @@ Environment knobs:
   VERIFY_DB          database path, relative to SCRIPTS (default: ../unified_database.csv)
   VERIFY_N_NETS      networks in the subset           (default: 6)
   VERIFY_MAX_NETS    escalation size for CHECK 2      (default: 12)
-  VERIFY_ALT_SEEDS   comma-separated alternate seeds  (default: 7,13,29)
+  VERIFY_ALT_SEEDS   comma-separated alternate seeds  (default: 7,13,29,41,53,61,79,97)
   VERIFY_NEG_CONTROL run CHECK 3 (1/0)                (default: 1)
   VERIFY_CHAIN       chiplet-pool chain version       (default: ae)
 """
@@ -78,7 +80,11 @@ OBJ = os.environ.get('VERIFY_OBJ', 'energy')
 DB = os.environ.get('VERIFY_DB', '../unified_database.csv')
 N_NETS = int(os.environ.get('VERIFY_N_NETS', '6'))
 MAX_NETS = int(os.environ.get('VERIFY_MAX_NETS', '12'))
-ALT_SEEDS = [int(s) for s in os.environ.get('VERIFY_ALT_SEEDS', '7,13,29').split(',') if s.strip()]
+# Eight seeds: the default subsets' GA optimum is only weakly seed-sensitive, and 7, 13 and 29
+# alone can leave all 6 (and 12) values unchanged, failing CHECK 2 while the reseed is live;
+# CHECK 2 stops at the first seed that changes a value.
+ALT_SEEDS = [int(s) for s in os.environ.get('VERIFY_ALT_SEEDS', '7,13,29,41,53,61,79,97').split(',')
+             if s.strip()]
 NEG_CONTROL = os.environ.get('VERIFY_NEG_CONTROL', '1') != '0'
 CHAIN = os.environ.get('VERIFY_CHAIN', 'ae')
 
@@ -142,7 +148,7 @@ def main():
     print(f"[verify] scripts={SCRIPTS}")
     print(f"[verify] obj={OBJ}  chain={CHAIN}  db={DB}  n_nets={N_NETS}"
           f"  alt_seeds={ALT_SEEDS}  neg_control={NEG_CONTROL}")
-    print("[verify] expect ~2-3 min per run, 4-5 runs total, after the one-time DB load\n")
+    print("[verify] expect ~2-3 min per run (2 + seeds tried + 2 runs), after the one-time DB load\n")
 
     all_vnets = _build_virtual_nets(database_file=DB)
     vnets = all_vnets[:N_NETS]

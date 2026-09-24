@@ -17,7 +17,7 @@ WHY MEMORY $/GB IS NOT A TORNADO KNOB (Reviewer B's question):
   per-unit DRAM $ = geomean over nets of (provisioned_GB(net) x $/GB).  This is a COMMON-MODE
   term: the chiplet pool and the unconstrained-bespoke design serve the SAME 200-net fleet, at
   the SAME precision, with the SAME baseline DRAM type (GDDR7) -- so each ships the identical
-  ~$28/unit of memory.  In the advantage ratio  uncon_total / pool_total = (U0 + M)/(P0 + M)
+  ~$36/unit of memory.  In the advantage ratio  uncon_total / pool_total = (U0 + M)/(P0 + M)
   the memory term M adds to BOTH numerator and denominator, so changing $/GB can only pull the
   ratio toward break-even by a bounded amount -- it can never flip the verdict (even across the
   full LPDDR5 $2.31 -> HBM3 $110/GB market it moved the advantage only ~12.6x -> 10.1x).  Memory
@@ -61,9 +61,10 @@ def _geo(xs):
 # unconstrained; the sweep scales it via CostParams.mem_cost_scale. No pytimeloop / DB needed.
 def _build_net_dram_gb():
     import pandas as pd
-    import gqa_kv
-    df = pd.read_csv(os.path.join(_SCRIPTS, 'network_analysis.csv'))
-    df['weight_mem'] = gqa_kv.kv_capacity(df)   # GQA: K / V sized by num_key_value_heads, as in the perf model
+    import network_analysis_sizes
+    # as in the perf model: whole tensors (tp = 1 rows) in bf16 GB, K / V sized by num_key_value_heads
+    df = network_analysis_sizes.whole_tensor_sizes(
+        pd.read_csv(os.path.join(_SCRIPTS, 'network_analysis.csv')))
     out = {}
     for tag in AREAS['meta']['nets']:
         m = re.match(r'(.+?)_b(\d+)_seq(\d+)', tag)
