@@ -5,8 +5,8 @@ network:
   attention: 'Q@K^T: (512 x 512)'
 architecture:
   hidden_size: 4096
-  num_attention_heads: 64
-  num_key_value_heads: 4
+  num_attention_heads: 64  # https://huggingface.co/Qwen/Qwen3-235B-A22B/blob/main/config.json
+  num_key_value_heads: 4  # https://huggingface.co/Qwen/Qwen3-235B-A22B/blob/main/config.json
   head_dim: 128
   gqa_ratio: 64Q / 4KV = 16:1
   intermediate_size: 12288

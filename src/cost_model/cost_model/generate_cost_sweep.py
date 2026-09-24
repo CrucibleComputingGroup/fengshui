@@ -61,7 +61,9 @@ def _geo(xs):
 # unconstrained; the sweep scales it via CostParams.mem_cost_scale. No pytimeloop / DB needed.
 def _build_net_dram_gb():
     import pandas as pd
+    import gqa_kv
     df = pd.read_csv(os.path.join(_SCRIPTS, 'network_analysis.csv'))
+    df['weight_mem'] = gqa_kv.kv_capacity(df)   # GQA: K / V sized by num_key_value_heads, as in the perf model
     out = {}
     for tag in AREAS['meta']['nets']:
         m = re.match(r'(.+?)_b(\d+)_seq(\d+)', tag)

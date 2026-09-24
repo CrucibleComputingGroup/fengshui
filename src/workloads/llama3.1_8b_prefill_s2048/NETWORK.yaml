@@ -5,8 +5,8 @@ network:
   attention: 'Q@K^T: (2048 x 2048)'
 architecture:
   hidden_size: 4096
-  num_attention_heads: 32
-  num_key_value_heads: 8
+  num_attention_heads: 32  # https://huggingface.co/meta-llama/Llama-3.1-8B/blob/main/config.json
+  num_key_value_heads: 8  # https://huggingface.co/meta-llama/Llama-3.1-8B/blob/main/config.json
   head_dim: 128
   gqa_ratio: 32Q / 8KV = 4:1
   intermediate_size: 14336

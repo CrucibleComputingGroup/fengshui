@@ -6,7 +6,8 @@ network:
   attention: 'Q@K^T: (257 x 257)'
 architecture:
   hidden_size: 1280
-  num_attention_heads: 16
+  num_attention_heads: 16  # https://huggingface.co/google/vit-huge-patch14-224-in21k/blob/main/config.json
+  num_key_value_heads: 16  # = num_attention_heads: multi-head attention (the HF config has no num_key_value_heads)
   head_dim: 80
   mlp_dim: 5120
   num_layers: 32

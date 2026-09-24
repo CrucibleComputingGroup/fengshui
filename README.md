@@ -85,6 +85,73 @@ The shipped `ae_*_chain_converged/` directories record these endpoints and the f
 Re-deriving the two that needed extending takes roughly four hours; `--assess-only` reports the
 status of all four either way.
 
+## Grouped-query attention: KV cache sized by KV heads
+
+The attention workloads (`layer0_attn_qk.yaml`, `layer0_attn_v.yaml`) give K and V the query-head
+count H, because a Timeloop problem has a single H. For grouped-query-attention models the KV cache
+therefore came out g = `num_attention_heads / num_key_value_heads` times too large: the DRAM reads
+of K (attn_qk) and V (attn_v), their DRAM energy, the DRAM-bandwidth bound of those rows' latency,
+and the KV capacity that sizes each fusion group's DRAM. FLOPs were right.
+
+| model | g | source |
+|---|---|---|
+| llama3.1-8B | 32 / 8 = 4 | `NETWORK.yaml`, HF `meta-llama/Llama-3.1-8B` config.json |
+| llama3.1-70B | 64 / 8 = 8 | `NETWORK.yaml`, HF `meta-llama/Llama-3.1-70B` config.json |
+| qwen3-30B-A3B | 32 / 4 = 8 | `NETWORK.yaml`, HF `Qwen/Qwen3-30B-A3B` config.json |
+| qwen3-235B-A22B | 64 / 4 = 16 | `NETWORK.yaml`, HF `Qwen/Qwen3-235B-A22B` config.json |
+| ViT-B/16, L/16, H/14 | 1 (multi-head attention) | `NETWORK.yaml` |
+| OPT, CNNs, other `network_analysis.csv` entries | 1 | `KV_GROUP_WITHOUT_NETWORK_YAML` in `src/scripts/gqa_kv.py` |
+
+`src/scripts/gqa_kv.py` corrects this in the evaluator, once, where `cal_perf_phy_net` builds its
+row dicts, so every search and figure script that prices through the evaluator sees it. In each
+non-PIM attn_qk / attn_v row that reads K or V from DRAM, the KV words (`i_access`) are divided by
+g, the matching DRAM energy is removed, and the latency is re-derived with postprocess_bw's
+roofline, max(compute-only cycles, DRAM bound), from the reduced words. The compute-only cycles
+are shipped in `src/scripts/attn_compute_cycles.csv`, which `tools/build_attn_compute_cycles.py`
+extracts from the Timeloop stats and checks against every attention row of the database. The KV
+capacity (`weight_mem` of the same ops in `network_analysis.csv`) is divided by g. Nothing is
+optional: a network without a g, a missing table, a missing table key, or an attention op of a GQA
+network that is not one of the two corrected ops raises.
+
+Not changed: PIM rows (the CENT model gives lumped latency and energy with no DRAM access counts),
+every row of a network with g = 1, and attention rows in the middle or at the end of a fusion
+group. For those, the fusion split (`parse_stats.py`) zeroes `i_access`, which for these ops is the
+K / V tensor, so the model already charges them no KV read and there is nothing to rescale.
+Physically, in decode no producer in the fusion group holds the KV cache on chip, so this
+under-counts the KV traffic of fused attention. That is a pre-existing simplification of the fusion
+model and is not addressed here; as a diagnostic, restoring that read on llama3.1-8B moves the
+Fengshui (Full) decode EDP change below from −50.79% to −49.01% (b1) and from −9.14% to −6.09% (b8).
+
+Scripts that read database rows directly instead of pricing through the evaluator do not see the
+correction: `remap.py`, `run_remap_cross_eval_v2.py`, `compare_ops.py`, `generate_pnr_config.py`,
+`reoptimize_pnr_config.py`, `chiplet_pruning.py` (only with `--prune-pct` > 0) and
+`arch_impl/c6_*.py`. None of them is used by `notebooks/reproduce_all.ipynb`.
+
+**The published MICRO 2026 numbers and the shipped results (`archgym_results/`, `arch_impl/*.csv`)
+were produced before this correction.** Re-running the evaluator now gives lower (better) EDP and
+energy for the GQA models, mostly in decode, so live re-runs no longer match the shipped CSVs for
+those workloads. `notebooks/reproduce_all.ipynb` therefore no longer compares its live re-runs
+(cells 10 and 13) against the shipped CSVs.
+
+For llama3.1-8B, the correction changes the published comparison (cost-unaware) by (+ = worse,
+− = better; each column is relative to the same code without the correction, same framework):
+
+| cell | EDP, Fengshui (Full) | EDP, Gemini-style | energy, Fengshui (Full) | energy, Gemini-style |
+|---|---|---|---|---|
+| prefill b1 | −0.32% | −0.06% | −0.07% | −0.08% |
+| prefill b8 | −0.06% | −0.06% | −0.07% | −0.07% |
+| decode b1 | −50.79% | −0.50% | −12.95% | −1.02% |
+| decode b8 | −9.14% | −2.61% | −10.51% | −5.64% |
+
+Fengshui gains more than the Gemini-style baseline, so the published llama3.1-8B decode comparisons
+understate Fengshui's advantage. Over the 20-net suite, with the published pools, the correction
+moves Fengshui (Full)'s geomean by −3.80% (energy), −7.71% (EDP), −7.80% (energy × cost) and
+−9.09% (EDP × cost); it does not change the CNN workloads. Relative to the published values, a
+re-run also includes two earlier model changes: inter-chiplet communication charged per bit
+(+0.30% energy, +0.31% EDP on this geomean) and the CATCH cost-model port (−12.5% energy × cost,
+−11.0% EDP × cost). Net of all three, the geomean is −3.51%, −7.42%, −19.12% and −18.80% against
+the published values.
+
 ---
 
 ## Layout
@@ -98,7 +165,7 @@ src/workloads/        42 workload operator-shape descriptions
 src/gpu/              pre-computed bf16 GPU measurements
 src/timeloop*/        database build pipeline (not needed to reproduce figures)
 notebooks/            reproduce_all.ipynb
-tools/                download_data.sh, verify_determinism.py
+tools/                download_data.sh, verify_determinism.py, build_attn_compute_cycles.py
 docker/               analysis and Timeloop images
 ```
 

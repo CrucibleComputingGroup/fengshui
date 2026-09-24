@@ -16,6 +16,7 @@ from convex_hull import *
 
 from utility_functions import cal_opt_val_fused, all_fillings, is_attention_layers
 import utility_functions
+import gqa_kv
 
 from get_cost import calculate_die_cost, area_with_mem_overheads
 import get_cost as _get_cost
@@ -142,7 +143,8 @@ def _apply_bw_contention(layer_latency, layer_row, dram_i, dram_o, tp, net_name,
 
 def _build_row_dict(chiplet_df):
     """Build Tier-2 row-level dict for a chiplet DataFrame subset.
-    Stores plain dicts instead of Pandas Series to avoid costly Series.__getitem__."""
+    Stores plain dicts instead of Pandas Series to avoid costly Series.__getitem__.
+    GQA: the KV-cache rows of the attention ops are corrected here, once (gqa_kv)."""
     df_id = id(chiplet_df)
     if df_id in _ROW_DICT_CACHE:
         return _ROW_DICT_CACHE[df_id]
@@ -151,8 +153,14 @@ def _build_row_dict(chiplet_df):
     cols_key = ['layer_name', 'batch_size', 'sequence_length',
                 'mapper_idx', 'tp_degree', 'fused_layer_type', 'dram_i', 'dram_o']
     cols_val = _ROW_DICT_FIELDS
+    cols_chiplet = ['net', 'arch_target', 'glb_scale', 'pe_x_scale', 'pe_y_scale']
     key_arrays = {c: chiplet_df[c].values for c in cols_key}
     val_arrays = {c: chiplet_df[c].values for c in cols_val}
+    chiplet_arrays = {c: chiplet_df[c].values for c in cols_chiplet}
+    # KV-head grouping factor of every network in this subset (raises if a network has no source)
+    kv_group = {net: gqa_kv.kv_group_factor(net) for net in chiplet_df['net'].unique()}
+    for net, layers in chiplet_df.groupby('net')['layer_name'].unique().items():
+        gqa_kv.check_kv_ops(net, layers, kv_group[net])   # a GQA attention op outside KV_OPS raises
     n = len(chiplet_df)
     for i in range(n):
         key = (key_arrays['layer_name'][i],
@@ -163,7 +171,14 @@ def _build_row_dict(chiplet_df):
                key_arrays['fused_layer_type'][i],
                key_arrays['dram_i'][i],
                key_arrays['dram_o'][i])
-        d[key] = {c: val_arrays[c][i] for c in cols_val}
+        row = {c: val_arrays[c][i] for c in cols_val}
+        if key[0] in gqa_kv.KV_OPS:
+            net = chiplet_arrays['net'][i]
+            gqa_kv.correct_db_row(row, net, key[0], chiplet_arrays['arch_target'][i],
+                                  chiplet_arrays['glb_scale'][i], chiplet_arrays['pe_x_scale'][i],
+                                  chiplet_arrays['pe_y_scale'][i], key[4], key[6], key[7],
+                                  kv_group[net])
+        d[key] = row
     _ROW_DICT_CACHE[df_id] = d
     return d
 
@@ -182,6 +197,8 @@ def _get_net_mem_dict():
         key_cols = ['net_name', 'layer_name', 'fused_layer_type', 'batch_size', 'sequence_length']
         key_arrays = {c: net_mem_df[c].values for c in key_cols}
         val_arrays = {c: net_mem_df[c].values for c in _NET_MEM_FIELDS}
+        # GQA: K / V (weight_mem of the attention ops) sized with num_key_value_heads (gqa_kv)
+        val_arrays[gqa_kv.KV_CAPACITY] = gqa_kv.kv_capacity(net_mem_df).values
         tp_arr = net_mem_df['tp'].values if 'tp' in net_mem_df.columns else None
         n = len(net_mem_df)
         with_tp = {}
