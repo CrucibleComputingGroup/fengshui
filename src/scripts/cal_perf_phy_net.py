@@ -701,14 +701,16 @@ def calculate_network_performance_with_memory_check(
                                 reads = layer_row['i_access']
                                 writes = layer_row['o_access']
 
-                                # DB stores per-chip energy; total = per_chip * tp
-                                dynamic_energy *= tp
-
                                 read_inter_chiplet_energy = calculate_inter_chiplet_communication(_accesses_to_bits(reads),bonding,num_hop=1)
                                 write_inter_chiplet_energy = calculate_inter_chiplet_communication(_accesses_to_bits(writes),bonding,num_hop=1)
 
-                                group_results["dynamic_energy"] += read_inter_chiplet_energy
-                                group_results["dynamic_energy"] += write_inter_chiplet_energy
+                                # The DB's accesses are per chip, like its energy, so the
+                                # crossings join the per-chip energy before the x tp here and
+                                # the attention x batch below.
+                                dynamic_energy += read_inter_chiplet_energy + write_inter_chiplet_energy
+
+                                # DB stores per-chip energy; total = per_chip * tp
+                                dynamic_energy *= tp
 
                             # Batch-agnostic ops (attention): chiplets are duplicated
                             # for batch parallelism, so dynamic energy scales with
@@ -1858,23 +1860,32 @@ def _build_off_cp_functions(off_cp_info: dict, chiplet_group, chiplets_data,
                                 # transfer is real on both sides (this is exact); were a
                                 # neighbour ever PIM, the at-most-one-side over-charge is
                                 # small and in the honest (PIM-looks-worse) direction.
+                                # These volumes are whole tensors, not per die, so they
+                                # are not scaled by tp as the DB energy is. A GEMM's tp
+                                # dies each hold a column slice of the weights and read
+                                # the whole input (the non-PIM rows split it so: a GEMM's
+                                # per-chip i_access does not shrink with tp); a head-split
+                                # op's dies read only their heads. The output slices add
+                                # up to out_mem.
                                 dyn *= tp
                                 _m = _get_net_mem_dict().get(
                                     (net_name, op_name, "single",
                                      int(lookup_b), int(seq_len)))
                                 if _m is not None:
-                                    _in_bits = _m['in_mem'] * 1e9 * 8
+                                    _readers = tp if utility_functions.is_gemm_layer(op_name) else 1
+                                    _in_bits = _m['in_mem'] * 1e9 * 8 * _readers
                                     _out_bits = _m['out_mem'] * 1e9 * 8
                                     dyn += calculate_inter_chiplet_communication(_in_bits, bonding, 1)
                                     dyn += calculate_inter_chiplet_communication(_out_bits, bonding, 1)
                             else:
                                 reads = row['i_access']
                                 writes = row['o_access']
-                                dyn *= tp
 
+                                # the same crossings as the main path: per chip, then x tp
                                 r_e = calculate_inter_chiplet_communication(_accesses_to_bits(reads), bonding, 1)
                                 w_e = calculate_inter_chiplet_communication(_accesses_to_bits(writes), bonding, 1)
                                 dyn += r_e + w_e
+                                dyn *= tp
 
                             if try_batch == het_batch and try_batch > batch_size:
                                 multiplier = try_batch / batch_size
