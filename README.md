@@ -134,10 +134,10 @@ longer reads (`src/scripts/softmax_vector.py`). None of them is used by
 `notebooks/reproduce_all.ipynb`.
 
 **The published MICRO 2026 numbers and the shipped results (`archgym_results/`, `arch_impl/*.csv`)
-were produced before this correction.** Re-running the evaluator now gives lower (better) EDP and
-energy for the GQA models, mostly in decode, so live re-runs no longer match the shipped CSVs for
-those workloads. `notebooks/reproduce_all.ipynb` therefore no longer compares its live re-runs
-(cells 10 and 13) against the shipped CSVs.
+were produced before this correction and the corrections in the next section.** Re-running the
+evaluator now gives different energy and EDP for the transformer workloads, so live re-runs no
+longer match the shipped CSVs for those workloads. `notebooks/reproduce_all.ipynb` therefore no
+longer compares its live re-runs (cells 10 and 13) against the shipped CSVs.
 
 For llama3.1-8B, the correction changes the published comparison (cost-unaware) by (+ = worse,
 − = better; each column is relative to the same code without the correction, same framework):
@@ -155,8 +155,41 @@ moves Fengshui (Full)'s geomean by −3.80% (energy), −7.71% (EDP), −7.80% (
 −9.09% (EDP × cost); it does not change the CNN workloads. Relative to the published values, a
 re-run also includes two earlier model changes: inter-chiplet communication charged per bit
 (+0.30% energy, +0.31% EDP on this geomean) and the CATCH cost-model port (−12.5% energy × cost,
-−11.0% EDP × cost). Net of all three, the geomean is −3.51%, −7.42%, −19.12% and −18.80% against
-the published values.
+−11.0% EDP × cost). Net of those three, the geomean was −3.51%, −7.42%, −19.12% and −18.80%
+against the published values.
+
+## Corrections since the MICRO 2026 results
+
+Five evaluator bugs were fixed after the GQA correction. Each effect is on the 20-net Fengshui
+(Full) geomean with the published pools, as energy / EDP / energy × cost / EDP × cost, against the
+code before the fix (+ = worse, − = better):
+
+1. **DDR5 accesses charged once.** `e_DDRtoLPDDR` added DDR5's 5 pJ/bit premium a second time to
+   every DDR5 access of rows that already price DDR5; it is removed. 0.00% / 0.00% / 0.00% / +0.03%.
+2. **Package crossings scaled with their energy.** The crossing energy of a row's per-chip DRAM
+   accesses was added after the row's energy was multiplied by tp and, for attention, by the batch;
+   it is now added before both. +0.06% / +0.07% / +0.12% / +0.13%.
+3. **`network_analysis.csv` read as whole bf16 tensors.** Most of its sizes were written at 8 bits
+   per element but read as bf16, from the tp = 2 row, which holds half the tensor for head-split
+   ops; `network_analysis_sizes.py` reads the tp = 1 rows at each network's own bits and adds the
+   fused softmax rows the file lacks. +0.05% / +0.04% / +1.84% / +1.84%.
+4. **Softmax priced on the vector unit.** Non-PIM softmax was looked up in a table with rows only
+   at pe_y 1 and batch 1, and a miss skipped the layer, so it cost nothing on almost every design;
+   `softmax_vector.py` now prices it analytically. PIM experts are scaled by the batch once, not
+   twice. +2.26% / +14.81% / +3.73% / +0.28%.
+5. **attn_v's V read restored in fused attention.** The fusion split drops attn_v's V input, so a
+   fused attention stage read no KV cache; `_apply_attention_rows` rebuilds those rows from attn_v's
+   single row, keeping its GQA-corrected V read. +0.43% / +0.40% / +1.03% / +0.82%.
+
+Net of these and the three changes in the previous section, a re-run gives −0.80% / +6.83% /
+−13.57% / −16.27% against the published values. Most of the EDP rise is fix 4: softmax now sets
+the pipeline latency of the qwen3 prefill workloads. For llama3.1-8B (cost-unaware), Fengshui (Full)
+moves by +0.15% to +2.66% in prefill and −5.68% to −48.90% in decode against the published values,
+and the published Gemini-style design by −3.50% to +1.60%. Re-selected over its 192 candidates as
+`competing_baselines.run_gemini` does, the Gemini-style baseline becomes gemmini_like glb1 3x1 for
+energy and energy × cost and eyeriss_like glb4 4x3 for EDP; EDP × cost keeps the published design.
+**The published numbers and the shipped results (`archgym_results/`, `arch_impl/*.csv`) predate all
+five fixes.**
 
 ---
 
