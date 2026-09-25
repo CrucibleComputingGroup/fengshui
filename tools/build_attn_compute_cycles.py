@@ -2,7 +2,8 @@
 """Build src/scripts/attn_compute_cycles.csv: Timeloop compute-only cycles of the KV ops.
 
 The GQA correction (src/scripts/gqa_kv.py) re-applies postprocess_bw's roofline to the attention
-rows with the corrected KV words:
+rows with the corrected KV words, and cal_perf_phy_net._apply_attention_rows to attn_v's rebuilt
+fused rows:
     latency = max(C, ceil((i + w) / bw_i), ceil(o / bw_o)) * cycle_time     (postprocess_bw.py:93-101)
 C, the op's compute-only cycles on a chiplet, is not a database column.  It is the 'Cycles' line
 of the infinite-bandwidth sweep (DRAM bandwidth x1000, run_sweep.py:449-453,

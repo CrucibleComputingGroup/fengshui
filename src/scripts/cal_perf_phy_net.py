@@ -146,7 +146,8 @@ def _apply_bw_contention(layer_latency, layer_row, dram_i, dram_o, tp, net_name,
 def _build_row_dict(chiplet_df):
     """Build Tier-2 row-level dict for a chiplet DataFrame subset.
     Stores plain dicts instead of Pandas Series to avoid costly Series.__getitem__.
-    GQA: the KV-cache rows of the attention ops are corrected here, once (gqa_kv)."""
+    GQA: the KV-cache rows of the attention ops are corrected here, once (gqa_kv); the fused
+    attention rows around softmax are then rebuilt from them (_apply_attention_rows)."""
     df_id = id(chiplet_df)
     if df_id in _ROW_DICT_CACHE:
         return _ROW_DICT_CACHE[df_id]
@@ -181,6 +182,7 @@ def _build_row_dict(chiplet_df):
                                   chiplet_arrays['pe_y_scale'][i], key[4], key[6], key[7],
                                   kv_group[net])
         d[key] = row
+    _apply_attention_rows(d, chiplet_df)
     _ROW_DICT_CACHE[df_id] = d
     return d
 
@@ -237,6 +239,73 @@ def _softmax_row_cached(sm_dims, net_name, arch, glb_scale, pe_x_scale, pe_y_sca
         heads=H, q_len=Q, k_len=K, batch_in_problem=B, tp=tp, pe_x_scale=pe_x_scale,
         glb_scale=glb_scale, scores_in_dram=scores_in_dram, probs_to_dram=probs_to_dram,
         dram_i=dram_i, dram_o=dram_o, dram_table=dram_type_bandwidth_width_dict)
+
+
+# --- Attention rows around softmax -----------------------------------------------
+# The fused attention rows of a compute chiplet are made consistent with the softmax above, once
+# per row dict and after the GQA correction, so every row read below has its K / V sized with
+# num_key_value_heads:
+#   attn_qk 'start'/'middle': the fused rows write S into the GLB and nothing to DRAM. When the
+#       mapping cannot keep the S rows in the GLB (attention_residency.csv), S spills: the sibling
+#       row that writes S is used instead ('single' for 'start', 'end' for 'middle').
+#   attn_v 'middle'/'end': the fusion split (parse_stats.py:404-423) zeroes the Inputs2 fields, and
+#       for attn_v Inputs2 is V (i_access) while the fused operand is P (Inputs1, w_access), so these
+#       rows read P from DRAM and not V. They are rebuilt from the 'single' row at the same key: the
+#       V read is kept; the P read and its DRAM energy are removed when P stays in the GLB and kept
+#       when it spills; the output is kept only at 'end'; the latency is re-derived with gqa_kv's
+#       roofline on attn_v's compute-only cycles (attn_compute_cycles.csv). P's GLB fill stays in
+#       the 'single' row's on-chip energy, which is why softmax books neither P's GLB write nor its
+#       port time when P stays.
+# attn_qk 'middle'/'end' rows are split the same way (no K read) and are left so: on the DAG path
+# attn_qk always opens its stage.
+# [A] Of the 3,072 mappings per op of llama3.1 8B/70B and qwen3 30B/235B at s1024/kv1024, 24 attn_qk
+#     and 36 attn_v ones (all gemmini) fit yet touch S or P up to 1.25x / 1.125x; the rebuilt rows
+#     move those extra accesses from DRAM into the GLB without charging GLB energy for them.
+
+
+def _apply_attention_rows(d, chiplet_df):
+    """Rewrite a compute chiplet's attn_qk 'start'/'middle' and attn_v 'middle'/'end' rows in d,
+    in place (see above). PIM keeps its rows."""
+    if chiplet_df.empty:
+        return
+    chips = chiplet_df[['net', 'arch_target', 'glb_scale', 'pe_x_scale', 'pe_y_scale']].drop_duplicates()
+    if len(chips) != 1:
+        raise ValueError(f"a row dict holds one chiplet of one network, got {len(chips)}")
+    net, arch, glb, px, py = chips.iloc[0]
+    if arch == 'PIM':
+        return
+    keys = [k for k in d if (k[0] == 'layer0_attn_qk' and k[5] in ('start', 'middle'))
+            or (k[0] == 'layer0_attn_v' and k[5] in ('middle', 'end'))]
+    if not keys:
+        return
+    chip = (net, arch, int(glb), int(px), int(py))
+    res = _attention_residency()
+    for key in keys:
+        layer, bs, sq, mi, tp, ft, di, do = key
+        if layer == 'layer0_attn_qk':
+            if not res[('attn_qk',) + chip + (tp,)]:
+                sib = 'single' if ft == 'start' else 'end'
+                d[key] = dict(d[(layer, bs, sq, mi, tp, sib, di, do)])
+            continue
+        row, single = d[key], d[(layer, bs, sq, mi, tp, 'single', di, do)]
+        C = gqa_kv.compute_cycles(net, layer, arch, glb, px, py, tp)
+        old = gqa_kv.roofline_cycles(C, row['i_access'], row['w_access'], row['o_access'], di, do, tp)
+        if not math.isclose(old * cycle_time, row['latency'], rel_tol=1e-9):
+            raise ValueError(f"{chip} {key}: latency {row['latency']!r} is not max(C, DRAM bound) = "
+                             f"{old} cycles; {gqa_kv.COMPUTE_CYCLES_CSV} does not describe this database")
+        p_resident = res[('attn_v',) + chip + (tp,)]
+        i_new = float(single['i_access'])
+        w_new = 0.0 if p_resident else float(single['w_access'])
+        o_new = float(single['o_access']) if ft == 'end' else 0.0
+        e_new = (single['dynamic_energy']
+                 - (float(single['w_access']) - w_new) * word_size
+                 * dram_type_bandwidth_width_dict[di]['final_e'] * 1e-12
+                 - (float(single['o_access']) - o_new) * word_size
+                 * dram_type_bandwidth_width_dict[do]['final_e'] * 1e-12)
+        d[key] = {'dynamic_energy': e_new,
+                  'latency': gqa_kv.roofline_cycles(C, i_new, w_new, o_new, di, do, tp) * cycle_time,
+                  'static_power': row['static_power'],
+                  'i_access': i_new, 'w_access': w_new, 'o_access': o_new}
 
 
 # 3) bind the global you use elsewhere

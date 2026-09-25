@@ -114,13 +114,16 @@ optional: a network without a g, a missing table, a missing table key, or an att
 network that is not one of the two corrected ops raises.
 
 Not changed: PIM rows (the CENT model gives lumped latency and energy with no DRAM access counts),
-every row of a network with g = 1, and attention rows in the middle or at the end of a fusion
-group. For those, the fusion split (`parse_stats.py`) zeroes `i_access`, which for these ops is the
-K / V tensor, so the model already charges them no KV read and there is nothing to rescale.
-Physically, in decode no producer in the fusion group holds the KV cache on chip, so this
-under-counts the KV traffic of fused attention. That is a pre-existing simplification of the fusion
-model and is not addressed here; as a diagnostic, restoring that read on llama3.1-8B moves the
-Fengshui (Full) decode EDP change below from −50.79% to −49.01% (b1) and from −9.14% to −6.09% (b8).
+every row of a network with g = 1, and the database's attention rows in the middle or at the end of
+a fusion group. For those, the fusion split (`parse_stats.py`) zeroes `i_access`, which for these
+ops is the K / V tensor, so the rows carry no KV read and there is nothing to rescale. Physically no
+producer in the fusion group holds the KV cache on chip, so the evaluator does not use attn_v's
+middle and end rows as they are: `_apply_attention_rows` in `cal_perf_phy_net.py` rebuilds them from
+attn_v's corrected single row, keeping its V read, now sized with `num_key_value_heads`. attn_qk's
+middle and end rows still read no K; they occur only on the linear path, since on the DAG-CP path
+attn_qk always opens its stage. The effects below were measured at the GQA correction, before that
+rebuild; restoring the V read then, as a diagnostic, moved the Fengshui (Full) decode EDP change
+from −50.79% to −49.01% (b1) and from −9.14% to −6.09% (b8).
 
 Scripts that read database rows directly instead of pricing through the evaluator do not see the
 correction: `remap.py`, `run_remap_cross_eval_v2.py`, `compare_ops.py`, `generate_pnr_config.py`,

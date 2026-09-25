@@ -39,10 +39,11 @@ ROWS LEFT AS THEY ARE
   - PIM rows: the CENT model supplies lumped latency / energy with no DRAM access counts, so there
     are no KV words to rescale.
   - middle / end rows of a fusion group: the fusion split (parse_stats.py:404-423) zeroes the
-    Inputs2 fields, and for these ops Inputs2 is K / V, so the model already charges these rows no
-    KV read and there is nothing to rescale.  Physically, in decode no producer in the fusion
-    group holds the KV cache on chip, so this under-counts the KV traffic of fused attention; that
-    is a pre-existing simplification of the fusion model and is not addressed here.
+    Inputs2 fields, and for these ops Inputs2 is K / V, so the database rows carry no KV read and
+    there is nothing to rescale here.  Physically no producer in the fusion group holds the KV
+    cache on chip.  cal_perf_phy_net._apply_attention_rows rebuilds attn_v's middle / end rows
+    from its corrected 'single' row, so they read V with num_key_value_heads heads; attn_qk's
+    middle / end rows (linear path only: on the DAG path attn_qk opens its stage) still read no K.
   - networks with g = 1.
 
 WHERE g COMES FROM (required; no default)
@@ -68,7 +69,8 @@ KV_DB_WORDS = "i_access"
 KV_CAPACITY = "weight_mem"
 
 # Compute-only cycles C of the KV ops, per (net, layer_name, arch_target, glb_scale, pe_x_scale,
-# pe_y_scale, tp_degree).  Built by tools/build_attn_compute_cycles.py.
+# pe_y_scale, tp_degree).  Built by tools/build_attn_compute_cycles.py.  Also read by
+# cal_perf_phy_net._apply_attention_rows, which rebuilds attn_v's fused rows on it.
 COMPUTE_CYCLES_CSV = os.path.join(_THIS_DIR, "attn_compute_cycles.csv")
 
 # Networks with no NETWORK.yaml.  None of them is a GQA model, so g = 1 for each, stated here:
@@ -191,6 +193,15 @@ def roofline_cycles(compute_cycles, i_words, w_words, o_words, dram_i, dram_o, t
     return max(compute_cycles, ci, co)
 
 
+def compute_cycles(net, layer_name, arch_target, glb_scale, pe_x_scale, pe_y_scale, tp):
+    """C of a KV op on a chiplet at tp (attn_compute_cycles.csv); a missing key raises."""
+    key = (net, layer_name, arch_target, int(glb_scale), int(pe_x_scale), int(pe_y_scale), int(tp))
+    C = _compute_cycles().get(key)
+    if C is None:
+        raise KeyError(f"{COMPUTE_CYCLES_CSV} has no compute-only cycles for {key}")
+    return C
+
+
 def correct_db_row(row, net, layer_name, arch_target, glb_scale, pe_x_scale, pe_y_scale, tp,
                    dram_i, dram_o, g):
     """Correct one database row dict of a KV op in place (see module docstring).
@@ -205,9 +216,7 @@ def correct_db_row(row, net, layer_name, arch_target, glb_scale, pe_x_scale, pe_
     if i == 0:                      # middle / end of a fusion group: no KV read (module docstring)
         return
     key = (net, layer_name, arch_target, int(glb_scale), int(pe_x_scale), int(pe_y_scale), int(tp))
-    C = _compute_cycles().get(key)
-    if C is None:
-        raise KeyError(f"{COMPUTE_CYCLES_CSV} has no compute-only cycles for {key}")
+    C = compute_cycles(*key)
     w, o = row["w_access"], row["o_access"]
     old = roofline_cycles(C, i, w, o, dram_i, dram_o, tp)
     if not math.isclose(old * cycle_time, row["latency"], rel_tol=1e-9):
