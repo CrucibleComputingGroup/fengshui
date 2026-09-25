@@ -43,10 +43,10 @@ print("=== PIM integration fact-check ===\n")
 
 # --- Inspection-verified invariants (energy/latency = 'all three replaced') ---
 print("Energy/latency model (verified by code inspection of cal_perf_phy_net.py):")
-print("  [OK] main path L573-577: PIM dynamic_energy = DB value (no e_DDRtoLPDDR DRAM")
-print("       adjustment, no inter-chiplet comm) -> in-memory compute already in DB.")
+print("  [OK] main path L573-577: PIM dynamic_energy = DB value (no inter-chiplet comm)")
+print("       -> in-memory compute already in DB.")
 print("  [OK] main path L566: PIM skips BW-contention; L563 latency = DB value.")
-print("  [OK] off-CP path: PIM skips DRAM adjustment + weight transfer; charges activation")
+print("  [OK] off-CP path: PIM skips weight transfer; charges activation")
 print("       operand transport (in_mem/out_mem inter-chiplet link) only -- no weights.")
 print("  [OK] main path L630-650: PIM cost/area = 2x PIM dies, 'no separate DRAM chips'.")
 print("  [OK] boundary L1104-1126: PIM->non-PIM input buffer deducted (no double-count).")

@@ -39,18 +39,6 @@ def is_gemm_layer(problem_name):
     """Check if this is any GEMM-based layer (projection, expert, lm_head, router)."""
     return is_projection_layers(problem_name) or problem_name.endswith("lm_head") or problem_name.endswith("router") or "expert_" in problem_name
 
-def DDRtoLPDDR(dram_type):
-    # Identity — database now has entries for all DRAM types directly.
-    return dram_type
-
-def e_DDRtoLPDDR(dynamic_energy,read,write,dram_i,dram_o):
-    final_dynamic_energy = dynamic_energy
-    if dram_i == "DDR5":
-        final_dynamic_energy = final_dynamic_energy - 1e-12*word_size*read*(dram_type_bandwidth_width_dict["LPDDR5"]['final_e'] - dram_type_bandwidth_width_dict["DDR5"]['final_e'])
-    if dram_o == "DDR5":
-        final_dynamic_energy = final_dynamic_energy - 1e-12*word_size*write*(dram_type_bandwidth_width_dict["LPDDR5"]['final_e'] - dram_type_bandwidth_width_dict["DDR5"]['final_e'])
-    return final_dynamic_energy
-
 def config_to_ids(min_e_config):
     res_ids = []
     for group_config in min_e_config['functions']:

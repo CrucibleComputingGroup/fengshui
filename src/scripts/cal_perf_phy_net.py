@@ -672,7 +672,7 @@ def calculate_network_performance_with_memory_check(
 
                             if is_pim:
                                 # PIM: energy comes directly from DB (already accounts for in-memory compute)
-                                # No DRAM type adjustment, no inter-chiplet communication.
+                                # No inter-chiplet communication.
                                 # For batch>1, scale energy linearly (pim_batch_scale).
                                 dynamic_energy = layer_row['dynamic_energy'] * tp * pim_batch_scale
                             else:
@@ -699,9 +699,7 @@ def calculate_network_performance_with_memory_check(
                                 dynamic_energy = best_dyn_e
 
                                 reads = layer_row['i_access']
-                                w_reads = layer_row['w_access']
                                 writes = layer_row['o_access']
-                                dynamic_energy = utility_functions.e_DDRtoLPDDR(dynamic_energy,reads+w_reads,writes,dram_i=lookup_dram_i,dram_o=lookup_dram_o)
 
                                 # DB stores per-chip energy; total = per_chip * tp
                                 dynamic_energy *= tp
@@ -1871,11 +1869,7 @@ def _build_off_cp_functions(off_cp_info: dict, chiplet_group, chiplets_data,
                                     dyn += calculate_inter_chiplet_communication(_out_bits, bonding, 1)
                             else:
                                 reads = row['i_access']
-                                w_reads = row['w_access']
                                 writes = row['o_access']
-                                dyn = utility_functions.e_DDRtoLPDDR(
-                                    dyn, reads + w_reads, writes,
-                                    dram_i=dram_i, dram_o=dram_o)
                                 dyn *= tp
 
                                 r_e = calculate_inter_chiplet_communication(_accesses_to_bits(reads), bonding, 1)
