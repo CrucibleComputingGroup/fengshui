@@ -1064,9 +1064,12 @@ class VirtualNetwork:
                                 '_softmax_sum.yaml', '_softmax_div.yaml')
             yaml_files = [f for f in yaml_files if not f.endswith(_sub_op_suffixes)]
 
-        # Filter to only layers present in the database
+        # Filter to only layers present in the database. The fused softmax is kept whatever the
+        # database holds: on a non-PIM chiplet it is priced analytically (softmax_vector), not
+        # from database rows.
         if db_layers is not None:
-            yaml_files = [f for f in yaml_files if os.path.splitext(f)[0] in db_layers]
+            yaml_files = [f for f in yaml_files if os.path.splitext(f)[0] in db_layers
+                          or re.match(r'^layer\d+_softmax\.yaml$', f)]
         
         # Extract layer numbers if present in filenames
         def get_layer_number(filename):

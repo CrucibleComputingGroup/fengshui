@@ -42,12 +42,7 @@ from chiplet_dataclass import ChipletConfig
 from network_dataclass import VirtualNetwork, create_physical_network_from_gene
 from genetic_algo_opt_phy_net import evaluate_gene
 import cal_perf_phy_net as cpn
-from global_parameter import transformer_nets, arch_vec_targets
 import pandas as pd
-
-# Activate fig14's simple_vector fallback patch BEFORE building any chiplet data,
-# and always fetch get_chiplet_data via the module so we use the patched version.
-fig14._patch_vector_data_lookup()
 
 COMMITTED = {  # av_vision_results.csv, cost_aware=False (energy)
     'ViT-L/16': 5.159076e-03,
@@ -59,26 +54,18 @@ VIT_WORKLOADS = {'ViT-L/16': ('vit_l16_s197', 1), 'ViT-H/14': ('vit_h14_s257', 1
 
 # ------------------------------------------------------------------ helpers
 def _build_chiplet_inputs(pool, net_name, db_file):
-    """Replicate the GA's chiplets_data / chiplets_vector_data construction."""
-    cdata, cvdata = [], []
+    """Replicate the GA's chiplets_data construction."""
+    cdata = []
     for c in pool:
         cdata.append(cpn.get_chiplet_data(db_file, c.arch_target,
                                       c.global_buffer_size_scale,
                                       c.pe_x_scale, c.pe_y_scale, net_name))
-        if c.arch_target == 'PIM':
-            cvdata.append(None)
-        elif net_name in transformer_nets:
-            cvdata.append(cpn.get_chiplet_data(db_file, arch_vec_targets[0],
-                                           c.global_buffer_size_scale,
-                                           c.pe_x_scale, c.pe_y_scale, net_name))
-        else:
-            cvdata.append(None)
-    return cdata, cvdata
+    return cdata
 
 def decompose(vn, pool, gene, db_file, cost_aware=False):
     """Return (total, latency, [(op_names, energy, latency_x1, chiplet_id), ...])."""
-    cdata, cvdata = _build_chiplet_inputs(pool, vn.network_name, db_file)
-    g, fitness, cfg, err = evaluate_gene(gene, vn, pool, cdata, cvdata, db_file,
+    cdata = _build_chiplet_inputs(pool, vn.network_name, db_file)
+    g, fitness, cfg, err = evaluate_gene(gene, vn, pool, cdata, db_file,
                                          'energy', False, cost_aware)
     if cfg is None:
         return float('inf'), None, [], err

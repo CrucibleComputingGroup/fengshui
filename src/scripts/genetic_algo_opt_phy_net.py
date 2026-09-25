@@ -14,7 +14,7 @@ from utility_functions import cal_opt_val_fused
 from cal_perf_phy_net import cal_perf_phy_net, get_chiplet_data, cal_buffer_config
 
 # Move evaluate_gene function outside the main function
-def evaluate_gene(gene, virtual_network, chiplet_group, chiplets_data, chiplets_vector_data, results_file, objective, verbose, cost_aware, dag=None):
+def evaluate_gene(gene, virtual_network, chiplet_group, chiplets_data, results_file, objective, verbose, cost_aware, dag=None):
     try:
         # For MoE workloads: force expert layers into own fusion groups
         moe_config = getattr(virtual_network, 'moe_config', None)
@@ -25,7 +25,7 @@ def evaluate_gene(gene, virtual_network, chiplet_group, chiplets_data, chiplets_
         physical_network = create_physical_network_from_gene(virtual_network, gene)
 
         (min_e, min_e_config), (min_edp, min_edp_config) = \
-            cal_perf_phy_net(chiplet_group, chiplets_data, chiplets_vector_data, physical_network,
+            cal_perf_phy_net(chiplet_group, chiplets_data, physical_network,
                             res_csv_file=results_file,
                             buffer_config=gene["buffer_config"],
                             dag=dag, cost_aware=cost_aware,
@@ -89,7 +89,6 @@ def genetic_algo_opt_phy_net(virtual_network, chiplet_group,objective="energy",
     population = []
     num_layers = len(virtual_network.layers)
     chiplets_data = []
-    chiplets_vector_data = []
     for chiplet_idx, chiplet_config in enumerate(chiplet_group):
         # Use original_name if available, otherwise fall back to network_name
 
@@ -101,20 +100,6 @@ def genetic_algo_opt_phy_net(virtual_network, chiplet_group,objective="energy",
             chiplet_config.pe_y_scale,
             virtual_network.network_name
         ))
-        # PIM handles all ops (including softmax) natively — no separate vector unit
-        if chiplet_config.arch_target == 'PIM':
-            chiplets_vector_data.append(None)
-        elif virtual_network.network_name in transformer_nets:
-            chiplets_vector_data.append(get_chiplet_data(
-                results_file,
-                arch_vec_targets[0],
-                chiplet_config.global_buffer_size_scale,
-                chiplet_config.pe_x_scale,
-                chiplet_config.pe_y_scale,
-                virtual_network.network_name
-            ))
-        else:
-            chiplets_vector_data.append(None)
 
     remaining_empty_population_size = population_size
 
@@ -130,13 +115,20 @@ def genetic_algo_opt_phy_net(virtual_network, chiplet_group,objective="energy",
             if verbose:
                 print(f"Including previous best gene in initial population: {prev_best_gene['binary_string']}")
 
-    physical_network = create_physical_network_from_gene_binary_string(virtual_network=virtual_network, binary_string='1'*num_layers)
+    # always have non-fused version in the initial population. A non-PIM stage of the fused
+    # layer<N>_softmax alone is rejected (calculate_network_performance_with_memory_check), so
+    # softmax is fused onto a linear neighbour (its predecessor, or its successor when first).
+    separate = ['1'] * num_layers
+    for i, layer in enumerate(virtual_network.layers):
+        if layer.name.endswith('_softmax') and num_layers > 1:
+            separate[i if i > 0 else 1] = '0'
+    separate = ''.join(separate)
+    physical_network = create_physical_network_from_gene_binary_string(virtual_network=virtual_network, binary_string=separate)
     buffer_config = cal_buffer_config(get_max_pes(chiplet_group), physical_network, virtual_network.batch_size, virtual_network.sequence_length, max(tp_degrees))
 
-    # always have non-fused version in the initial population
     if remaining_empty_population_size > 0:
         population.append({
-                'binary_string': '1'*num_layers,
+                'binary_string': separate,
                 'buffer_config': buffer_config
             })
     remaining_empty_population_size -= 1
@@ -173,7 +165,6 @@ def genetic_algo_opt_phy_net(virtual_network, chiplet_group,objective="energy",
         virtual_network=virtual_network,
         chiplet_group=chiplet_group,
         chiplets_data=chiplets_data,
-        chiplets_vector_data = chiplets_vector_data,
         results_file=results_file,
         objective=objective,
         verbose=verbose,
@@ -538,7 +529,7 @@ def mutate_dag(gene: dict, mutation_rate: float, cp_spec: CriticalPathSpec,
 
 
 def evaluate_dag_gene(gene, cp_spec, virtual_network, chiplet_group,
-                      chiplets_data, chiplets_vector_data,
+                      chiplets_data,
                       results_file, objective, verbose, cost_aware,
                       v_het_batch=True):
     """Evaluate a DAG gene. Returns (gene, fitness, config, error)."""
@@ -549,7 +540,6 @@ def evaluate_dag_gene(gene, cp_spec, virtual_network, chiplet_group,
             virtual_network=virtual_network,
             chiplet_group=chiplet_group,
             chiplets_data=chiplets_data,
-            chiplets_vector_data=chiplets_vector_data,
             gene=gene,
             res_csv_file=results_file,
             cost_aware=cost_aware,
@@ -602,24 +592,13 @@ def genetic_algo_opt_phy_net_dag(
     pool_dram_types = dram_options
 
     # Pre-load chiplet data
-    chiplets_data, chiplets_vector_data = [], []
+    chiplets_data = []
     for chiplet in chiplet_group:
         chiplets_data.append(get_chiplet_data(
             results_file, chiplet.arch_target,
             chiplet.global_buffer_size_scale,
             chiplet.pe_x_scale, chiplet.pe_y_scale,
             virtual_network.network_name))
-        # PIM handles all ops natively — no separate vector unit
-        if chiplet.arch_target == 'PIM':
-            chiplets_vector_data.append(None)
-        elif virtual_network.network_name in transformer_nets:
-            chiplets_vector_data.append(get_chiplet_data(
-                results_file, arch_vec_targets[0],
-                chiplet.global_buffer_size_scale,
-                chiplet.pe_x_scale, chiplet.pe_y_scale,
-                virtual_network.network_name))
-        else:
-            chiplets_vector_data.append(None)
 
     # --- Initialize population ---
     population = []
@@ -656,7 +635,6 @@ def genetic_algo_opt_phy_net_dag(
         virtual_network=virtual_network,
         chiplet_group=chiplet_group,
         chiplets_data=chiplets_data,
-        chiplets_vector_data=chiplets_vector_data,
         results_file=results_file,
         objective=objective,
         verbose=verbose,

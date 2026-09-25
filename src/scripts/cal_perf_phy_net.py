@@ -18,6 +18,7 @@ from utility_functions import cal_opt_val_fused, all_fillings, is_attention_laye
 import utility_functions
 import gqa_kv
 import network_analysis_sizes
+import softmax_vector
 
 from get_cost import calculate_die_cost, area_with_mem_overheads
 import get_cost as _get_cost
@@ -182,6 +183,61 @@ def _build_row_dict(chiplet_df):
         d[key] = row
     _ROW_DICT_CACHE[df_id] = d
     return d
+
+
+# --- Softmax on the vector unit ------------------------------------------------
+# A non-PIM softmax runs on its chiplet's 1-D vector unit and is priced analytically
+# (softmax_vector.py), not from the database's simple_vector rows (see that module). Whether the
+# scores S it reads and the probabilities P it writes stay in the GLB comes from the Timeloop
+# mappings behind the neighbouring attn_qk and attn_v rows: attention_residency.csv
+# (tools/build_attention_residency.py), per (op, net, arch, glb, pe_x, pe_y, tp). The table is
+# required: a missing file or key raises.
+# [A] S -> E -> P happen in place, and attn_qk's tile of S and attn_v's tile of P line up at the
+#     handoff; the two residency checks are applied independently.
+ATTENTION_RESIDENCY_CSV = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                       "attention_residency.csv")
+_ATTN_RESIDENCY = None
+
+
+def _attention_residency():
+    """(op, net, arch, glb, pe_x, pe_y, tp) -> True when the Timeloop mapping behind the database
+    row keeps every S row (attn_qk) or P row (attn_v) it needs in the GLB."""
+    global _ATTN_RESIDENCY
+    if _ATTN_RESIDENCY is None:
+        if not os.path.isfile(ATTENTION_RESIDENCY_CSV):
+            raise FileNotFoundError(f"{ATTENTION_RESIDENCY_CSV} is required to price softmax; "
+                                    f"build it with tools/build_attention_residency.py")
+        df = pd.read_csv(ATTENTION_RESIDENCY_CSV)
+        _ATTN_RESIDENCY = {
+            (r.op, r.net, r.arch_target, int(r.glb_scale), int(r.pe_x_scale), int(r.pe_y_scale),
+             int(r.tp_degree)): bool(r.fits) for r in df.itertuples()}
+    return _ATTN_RESIDENCY
+
+
+@functools.lru_cache(maxsize=None)
+def _softmax_row_cached(sm_dims, net_name, arch, glb_scale, pe_x_scale, pe_y_scale, tp,
+                        after_qk, before_v, dram_i, dram_o):
+    """The analytic softmax row of one chiplet (softmax_vector.softmax_row).
+
+    S stays in the GLB only when attn_qk runs just before softmax in its stage (after_qk) and
+    attn_qk's mapping keeps the S rows in the GLB; otherwise it is read from DRAM. P stays only
+    when attn_v runs just after softmax in its stage (before_v) and attn_v's mapping keeps the
+    P rows in the GLB; otherwise it is written to DRAM. On the DAG-CP path attn_qk opens
+    softmax's stage and a fused attn_v follows it, so this is softmax's stage position; the
+    linear path's order is not topological (load_from_dir sorts by layer number only, so the
+    layer0_* ops keep os.listdir's order), and there the neighbours are other ops."""
+    H, Q, K, B = sm_dims
+    if not all(float(v).is_integer() for v in (glb_scale, pe_x_scale, pe_y_scale)):
+        raise ValueError(f"non-integer chiplet scale {(glb_scale, pe_x_scale, pe_y_scale)}")
+    chip = (net_name, arch, int(glb_scale), int(pe_x_scale), int(pe_y_scale), tp)
+    res = _attention_residency()
+    scores_in_dram = not (after_qk and res[('attn_qk',) + chip])
+    probs_to_dram = not (before_v and res[('attn_v',) + chip])
+    return softmax_vector.softmax_row(
+        heads=H, q_len=Q, k_len=K, batch_in_problem=B, tp=tp, pe_x_scale=pe_x_scale,
+        glb_scale=glb_scale, scores_in_dram=scores_in_dram, probs_to_dram=probs_to_dram,
+        dram_i=dram_i, dram_o=dram_o, dram_table=dram_type_bandwidth_width_dict)
+
 
 # 3) bind the global you use elsewhere
 net_mem_df = _read_csv_cached("network_analysis.csv")#CSV_CACHE["network_analysis.csv"]
@@ -465,7 +521,6 @@ def calculate_network_performance_with_memory_check(
     batch_size: int,
     sequence_length: int,
     chiplet_data: pd.DataFrame,
-    chiplet_vector_data: Optional[pd.DataFrame],
     het_batch_candidates: Optional[Dict[str, List[int]]] = None,
 ) -> Dict:
     """
@@ -559,12 +614,8 @@ def calculate_network_performance_with_memory_check(
         core_area_mm2 = PIM_DIE_AREA_MM2
         vector_leak_W = 0.0  # PIM handles softmax natively, no separate vector unit
 
-    # Pre-build row dicts for both chiplet data and vector data (once, not per-layer)
+    # Pre-build the row dict (once, not per-layer)
     row_dict_main = _build_row_dict(chiplet_data)
-    # PIM handles all ops (including softmax) natively — no separate vector unit
-    row_dict_vector = None
-    if not is_pim:
-        row_dict_vector = _build_row_dict(chiplet_vector_data) if (chiplet_vector_data is not None and not chiplet_vector_data.empty) else None
 
     # Pre-compute softmax layer set for this network
     _is_softmax = utility_functions.is_softmax_layers
@@ -588,11 +639,32 @@ def calculate_network_performance_with_memory_check(
 
         # Pre-compute fused_layer_type, softmax, and attention flags per layer (invariant)
         layer_info = []
+        group_names = [layer.name for layer in fusion_group.layers]
         for idx, layer in enumerate(fusion_group.layers):
             flt = get_fused_layer_type(idx, num_layers_per_group)
             is_sm = _is_softmax(layer.name)
             is_attn = is_attention_layers(layer.name)
-            layer_info.append((layer.name, flt, is_sm, is_attn))
+            # softmax is priced as the one fused op: a legacy sub-op (layer<N>_softmax_max/_sub_exp/
+            # _sum/_div) carries the whole softmax's H/Q/K instance, so priced here it would count
+            # a whole softmax per sub-op. load_from_dir does not load them next to the fused op.
+            if layer.name.endswith(('_softmax_max', '_softmax_sub_exp', '_softmax_sum',
+                                    '_softmax_div')):
+                raise ValueError(f"legacy softmax sub-op {layer.name!r} of {net_name!r} is "
+                                 f"not priced; use the fused layer<N>_softmax")
+            # a non-PIM softmax is priced from its problem instance (H, Q, K, B), which
+            # LayerConfig.instance does not carry
+            sm_dims = sm_nbrs = None
+            if is_sm and not is_pim:
+                inst = layer.problem_data.get('instance', {})
+                if not all(d in inst for d in ('H', 'Q', 'K', 'B')):
+                    raise ValueError(f"softmax {layer.name!r} of {net_name!r} has no H/Q/K/B "
+                                     f"problem instance ({sorted(inst)})")
+                sm_dims = (int(inst['H']), int(inst['Q']), int(inst['K']), int(inst['B']))
+                # S / P can stay in the GLB only across a handoff inside the stage: is softmax's
+                # producer just before it and its consumer just after it (_softmax_row_cached)?
+                sm_nbrs = (idx > 0 and group_names[idx - 1].endswith('attn_qk'),
+                           idx + 1 < len(group_names) and group_names[idx + 1].endswith('attn_v'))
+            layer_info.append((layer.name, flt, is_sm, is_attn, sm_dims, sm_nbrs))
 
         for tp in tp_degrees:
             results[group_idx]['group_results'][tp] = {}
@@ -613,11 +685,11 @@ def calculate_network_performance_with_memory_check(
                         }
 
                         layer_row = None
-                        for idx, (layer_name, fused_layer_type, is_sm, is_attn) in enumerate(layer_info):
-                            # PIM handles all ops natively; traditional arch uses separate vector unit for softmax
-                            rd = row_dict_main if is_pim else (row_dict_vector if is_sm else row_dict_main)
-                            if rd is None:
-                                continue
+                        compute_row = None   # the compute chiplet's own row (not an analytic softmax row)
+                        for idx, (layer_name, fused_layer_type, is_sm, is_attn, sm_dims, sm_nbrs) in enumerate(layer_info):
+                            # non-PIM softmax runs on the chiplet's vector unit and is priced
+                            # analytically (softmax_vector); PIM runs every op from its rows
+                            analytic_sm = sm_dims is not None
 
                             # Attention ops are batch-agnostic: DB only has batch=1.
                             # PIM DB also only has batch=1; for batch>1 we look up
@@ -626,8 +698,15 @@ def calculate_network_performance_with_memory_check(
                             # only processes B*k/E tokens (routing fraction), not
                             # the full batch; scaling handled in _moe_expand_expert_groups.
                             is_expert = layer_name in MOE_EXPERT_OPS
-                            lookup_batch = 1 if (is_attn or is_pim or is_expert) else batch_size
-                            pim_batch_scale = batch_size if (is_pim and not is_attn and batch_size > 1) else 1
+                            # softmax is batch-agnostic like attention: its row is per item
+                            lookup_batch = 1 if (is_attn or is_sm or is_pim or is_expert) else batch_size
+                            # Per-item ops are scaled elsewhere: attention and softmax by the
+                            # batch-agnostic energy scaling below (their stage is replicated per
+                            # item), experts by the MoE expansion (B*k tokens,
+                            # _moe_expand_expert_groups). Only the other PIM ops run the batch
+                            # serially on the looked-up batch-1 row.
+                            per_item = is_attn or is_sm or is_expert
+                            pim_batch_scale = batch_size if (is_pim and not per_item and batch_size > 1) else 1
 
                             # PIM data has dram_i/dram_o = 'GDDR7' — only matches
                             # when buffer_config assigns GDDR7 at this boundary.
@@ -639,22 +718,40 @@ def calculate_network_performance_with_memory_check(
                                 group_results["latency"] = float("inf")
                                 break
 
-                            row_key = (layer_name, lookup_batch, sequence_length,
-                                       mapper_idx, tp, fused_layer_type,
-                                       dram_i_here, dram_o_here)
-                            io_row = rd.get(row_key)
+                            if analytic_sm:
+                                io_row = _softmax_row_cached(
+                                    sm_dims, net_name, chiplet_config.arch_target,
+                                    chiplet_config.global_buffer_size_scale,
+                                    chiplet_config.pe_x_scale, chiplet_config.pe_y_scale,
+                                    tp, *sm_nbrs, dram_i_here, dram_o_here)
+                            else:
+                                row_key = (layer_name, lookup_batch, sequence_length,
+                                           mapper_idx, tp, fused_layer_type,
+                                           dram_i_here, dram_o_here)
+                                io_row = row_dict_main.get(row_key)
 
                             layer_data = None
                             if on_sram:
                                 layer_data = io_row
 
                             if layer_data is None:
-                                continue
+                                # no row for this layer on this chiplet: the stage cannot be
+                                # priced, so the option is rejected, not priced without the layer
+                                group_results["dynamic_energy"] = float("inf")
+                                group_results["latency"] = float("inf")
+                                layer_row = None
+                                break
 
                             # layer_data is now a plain dict (fast key access)
                             layer_row = layer_data
+                            if not analytic_sm:
+                                compute_row = layer_data
 
                             layer_latency = layer_row['latency'] * pim_batch_scale
+                            if is_sm and batch_size > 1 and batch_size_scale == 1:
+                                # a softmax in a stage that is not replicated per item runs the
+                                # batch serially on the one chiplet's vector unit (or PIM die)
+                                layer_latency *= batch_size
 
                             # BW contention: parallel ops sharing a physical DRAM
                             if not is_pim:
@@ -671,10 +768,12 @@ def calculate_network_performance_with_memory_check(
                                 dynamic_energy = layer_row['dynamic_energy'] * tp * pim_batch_scale
                             else:
                                 # --- Dynamic energy: try het_batch candidates, pick lowest per-item ---
+                                # (an analytic softmax row is per item and has none)
                                 lookup_dram_i = buffer_config[idx+glb_layer_idx]
                                 lookup_dram_o = buffer_config[idx+glb_layer_idx+1]
                                 candidates = (het_batch_candidates.get(layer_name, [lookup_batch])
-                                              if het_batch_candidates else [lookup_batch])
+                                              if (het_batch_candidates and not analytic_sm)
+                                              else [lookup_batch])
                                 best_dyn_e = layer_row['dynamic_energy']
 
                                 for cand_bs in candidates:
@@ -683,7 +782,7 @@ def calculate_network_performance_with_memory_check(
                                     het_key = (layer_name, cand_bs, sequence_length,
                                                mapper_idx, tp, fused_layer_type,
                                                lookup_dram_i, lookup_dram_o)
-                                    het_row = rd.get(het_key)
+                                    het_row = row_dict_main.get(het_key)
                                     if het_row is not None:
                                         multiplier = cand_bs / lookup_batch
                                         amortized = het_row['dynamic_energy'] / multiplier
@@ -706,10 +805,10 @@ def calculate_network_performance_with_memory_check(
                                 # DB stores per-chip energy; total = per_chip * tp
                                 dynamic_energy *= tp
 
-                            # Batch-agnostic ops (attention): chiplets are duplicated
+                            # Batch-agnostic ops (attention, softmax): chiplets are duplicated
                             # for batch parallelism, so dynamic energy scales with
                             # batch_size while latency stays unchanged.
-                            if is_attn and batch_size > 1:
+                            if (is_attn or is_sm) and batch_size > 1:
                                 dynamic_energy *= batch_size
 
                             group_results["dynamic_energy"] += dynamic_energy
@@ -719,6 +818,13 @@ def calculate_network_performance_with_memory_check(
                             if fusion_group_mem_buffer_dict[group_idx] > available_memory:
                                 group_results["dynamic_energy"] = float("inf")
                                 group_results["latency"] = float("inf")
+
+                        if layer_row is not None and not is_pim and compute_row is None:
+                            # a stage of softmax alone: the compute chiplet's own leakage has no
+                            # row to come from, so the stage cannot be priced
+                            group_results["dynamic_energy"] = float("inf")
+                            group_results["latency"] = float("inf")
+                            layer_row = None
 
                         if layer_row is not None:
                             if is_pim:
@@ -753,7 +859,9 @@ def calculate_network_performance_with_memory_check(
                                     layer_buffer_cost += 2*fusion_group_mem_spec_dict[group_idx+1][buffer_config[glb_layer_idx+num_layers_per_group]]["cost"]*batch_size_scale
                                 # W
 
-                                group_results["static_power"] = layer_row['static_power'] * tp*batch_size_scale + vector_leak_W * batch_size_scale + 2*fusion_group_mem_spec_dict[group_idx][buffer_config[glb_layer_idx]]["leakage_power"]*batch_size_scale
+                                # the compute chiplet's leakage from its own row (an analytic softmax
+                                # row has none; the vector unit's is vector_leak_W)
+                                group_results["static_power"] = compute_row['static_power'] * tp*batch_size_scale + vector_leak_W * batch_size_scale + 2*fusion_group_mem_spec_dict[group_idx][buffer_config[glb_layer_idx]]["leakage_power"]*batch_size_scale
                                 if group_idx==num_group-1:
                                     group_results["static_power"] += 2*fusion_group_mem_spec_dict[group_idx+1][buffer_config[glb_layer_idx+num_layers_per_group]]["leakage_power"]*batch_size_scale
                                 # PHY + controller leakage for all DRAM interfaces on compute chiplet
@@ -1068,7 +1176,7 @@ def _moe_expand_expert_groups(group_parsed, fusion_groups, moe_config, virtual_n
         group_parsed[gi] = expanded
 
 
-def cal_perf_phy_net(chiplet_group, chiplets_data, chiplets_vector_data, physical_network,
+def cal_perf_phy_net(chiplet_group, chiplets_data, physical_network,
                      res_csv_file,
                      buffer_config,
                      dag=None,
@@ -1120,7 +1228,6 @@ def cal_perf_phy_net(chiplet_group, chiplets_data, chiplets_vector_data, physica
                 batch_size=batch_size,
                 sequence_length=sequence_length,
                 chiplet_data=chiplets_data[chiplet_idx],
-                chiplet_vector_data=chiplets_vector_data[chiplet_idx],
                 het_batch_candidates=het_batch_candidates,
             )
 
@@ -1171,25 +1278,11 @@ def cal_perf_phy_net(chiplet_group, chiplets_data, chiplets_vector_data, physica
                 physical_network.virtual_network,
                 chiplet_group)
 
-        # Drop empty groups (e.g. softmax layers without vector data in MoE)
-        if moe_config is not None:
-            gp = group_parsed_result_dict[buffer_config_str]
-            valid = {}
-            old_to_new = {}
-            for gi in sorted(gp.keys()):
-                if gp[gi]:
-                    old_to_new[gi] = len(valid)
-                    valid[len(valid)] = gp[gi]
-            group_parsed_result_dict[buffer_config_str] = valid
-            # Re-index _input_buf_leak to match remapped group indices
-            remapped = {}
-            for (bcfg, old_gi, cid), leak in list(_input_buf_leak.items()):
-                if bcfg == buffer_config_str and old_gi in old_to_new:
-                    remapped[(bcfg, old_to_new[old_gi], cid)] = leak
-            for k in list(_input_buf_leak.keys()):
-                if k[0] == buffer_config_str:
-                    del _input_buf_leak[k]
-            _input_buf_leak.update(remapped)
+        # A group with no priced option makes the gene infeasible, as on the DAG-CP path
+        # (cal_perf_phy_net_dag_cp). The MoE path used to drop such groups (a softmax stage
+        # without vector data), and the hull skips them, pricing the network without them.
+        if any(not options for options in group_parsed_result_dict[buffer_config_str].values()):
+            return (float('inf'), None), (float('inf'), None)
 
         if query_points is not None:
             # Legacy fixed-grid path
@@ -1263,7 +1356,6 @@ if __name__ == "__main__":
     for chiplet_config in chiplet_group:
         print(chiplet_config.get_identifier())
     chiplets_data = []
-    chiplets_vector_data = []
     for chiplet_idx, chiplet_config in enumerate(chiplet_group):
         chiplets_data.append(get_chiplet_data(
             DB_CSV,
@@ -1273,26 +1365,12 @@ if __name__ == "__main__":
             chiplet_config.pe_y_scale,
             net_name_to_test
         ))
-        # PIM handles all ops natively — no separate vector unit
-        if chiplet_config.arch_target == 'PIM':
-            chiplets_vector_data.append(None)
-        elif net_name_to_test in transformer_nets:
-            chiplets_vector_data.append(get_chiplet_data(
-                DB_CSV,
-                arch_vec_targets[0],
-                chiplet_config.global_buffer_size_scale,
-                chiplet_config.pe_x_scale,
-                chiplet_config.pe_y_scale,
-                net_name_to_test
-            ))
-        else:
-            chiplets_vector_data.append(None)
 
     import time
     start = time.time()
 
 
-    (min_e,min_e_config),(min_edp, min_edp_config) = cal_perf_phy_net(chiplet_group, chiplets_data, chiplets_vector_data, physical_network,DB_CSV,cost_aware=False, buffer_config=gene['buffer_config'])
+    (min_e,min_e_config),(min_edp, min_edp_config) = cal_perf_phy_net(chiplet_group, chiplets_data, physical_network,DB_CSV,cost_aware=False, buffer_config=gene['buffer_config'])
     print(f"time:{time.time()-start}")
     print(min_e, min_e_config.get('latency', 'N/A'))
     for group_config in min_e_config['functions']:
@@ -1511,13 +1589,13 @@ def _print_het_batch(dag, het_candidates, base_batch):
 # ============================================================
 
 def evaluate_gene_dag(gene, virtual_network, chiplet_group, chiplets_data,
-                      chiplets_vector_data, results_file, objective, verbose,
+                      results_file, objective, verbose,
                       cost_aware, dag=None):
     """Drop-in for genetic_algo_opt_phy_net's evaluate_gene."""
     try:
         physical_network = create_physical_network_from_gene(virtual_network, gene)
         (min_e, min_e_config), (min_edp, min_edp_config) = cal_perf_phy_net(
-            chiplet_group, chiplets_data, chiplets_vector_data,
+            chiplet_group, chiplets_data,
             physical_network, res_csv_file=results_file,
             buffer_config=gene["buffer_config"],
             dag=dag, cost_aware=cost_aware, verbose=verbose)
@@ -1579,31 +1657,22 @@ class CriticalPathSpec:
 
 # ---- Spec builders ----
 
-_SOFTMAX_DROP_WARNED = set()
-
-
 def _prune_spec_to_network(positions, off_cp, network):
     """Prune CP positions + off-CP ops to the ops actually present in the loaded network.
 
-    LOUD GUARD: if a *softmax* op is on the critical path but absent from the loaded
-    network, it would silently contribute ZERO latency/energy/cost — this is exactly
-    the bug that zeroed ViT softmax (the DB carried legacy sub-op names, so the fused
-    `layer0_softmax` was filtered out at load). Warn to stderr once per (net, op)
-    instead of dropping it silently. Fix is a DB issue (see fuse_vit_softmax.py), not
-    a code issue — this guard just makes a recurrence impossible to miss.
+    A *softmax* op on the critical path that is absent from the loaded network raises: pruned,
+    it would contribute ZERO latency/energy/cost -- the bug that once zeroed ViT softmax, when
+    the fused `layer0_softmax` was filtered out at load. load_from_dir always loads the fused
+    softmax (the evaluator prices it analytically, not from database rows), so its absence is a
+    workload defect.
     """
     layer_names = {l.name for l in network.layers}
     for pos in positions:
         for op in pos.ops:
             if op not in layer_names and utility_functions.is_softmax_layers(op):
-                k = (getattr(network, 'network_name', '?'), op)
-                if k not in _SOFTMAX_DROP_WARNED:
-                    _SOFTMAX_DROP_WARNED.add(k)
-                    _sys.stderr.write(
-                        f"[WARN] softmax op '{op}' is on the critical path but ABSENT "
-                        f"from loaded network '{k[0]}' -> contributes ZERO cost. "
-                        f"Likely a DB naming mismatch (fused 'layer0_softmax' missing). "
-                        f"See fuse_vit_softmax.py / Bug.md ViT-softmax note.\n")
+                raise ValueError(
+                    f"softmax op {op!r} is on the critical path but absent from loaded "
+                    f"network {getattr(network, 'network_name', '?')!r}")
         pos.ops = [op for op in pos.ops if op in layer_names]
     off_cp = [o for o in off_cp if o.op_name in layer_names]
     return positions, off_cp
@@ -1613,9 +1682,8 @@ def create_llama_cp_spec(network=None, prefix: str = 'layer0') -> CriticalPathSp
     p = prefix
     positions = [
         CriticalPathPosition([f'{p}_q_proj', f'{p}_k_proj'], parallel=True),
-        # DB now stores a single fused softmax row (`layer0_softmax`); the legacy
-        # 4 sub-op names (_softmax_max/_sub_exp/_sum/_div) no longer exist and would
-        # be filtered out, silently dropping softmax from the critical path.
+        # softmax is the one fused op `layer0_softmax`; load_from_dir does not load the
+        # legacy 4 sub-op names (_softmax_max/_sub_exp/_sum/_div) next to it
         CriticalPathPosition([f'{p}_attn_qk', f'{p}_softmax'], parallel=False),
         CriticalPathPosition([f'{p}_attn_v'], parallel=False),
         CriticalPathPosition([f'{p}_o_proj'], parallel=False),
@@ -1656,9 +1724,7 @@ def create_vit_cp_spec(network=None, prefix: str = 'layer0') -> CriticalPathSpec
     o_proj, MLP) with two ViT-specific differences:
       - GELU MLP, not SwiGLU: only fc1 (gate_proj) + fc2 (down_proj); no up_proj.
       - softmax is referenced by its fused name `layer0_softmax` (same as the llama/qwen
-        specs). This only resolves once the ViT DB carries a fused `layer0_softmax` row
-        (added by fuse_vit_softmax.py); before that it was silently dropped — see the
-        loud guard in `_prune_spec_to_network`.
+        specs); `_prune_spec_to_network` raises if the loaded network lacks it.
     k/v/o_proj share q_proj's dimensions (standard MHA).
     """
     p = prefix
@@ -1772,7 +1838,7 @@ def _merge_parallel_configs(member_configs: List[List[Tuple]]) -> List[Tuple]:
 
 
 def _build_off_cp_functions(off_cp_info: dict, chiplet_group, chiplets_data,
-                            chiplets_vector_data, gene: dict, cp_spec: CriticalPathSpec,
+                            gene: dict, cp_spec: CriticalPathSpec,
                             virtual_network, res_csv_file: str,
                             cost_aware: bool,
                             v_het_batch: bool = True) -> List[Tuple]:
@@ -1804,7 +1870,6 @@ def _build_off_cp_functions(off_cp_info: dict, chiplet_group, chiplets_data,
             if getattr(chiplet, 'arch_target', '') == 'switch_8port':
                 continue
             cd = chiplets_data[chiplet_idx]
-            cvd = chiplets_vector_data[chiplet_idx]
             if cd is None or (hasattr(cd, 'empty') and cd.empty):
                 continue
 
@@ -1941,7 +2006,6 @@ def cal_perf_phy_net_dag_cp(
     virtual_network,
     chiplet_group,
     chiplets_data,
-    chiplets_vector_data,
     gene: dict,
     res_csv_file: str,
     cost_aware: bool = False,
@@ -2021,7 +2085,6 @@ def cal_perf_phy_net_dag_cp(
                         batch_size=batch_size,
                         sequence_length=seq_len,
                         chiplet_data=chiplets_data[ci],
-                        chiplet_vector_data=chiplets_vector_data[ci],
                     )
                     for tp in perf.get(0, {}).get('group_results', {}):
                         for mi in perf[0]['group_results'][tp]:
@@ -2067,7 +2130,6 @@ def cal_perf_phy_net_dag_cp(
                     batch_size=batch_size,
                     sequence_length=seq_len,
                     chiplet_data=chiplets_data[ci],
-                    chiplet_vector_data=chiplets_vector_data[ci],
                 )
                 for tp in perf.get(0, {}).get('group_results', {}):
                     for mi in perf[0]['group_results'][tp]:
@@ -2118,7 +2180,7 @@ def cal_perf_phy_net_dag_cp(
 
     # Step 4: Off-CP ops
     off_cp_tuples = _build_off_cp_functions(
-        off_cp_info, chiplet_group, chiplets_data, chiplets_vector_data,
+        off_cp_info, chiplet_group, chiplets_data,
         gene, cp_spec, virtual_network, res_csv_file, cost_aware,
         v_het_batch=v_het_batch)
 

@@ -40,11 +40,10 @@ def geomean(vals):
 
 # --- monkeypatch: drop PIM from the off-CP builder's chiplet set ---
 _orig_offcp = cpp._build_off_cp_functions
-def _no_pim_offcp(off_cp_info, chiplet_group, chiplets_data, chiplets_vector_data, *a, **kw):
+def _no_pim_offcp(off_cp_info, chiplet_group, chiplets_data, *a, **kw):
     keep = [i for i, c in enumerate(chiplet_group) if getattr(c, "arch_target", "") != "PIM"]
     return _orig_offcp(off_cp_info, [chiplet_group[i] for i in keep],
-                       [chiplets_data[i] for i in keep],
-                       [chiplets_vector_data[i] for i in keep], *a, **kw)
+                       [chiplets_data[i] for i in keep], *a, **kw)
 
 
 def evaluate(vnets, objective, cost_aware):

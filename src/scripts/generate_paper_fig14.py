@@ -118,22 +118,6 @@ def _find_latest_csv(directory, pattern_prefix='saeo_isaeo_chain_'):
     raise FileNotFoundError(f'No sweep/chain CSV found in {directory}')
 
 
-def _patch_vector_data_lookup():
-    """Monkeypatch get_chiplet_data: simple_vector fallback to glb=1,pe=1,1."""
-    import cal_perf_phy_net as cpn
-    import genetic_algo_opt_phy_net as gamod
-    _orig = cpn.get_chiplet_data
-
-    def _patched(csv_file, arch_target, glb_scale, pe_x_scale, pe_y_scale, net_name):
-        result = _orig(csv_file, arch_target, glb_scale, pe_x_scale, pe_y_scale, net_name)
-        if result.empty and arch_target == 'simple_vector':
-            result = _orig(csv_file, arch_target, 1, 1, 1, net_name)
-        return result
-
-    cpn.get_chiplet_data = _patched
-    gamod.get_chiplet_data = _patched
-
-
 def _build_database_for_workload(net_name, is_vit):
     """Return the correct database path for a workload.
     ViT needs merged unified + PIM database; CNN uses unified directly.
@@ -278,7 +262,6 @@ def evaluate_all_workloads(pool, cost_aware, label):
     """
     from network_dataclass import VirtualNetwork
     from chiplet_dataclass import ChipletConfig
-    _patch_vector_data_lookup()
 
     # ── Step 1: Load all workloads ──
     workload_info = []  # (vn, db_file, display_name)

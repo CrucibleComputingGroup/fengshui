@@ -1,0 +1,82 @@
+ERT_summary:
+    version: '0.4'
+    table_summary:
+      - name: system_top_level.DRAM_I[1..1]
+        actions:
+          - name: write
+            energy: 704.0
+          - name: leak
+            energy: 0.0
+          - name: read
+            energy: 704.0
+          - name: update
+            energy: 704.0
+        primitive_estimation(s):
+          - name: system_top_level.DRAM_I[1..1]
+            estimator: CactiDRAM
+      - name: system_top_level.DRAM_O[1..1]
+        actions:
+          - name: write
+            energy: 704.0
+          - name: leak
+            energy: 0.0
+          - name: read
+            energy: 704.0
+          - name: update
+            energy: 704.0
+        primitive_estimation(s):
+          - name: system_top_level.DRAM_O[1..1]
+            estimator: CactiDRAM
+      - name: system_top_level.shared_glb[1..1]
+        actions:
+          - name: write
+            energy: 29.0396
+          - name: read
+            energy: 32.1007
+          - name: leak
+            energy: 318.938
+          - name: update
+            energy: 29.0396
+        primitive_estimation(s):
+          - name: storage
+            estimator: CactiSRAM
+          - name: address_generators[0]
+            estimator: Neurosim Plug-In
+          - name: address_generators[1]
+            estimator: Neurosim Plug-In
+          - name: address_generators[0..1]
+            estimator: Neurosim Plug-In
+      - name: system_top_level.reg_file[1..64]
+        actions:
+          - name: write
+            energy: 0.147751
+          - name: read
+            energy: 0.153201
+          - name: leak
+            energy: 0.0115615
+          - name: update
+            energy: 0.147751
+        primitive_estimation(s):
+          - name: storage.storage[1..32]
+            estimator: Library
+          - name: storage.comparator[1..64]
+            estimator: Library
+          - name: address_generators[0]
+            estimator: Neurosim Plug-In
+          - name: address_generators[1]
+            estimator: Neurosim Plug-In
+          - name: storage.storage[1..2048]
+            estimator: Library
+          - name: address_generators[0..1]
+            estimator: Neurosim Plug-In
+      - name: system_top_level.mac[1..64]
+        actions:
+          - name: compute
+            energy: 0.293341
+          - name: leak
+            energy: 0.00851577
+        primitive_estimation(s):
+          - name: bf16adder
+            estimator: Library
+          - name: bf16multiplier
+            estimator: Library

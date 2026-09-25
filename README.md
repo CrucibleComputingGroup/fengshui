@@ -125,7 +125,10 @@ Fengshui (Full) decode EDP change below from −50.79% to −49.01% (b1) and fro
 Scripts that read database rows directly instead of pricing through the evaluator do not see the
 correction: `remap.py`, `run_remap_cross_eval_v2.py`, `compare_ops.py`, `generate_pnr_config.py`,
 `reoptimize_pnr_config.py`, `chiplet_pruning.py` (only with `--prune-pct` > 0) and
-`arch_impl/c6_*.py`. None of them is used by `notebooks/reproduce_all.ipynb`.
+`arch_impl/c6_*.py`. Of these, `arch_impl/c6_op_walkthrough.py` and `arch_impl/c6_weighted.py` also
+price softmax from the database's `simple_vector` rows, a Timeloop mapping artifact the evaluator no
+longer reads (`src/scripts/softmax_vector.py`). None of them is used by
+`notebooks/reproduce_all.ipynb`.
 
 **The published MICRO 2026 numbers and the shipped results (`archgym_results/`, `arch_impl/*.csv`)
 were produced before this correction.** Re-running the evaluator now gives lower (better) EDP and
@@ -165,7 +168,8 @@ src/workloads/        42 workload operator-shape descriptions
 src/gpu/              pre-computed bf16 GPU measurements
 src/timeloop*/        database build pipeline (not needed to reproduce figures)
 notebooks/            reproduce_all.ipynb
-tools/                download_data.sh, verify_determinism.py, build_attn_compute_cycles.py
+tools/                download_data.sh, verify_determinism.py, build_attn_compute_cycles.py,
+                      build_attention_residency.py
 docker/               analysis and Timeloop images
 ```
 
