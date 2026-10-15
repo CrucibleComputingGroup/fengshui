@@ -1,0 +1,41 @@
+Fengshui
+Copyright (C) 2026 The Fengshui authors
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License version 3, as published by the Free
+Software Foundation. See LICENSE.
+
+--------------------------------------------------------------------------------
+THIRD-PARTY COMPONENTS
+--------------------------------------------------------------------------------
+
+CATCH  (Apache License 2.0)
+    Copyright 2025 UCLA NanoCAD Laboratory
+    src/scripts/get_cost.py ports parts of the CATCH chiplet cost model: the
+    layer table (CATCH_LAYERS, from CATCH's layer_definitions.xml), the reticle
+    utilization, the wafer-fit factor and the defect-yield model (CATCH's
+    design.py). The file states where it departs from CATCH. A copy of the
+    Apache License 2.0 is in LICENSES/Apache-2.0.txt.
+    https://github.com/nanocad-lab/CATCH  (arXiv:2503.15753)
+
+arch-gym  (Apache License 2.0)
+    Earlier versions of src/scripts/run_archgym_chiplet.py ran arch-gym's
+    optimizers. This release contains no arch-gym code; the script and
+    src/archgym_results/ keep the name.
+    https://github.com/srivatsankrishnan/oss-arch-gym
+
+Accelergy / CACTI
+    The characterization database was built with a modified Accelergy CACTI
+    estimation plug-in and component tables derived from CACTI and Aladdin
+    characterization data. That build pipeline is not in this repository; an
+    earlier version of it is in the Zenodo code archive
+    (doi:10.5281/zenodo.21524898). The ERT summaries in src/scripts/ert/ and the
+    component areas in src/timeloop_experiments/compute_area.py are Accelergy
+    outputs.
+    Accelergy: https://github.com/Accelergy-Project/accelergy
+    CACTI:     https://github.com/HewlettPackard/cacti
+
+Timeloop
+    The characterization database distributed via Zenodo was produced with
+    Timeloop. Timeloop itself is not vendored here.
+    https://github.com/NVlabs/timeloop

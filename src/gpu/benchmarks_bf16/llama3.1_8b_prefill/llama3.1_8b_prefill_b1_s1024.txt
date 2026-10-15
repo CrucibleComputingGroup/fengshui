@@ -1,0 +1,22 @@
+Results for llama3.1_8b_prefill_b1_s1024:
+{'name': 'layer0_q_proj', 'iters': 12900, 'avg_latency_ms': 0.11675498311833818, 'avg_energy_J': 0.06973651162790698, 'avg_power_W': 597.2590758572355, 'out_elems': 4194304}
+{'name': 'layer0_k_proj', 'iters': 40600, 'avg_latency_ms': 0.036953521878848525, 'avg_energy_J': 0.018868004926108375, 'avg_power_W': 510.5720648434051, 'out_elems': 1048576}
+{'name': 'layer0_v_proj', 'iters': 40600, 'avg_latency_ms': 0.03699134864243381, 'avg_energy_J': 0.01881100985221675, 'avg_power_W': 508.5061363379153, 'out_elems': 1048576}
+{'name': 'layer0_attn_scores', 'iters': 22400, 'avg_latency_ms': 0.10786777970213327, 'avg_energy_J': 0.051985485248447205, 'avg_power_W': 481.9371029235999, 'out_elems': 33554432, 'scores_on_chip': False}
+{'name': 'layer0_attn_v', 'iters': 31600, 'avg_latency_ms': 0.047614185960986946, 'avg_energy_J': 0.02867, 'avg_power_W': 602.1135814154175, 'out_elems': 4194304}
+{'name': 'layer0_o_proj', 'iters': 12900, 'avg_latency_ms': 0.11694363379663275, 'avg_energy_J': 0.06978124031007751, 'avg_power_W': 596.6867563553403, 'out_elems': 4194304}
+{'name': 'layer0_gate_proj', 'iters': 4500, 'avg_latency_ms': 0.33354852973090277, 'avg_energy_J': 0.19999244444444444, 'avg_power_W': 599.5685618714267, 'out_elems': 14680064}
+{'name': 'layer0_up_proj', 'iters': 4500, 'avg_latency_ms': 0.3335755750868056, 'avg_energy_J': 0.2001888888888889, 'avg_power_W': 600.1141593766863, 'out_elems': 14680064}
+{'name': 'layer0_down_proj', 'iters': 3700, 'avg_latency_ms': 0.4078076831714527, 'avg_energy_J': 0.2438935135135135, 'avg_power_W': 598.0412565191247, 'out_elems': 4194304}
+Critical Path Latency (ms): 1.1305638408363494
+Total Pipeline Energy (J): 0.9019270988116036
+Bottleneck Latency (ms): 0.4078076831714527
+Total Pipeline Energy with Idle (J): 0.9978766346470579
+P2P Transfer Energy (J): 0.2012127061712973  [@ 133 pJ/bit (size-dependent, eff.)]
+Total Pipeline Energy with Idle + P2P (J): 1.1990893408183552
+--- Inter-card transfer (step 4), curve=interconnect-measured size-dependent (pj/bit 113-877, bw 4-48 GB/s) ---
+Max Single-Edge Transfer Latency (ms): 1.3981013333333334
+Sum On-Path Transfer Latency (ms): 2.757606337561789
+Critical Path Latency w/ Transfer (ms): 3.8881701783981386
+Bottleneck Latency w/ Transfer (ms): 1.3981013333333334
+Transfer-bound (slowest link > slowest compute stage): True

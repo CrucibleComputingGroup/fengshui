@@ -1,0 +1,52 @@
+{
+  "metric": "energy_cost",
+  "objective": "energy",
+  "cost_aware": true,
+  "threshold_pct": 1.0,
+  "patience": 2,
+  "n_max": 16,
+  "converged_n": 10,
+  "source_dir": "src/archgym_results/ae_energy_cost_chain",
+  "curve": [
+    {
+      "n": 1,
+      "best_value": 5.352025384269902
+    },
+    {
+      "n": 2,
+      "best_value": 4.871307507182993
+    },
+    {
+      "n": 3,
+      "best_value": 4.859808544905442
+    },
+    {
+      "n": 4,
+      "best_value": 4.556844794856953
+    },
+    {
+      "n": 5,
+      "best_value": 4.414978689601975
+    },
+    {
+      "n": 6,
+      "best_value": 4.414874493440431
+    },
+    {
+      "n": 7,
+      "best_value": 4.390096408207339
+    },
+    {
+      "n": 8,
+      "best_value": 4.378931770818678
+    },
+    {
+      "n": 9,
+      "best_value": 4.3716628687217645
+    },
+    {
+      "n": 10,
+      "best_value": 4.367063016874516
+    }
+  ]
+}

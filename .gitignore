@@ -1,0 +1,30 @@
+# Database: downloaded from Zenodo by tools/download_data.sh, never committed
+**/unified_database*.csv
+src/SHA256SUMS
+*.csv.gz
+*.tar
+*.tar.gz
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Outputs of the scripts and the notebook
+*.log
+*.out
+src/figures/
+notebooks/_figures/
+notebooks/*.nbconvert.ipynb
+src/archgym_results/repro_*/
+src/scripts/archgym_results/
+src/scripts/archgym_saeo_isaeo_chain/
+src/scripts/convergence_runs/
+src/scripts/incremental_chiplet_sweep_*.csv
+
+# Not shipped
+src/scripts/arch_impl/
+
+# OS
+.DS_Store

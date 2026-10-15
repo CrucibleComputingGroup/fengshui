@@ -1,0 +1,11 @@
+# Fengshui — environment for Figures 8 and 9 (Python 3.13).
+# Versions pinned to the environment that produced the shipped results.
+numpy==2.3.4
+pandas==3.0.1
+scipy==1.17.1
+scikit-learn==1.8.0
+matplotlib==3.10.7
+joblib==1.5.3
+PyYAML==6.0.3
+# Notebook interface for notebooks/reproduce_all.ipynb
+jupyterlab==4.6.1

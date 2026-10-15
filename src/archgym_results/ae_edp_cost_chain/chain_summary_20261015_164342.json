@@ -1,0 +1,127 @@
+{
+  "n1": {
+    "algorithm": "saeo",
+    "best_value": 0.018053385368405204,
+    "time": 913.3544611099642,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1"
+    ]
+  },
+  "n2": {
+    "algorithm": "saeo",
+    "best_value": 0.009824424890032785,
+    "time": 1431.6108480559196,
+    "best_chiplets": [
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "eyeriss_like@glb4@pe_x_scale3@pe_y_scale2"
+    ]
+  },
+  "n3": {
+    "algorithm": "saeo",
+    "best_value": 0.006126673571668149,
+    "time": 2432.327600691002,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale1@pe_y_scale2",
+      "eyeriss_like@glb9@pe_x_scale3@pe_y_scale3",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1"
+    ]
+  },
+  "n4": {
+    "algorithm": "saeo",
+    "best_value": 0.004437337359543528,
+    "time": 3119.2276626649546,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale2",
+      "eyeriss_like@glb9@pe_x_scale3@pe_y_scale4",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "switch_8port@glb4@pe_x_scale3@pe_y_scale4"
+    ]
+  },
+  "n5": {
+    "algorithm": "saeo",
+    "best_value": 0.003893772509840815,
+    "time": 4126.540381592,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale1@pe_y_scale2",
+      "eyeriss_like@glb9@pe_x_scale3@pe_y_scale2",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "switch_8port@glb16@pe_x_scale2@pe_y_scale3",
+      "gemmini_like@glb4@pe_x_scale4@pe_y_scale4"
+    ]
+  },
+  "n6": {
+    "algorithm": "saeo",
+    "best_value": 0.003726644633473465,
+    "time": 4339.107481694082,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+      "eyeriss_like@glb9@pe_x_scale3@pe_y_scale2",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "gemmini_like@glb9@pe_x_scale4@pe_y_scale3",
+      "gemmini_like@glb4@pe_x_scale3@pe_y_scale4",
+      "switch_8port@glb9@pe_x_scale2@pe_y_scale4"
+    ]
+  },
+  "n7": {
+    "algorithm": "isaeo",
+    "best_value": 0.003645226139125536,
+    "time": 3976.37763862696,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+      "eyeriss_like@glb9@pe_x_scale3@pe_y_scale2",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "gemmini_like@glb9@pe_x_scale4@pe_y_scale3",
+      "gemmini_like@glb4@pe_x_scale3@pe_y_scale4",
+      "switch_8port@glb9@pe_x_scale2@pe_y_scale4",
+      "gemmini_like@glb1@pe_x_scale1@pe_y_scale4"
+    ]
+  },
+  "n8": {
+    "algorithm": "isaeo",
+    "best_value": 0.003591992114225261,
+    "time": 3563.072817323962,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+      "eyeriss_like@glb9@pe_x_scale3@pe_y_scale2",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "gemmini_like@glb9@pe_x_scale4@pe_y_scale3",
+      "gemmini_like@glb4@pe_x_scale3@pe_y_scale4",
+      "switch_8port@glb9@pe_x_scale2@pe_y_scale4",
+      "gemmini_like@glb1@pe_x_scale1@pe_y_scale4",
+      "eyeriss_like@glb9@pe_x_scale1@pe_y_scale2"
+    ]
+  },
+  "n9": {
+    "algorithm": "isaeo",
+    "best_value": 0.0035556564050030696,
+    "time": 4386.344979587011,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+      "eyeriss_like@glb9@pe_x_scale3@pe_y_scale2",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "gemmini_like@glb9@pe_x_scale4@pe_y_scale3",
+      "gemmini_like@glb4@pe_x_scale3@pe_y_scale4",
+      "switch_8port@glb9@pe_x_scale2@pe_y_scale4",
+      "gemmini_like@glb1@pe_x_scale1@pe_y_scale4",
+      "eyeriss_like@glb9@pe_x_scale1@pe_y_scale2",
+      "eyeriss_like@glb4@pe_x_scale2@pe_y_scale1"
+    ]
+  },
+  "n10": {
+    "algorithm": "isaeo",
+    "best_value": 0.003524772403218603,
+    "time": 6744.060680921073,
+    "best_chiplets": [
+      "gemmini_like@glb1@pe_x_scale2@pe_y_scale1",
+      "eyeriss_like@glb9@pe_x_scale3@pe_y_scale2",
+      "PIM@glb1@pe_x_scale1@pe_y_scale1",
+      "gemmini_like@glb9@pe_x_scale4@pe_y_scale3",
+      "gemmini_like@glb4@pe_x_scale3@pe_y_scale4",
+      "switch_8port@glb9@pe_x_scale2@pe_y_scale4",
+      "gemmini_like@glb1@pe_x_scale1@pe_y_scale4",
+      "eyeriss_like@glb9@pe_x_scale1@pe_y_scale2",
+      "eyeriss_like@glb4@pe_x_scale2@pe_y_scale1",
+      "eyeriss_like@glb16@pe_x_scale1@pe_y_scale3"
+    ]
+  }
+}

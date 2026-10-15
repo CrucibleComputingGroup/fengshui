@@ -1,0 +1,4 @@
+# docker/Dockerfile.analysis copies only requirements.txt; the repository and the database
+# are mounted at run time, so nothing else goes into the build context.
+*
+!requirements.txt

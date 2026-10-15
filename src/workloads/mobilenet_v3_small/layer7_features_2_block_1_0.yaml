@@ -1,0 +1,59 @@
+problem:
+  instance:
+    C: 1
+    G: 72
+    M: 1
+    N: 1
+    P: 28
+    Q: 28
+    R: 3
+    S: 3
+  shape:
+    coefficients:
+    - default: 1
+      name: Cgroup
+    - default: 1
+      name: Mgroup
+    - default: 2
+      name: Hstride
+    - default: 2
+      name: Wstride
+    data_spaces:
+    - name: Weights
+      projection:
+      - - - G
+      - - - C
+      - - - M
+      - - - R
+      - - - S
+    - name: Inputs
+      projection:
+      - - - N
+      - - - G
+          - Cgroup
+        - - C
+      - - - R
+        - - P
+          - Hstride
+      - - - S
+        - - Q
+          - Wstride
+    - name: Outputs
+      projection:
+      - - - N
+      - - - G
+          - Mgroup
+        - - M
+      - - - P
+      - - - Q
+      read_write: true
+    dimensions:
+    - G
+    - C
+    - M
+    - R
+    - S
+    - N
+    - P
+    - Q
+    name: features_2_block_1_0

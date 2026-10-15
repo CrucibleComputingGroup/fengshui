@@ -1,0 +1,30 @@
+# syntax=docker/dockerfile:1
+#
+# Fengshui — environment for Figures 8 and 9 (plots, pool searches, notebook).
+# The repository and the 4.6 GB database are mounted at run time, not copied in. From the
+# repository root:
+#   docker build -f docker/Dockerfile.analysis -t fengshui .
+#   docker run -it --rm -v "$PWD":/fengshui fengshui                # a shell
+#   docker run -it --rm -p 8888:8888 -v "$PWD":/fengshui fengshui \
+#       jupyter lab --ip=0.0.0.0 --allow-root --no-browser notebooks/reproduce_all.ipynb
+#   docker run --rm -v "$PWD":/fengshui fengshui \
+#       jupyter nbconvert --to notebook --execute notebooks/reproduce_all.ipynb   # headless
+# The container runs as root, hence --allow-root. The database must be at
+# src/unified_database.csv (bash tools/download_data.sh).
+
+FROM python:3.13-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    FENGSHUI_DETERMINISTIC=1 \
+    FENGSHUI_GA_SEED=0
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        git ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /fengshui
+COPY requirements.txt /fengshui/requirements.txt
+RUN pip install --no-cache-dir -r /fengshui/requirements.txt
+
+CMD ["bash"]

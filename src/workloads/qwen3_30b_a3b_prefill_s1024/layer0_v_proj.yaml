@@ -1,0 +1,29 @@
+problem:
+  instance:
+    B: 1
+    C: 2048
+    M: 512
+    N: 1024
+  shape:
+    data_spaces:
+    - name: Inputs1
+      projection:
+      - - - M
+      - - - C
+    - name: Inputs2
+      projection:
+      - - - B
+      - - - N
+      - - - C
+    - name: Outputs
+      projection:
+      - - - B
+      - - - N
+      - - - M
+      read_write: true
+    dimensions:
+    - B
+    - N
+    - C
+    - M
+    name: layer0_k_proj

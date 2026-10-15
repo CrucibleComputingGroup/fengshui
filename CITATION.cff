@@ -1,0 +1,65 @@
+cff-version: 1.2.0
+message: "If you use Fengshui, please cite the MICRO 2026 paper."
+title: "Fengshui: Demystifying Chiplet Ecosystem and Bespoke Neural Network Accelerator Codesign"
+type: software
+authors:
+  - family-names: "Jin"
+    given-names: "Haoran"
+    affiliation: "University of Michigan"
+  - family-names: "Yang"
+    given-names: "Jirong"
+    affiliation: "University of Michigan"
+  - family-names: "Zhang"
+    given-names: "Zhiheng"
+    affiliation: "University of Michigan"
+  - family-names: "Shin"
+    given-names: "Justin"
+    affiliation: "University of Michigan"
+  - family-names: "Lyu"
+    given-names: "Barry"
+    affiliation: "University of Michigan"
+  - family-names: "Zhang"
+    given-names: "Kangqi"
+    affiliation: "University of Michigan"
+  - family-names: "Liu"
+    given-names: "Yunpeng"
+    affiliation: "University of Michigan"
+  - family-names: "Bleier"
+    given-names: "Nathan"
+    affiliation: "University of Michigan"
+repository-code: "https://github.com/CrucibleComputingGroup/fengshui"
+license: GPL-3.0
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21524898
+    description: Archived artifact and characterization database
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: "Jin"
+      given-names: "Haoran"
+      affiliation: "University of Michigan"
+    - family-names: "Yang"
+      given-names: "Jirong"
+      affiliation: "University of Michigan"
+    - family-names: "Zhang"
+      given-names: "Zhiheng"
+      affiliation: "University of Michigan"
+    - family-names: "Shin"
+      given-names: "Justin"
+      affiliation: "University of Michigan"
+    - family-names: "Lyu"
+      given-names: "Barry"
+      affiliation: "University of Michigan"
+    - family-names: "Zhang"
+      given-names: "Kangqi"
+      affiliation: "University of Michigan"
+    - family-names: "Liu"
+      given-names: "Yunpeng"
+      affiliation: "University of Michigan"
+    - family-names: "Bleier"
+      given-names: "Nathan"
+      affiliation: "University of Michigan"
+  title: "Fengshui: Demystifying Chiplet Ecosystem and Bespoke Neural Network Accelerator Codesign"
+  year: 2026
+  collection-title: "Proceedings of the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO)"
